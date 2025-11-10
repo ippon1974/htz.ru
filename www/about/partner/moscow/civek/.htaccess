@@ -1,0 +1,5 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /about/partner/moscow/civek
+RewriteRule (.+)(/)$ $1.html [L,QSA]

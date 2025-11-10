@@ -1,0 +1,11 @@
+/*-------------------------------------------	
+	Home
+-------------------------------------------*/
+#message a { background-color: #000; }
+
+#landings #row1 { padding-bottom: 20px; }
+#landings li { margin-left: 13px; }
+	#landings li img { margin-left: 5px; }		
+#landings dl * { border-bottom: none; }
+		/*#landings dd.thumb { margin-top: -27px; }*/
+		/*#landings li#forstudents dd.thumb { margin-top: -41px; }*/

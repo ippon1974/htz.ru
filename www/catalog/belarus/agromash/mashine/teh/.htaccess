@@ -1,0 +1,7 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/belarus/agromash/mashine/teh
+RewriteRule ^id/([^/]*)\.html$ /catalog/belarus/agromash/mashine/teh/?id=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

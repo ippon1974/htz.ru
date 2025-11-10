@@ -1,0 +1,29 @@
+body {
+	font-size: 0.7em;
+}
+
+	strong {
+	font-size: 1.1em;
+}
+
+.odd {
+background-color: #fcfcfc; /* желтый цвет дл€ нечетных €чеек */ 
+}    
+ .even {  
+background-color: #eaeaea; /* синий цвет дл€ четных €чеек */ 
+}
+ .table-heading {  
+background-color: #c6c6c6; /* синий цвет дл€ четных €чеек */ 
+} 
+
+table.admin {
+	border-style: dotted dotted dotted dotted;
+	border-width: 1px 1px 1px 1px;
+	border-color: Gray Gray Gray Gray;
+}
+
+.w {
+	background-color: #ffffff;
+}
+
+

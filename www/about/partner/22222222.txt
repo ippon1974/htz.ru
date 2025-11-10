@@ -1,0 +1,9 @@
+<ul class="listing">
+<li>
+<dl>
+<dt><a href="/about/partner/belgorod/" title="Трактор Черноземья">ООО &laquo;Трактор Черноземья&raquo;</a></dt>							
+<dd><p>Россия, 308036, т. Белгород, ул. Будённого, 6/155</p>
+</dd>					
+</dl>
+</li>
+</ul>

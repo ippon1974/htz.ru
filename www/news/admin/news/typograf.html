@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<!-- Copyright (c) STROYPROEKTMONTAZH | http://www.htz.ru/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Типограф</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	<meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+</head>
+
+<body bgcolor="#eaeaea">
+
+<center> 
+
+<table align="center" border="0" width="700">
+<form method="post">
+<tr><td><h1 style="font-weight: normal;">&#167; &laquo;Типограф&raquo;</h1></td></tr>
+<tr>
+	<td>^if(def $form:text){
+		$file[^file::load[text;http://www.typograf.ru/webservice/;
+		            $.timeout(10)
+					$.charset[windows-1251]
+					$.method[POST]
+					$.form[
+					$.text[$form:text]
+					$.xml[]
+				]
+			]
+		]
+	}
+	<textarea name="text" rows="12" style="width: 100%">^if(def $file.text){$file.text}</textarea>
+	<br />
+	<input type="submit" value="типографировать" style="margin-top: 0.5em" /></td>
+</tr>
+<tr>
+	<td align="left">Типограф — это удобное средство онлайн подготовки русского текста к веб-изданию. Он помогает избежать монотонной корректировки, расстановки кавычек, неразрывных пробелов, специальных символов, исправляет некоторые ошибки ввода (опечатки), проверяет орфографию и так далее. Этот инструмент не является полноценной заменой ручного труда верстальщика, корректора и кодера, но он может сократить этот труд до 95—99%, что весьма удобно.</td>
+</tr>
+</table>
+</form>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

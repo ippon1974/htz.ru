@@ -1,0 +1,6 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/belarus/taim/hoover_park_mounted
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

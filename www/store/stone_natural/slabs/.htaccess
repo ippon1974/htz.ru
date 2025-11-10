@@ -1,0 +1,19 @@
+ErrorDocument 404 http://www.htz.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /store/stone_natural/slabs
+RewriteRule ^products_format_type_size/([^/]*)\.html$ /store/stone_natural/slabs/?products_format_type_size=$1 [L]
+RewriteRule ^products_format_type/([^/]*)\.html$ /store/stone_natural/slabs/?products_format_type=$1 [L]
+RewriteRule ^color/([^/]*)\.html$ /store/stone_natural/slabs/?color=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+
+
+
+
+
+
+
+
+

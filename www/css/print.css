@@ -1,0 +1,42 @@
+/*-------------------------------------------	
+	Hidden Elements
+-------------------------------------------*/
+#navigation, #skip, #utility, #languageswitch, #breadcrumbs, #search, #anchorlist, #copyright li, #secondary, .backtotop, #message a, #googlemapholder, #googlemap { display: none; }
+#copyright li.first { display: block; }
+
+
+/*-------------------------------------------	
+	Rules for every page
+-------------------------------------------*/
+body { font-family: "Lucida Grande", Georgia, "Times New Roman", serif; width: 6.5in; margin: 0 0.25in; }
+#header h1 { border-bottom: 1px solid #333; padding-bottom: 0.25in; text-align: center; margin-top: 0.5in; }
+	#header h1 a, #header h1 a img { border: 0; }
+#primary h2 { color: #369; font-size: 20pt; font-weight: normal; padding-bottom: 0.1in; border-bottom: 1px dashed #999; margin: 0 0 0.25in; }
+#primary h3, #landings dt { margin: 0.35in 0 0.15in; font-size: 11pt; font-weight: bold; text-transform: uppercase; color: #600; letter-spacing: 1pt; }
+p, ul, dl { font-size: 9pt; color: #333; line-height: 150%; }
+#primary ul li { list-style-image: url(/img/presentation/yellow_diamond_bullet.gif); }
+#primary ul.listing { list-style: none; margin: 0; padding: 0; }
+	#primary ul.listing li, #primary #landings li { list-style-image: none; border-top: 1px dashed #ccc; margin-bottom: 0.15in; padding-top: 0.15in; /*clear: left;*/ float: left; width: 6.5in; }
+	#primary ul.listing li.first { border: none; padding-top: 0; }
+	#primary ul.listing img, #primary #landings li { float: left; margin-right: 0.25in; }
+.metadata dd.volume, .metadata dd.date { font-style: italic; color: #600; }
+a { color: #369; }
+a img { border: none; }
+/*
+#primary a:after { content: " ("attr(href)") "; }
+#primary ul.listing a:after, #primary #landings a:after { content: normal; }
+*/
+#copyright, #site { clear: both; margin: 0; padding: 0; }
+#copyright { border-top: 1px solid #333; padding-top: 0.15in; margin-top: 0.35in; }
+#site li { display: inline; border-left: 1px solid #333; padding-left: 10pt; margin-right: 10pt; }
+#site li.first { padding-left: 0; border: none; }
+
+
+/*-------------------------------------------	
+	Home
+-------------------------------------------*/
+.home #primary h2 { color: black; text-align: center; margin-bottom: 0; background-color: white; }
+#welcome { width: 6.5in; text-align: center; background-color: #eee; border-bottom: 1px dashed #999; }
+#welcome img { text-align: center; margin: 0 auto; padding-bottom: 0; display: block; border-left: 3px solid #ddd; border-right: 3px solid #ddd; }
+#landings ul { margin: 0; padding: 0; list-style: none; }
+#landings dt { margin-top: 0; }

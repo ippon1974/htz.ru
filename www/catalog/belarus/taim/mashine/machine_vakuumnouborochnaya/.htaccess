@@ -1,0 +1,6 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/belarus/taim/machine_vakuumnouborochnaya
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

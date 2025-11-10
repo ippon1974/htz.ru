@@ -1,0 +1,18 @@
+ErrorDocument 404 http://www.alla-tour.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /service/centerdownload/shantui
+RewriteRule ^3/([^/]*)\.html$ /news/show/?id=$1 [L]
+RewriteRule ^year/([^/]*)/month/([^/]*)\.html$ /news/show/?year=$1&month=$2 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+
+
+
+
+
+
+
+
+

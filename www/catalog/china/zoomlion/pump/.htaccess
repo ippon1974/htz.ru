@@ -1,0 +1,8 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/china/zoomlion/pump
+RewriteRule ^diesel/([^/]*)\.html$ /catalog/china/zoomlion/pump/?translite=$1 [QSA,L]
+RewriteRule ^electric/([^/]*)\.html$ /catalog/china/zoomlion/pump/?translite=$1 [QSA,L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

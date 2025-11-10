@@ -1,0 +1,15 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/htz/general
+RewriteRule ^k09([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^150kd09([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^1500509([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^150d0509([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^181([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^21041([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^17022([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^17221([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^18040([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^general/([^/]*)\.html$ /catalog/htz/general/?translite=$1 [QSA,L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]

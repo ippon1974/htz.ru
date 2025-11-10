@@ -1,0 +1,17 @@
+ErrorDocument 404 http://www.htz.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /catalog/spare/ctz/t170/products
+RewriteRule ^id/([^/]*)\.html$ /catalog/spare/ctz/t170/products/?id=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+
+
+
+
+
+
+
+
+

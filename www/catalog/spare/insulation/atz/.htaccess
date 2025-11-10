@@ -1,0 +1,7 @@
+ErrorDocument 404 http://www.htz.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /catalog/spare/insulation/atz
+RewriteRule (.+)(/)$ $1.html [L,QSA]

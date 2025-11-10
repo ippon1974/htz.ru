@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<price>
+    <item price="1">
+        <id>ZXC234V-123</id>
+        <section>Ку</section>
+        <title>Ку, ку, ку.</title>
+    </item>
+	<item price="4">
+        <id>ZXC234V-1000 000</id>
+        <section>Ку</section>
+        <title>Ку, ку, ку.</title>
+    </item>
+	<item price="3">
+        <id>ZXC234V-123</id>
+        <section>Ку</section>
+        <title>Ку, ку, ку.</title>
+    </item>
+	<item price="3">
+        <id>ZXC234V-123</id>
+        <section>Ку</section>
+        <title>Ку, ку, ку.</title>
+    </item>
+</price>

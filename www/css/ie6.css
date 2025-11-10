@@ -1,0 +1,110 @@
+/*-------------------------------------------	
+	Rules for all pages
+-------------------------------------------*/
+a.license { float: left; }
+a.license, a.license img { border: none; }
+
+#languageswitch { margin-top: 0; }
+	#languageswitch li.first, #footer li.first { padding-left: 0; border: 0; }
+
+	
+#utility li#glossary span { background: transparent url(/img/presentation/glossary_icon.gif) no-repeat right 2px; }
+
+#search form dl { margin-top: 1px; }
+	#search dt { width: 80px; }
+		#search dt input { width: 80px; }
+		#search dd input { margin: 0; }
+/* IE 3px jog */		
+* html #primary {margin-right: -3px; }
+* html #secondary { height: 1%; margin-left: 0; }
+/* end 3px jog stuff */
+
+#navigation li { height: 1%; margin: 0; padding: 0; }
+#navigation li a { height: 1%; margin: 0; }
+#search #breadcrumbs { margin: 0 0 0 168px; padding-top: 35px; }
+	#breadcrumbs li { padding: 0 0 0 10px; background: transparent url(/img/presentation/breadcrumb_raquo.gif) no-repeat 0 50%; }
+	#breadcrumbs li.first { padding-left: 0; background: none; }
+
+* html #content {
+  height:expression( this.scrollHeight < 400 ? "400px" : "auto" );
+}
+
+.explanation { font-style: normal; }
+
+.metadata dt, .metadata dd { line-height: 1.5; }
+
+#primary legend { margin-bottom: 1em; }
+
+.backtotop a { padding: 0.1em 8px 0.1em 0; background: transparent url(/img/presentation/uarr.gif) no-repeat right 50%; }
+
+/*-------------------------------------------	
+	Home
+-------------------------------------------*/
+#message a { margin: 0; background-color: transparent; }
+#message span { background: #000 url(/img/presentation/home_message_learnmore.gif) no-repeat 0 -25px; }
+* html .home #message h2.ga { background: #000 url(/img/presentation/home_message_ga.gif) no-repeat 0 0; width: 403px; height: 49px; }
+	.home #message span.ga { background: #000 url(/img/presentation/home_message_learnmore_ga.gif) no-repeat 0 -27px; }
+		* html .home #message a.ga { width: 223px; height: 27px; background: #000 url(/img/presentation/home_message_learnmore_ga.gif) no-repeat 0 0; } 
+		* html #message a.ga:hover, * html #message a.ga:focus, * html #message a.ga:active { background-position: 0 -27px; }
+
+#landings li { width: 212px; float: left; margin: 0 0 1.5em 10px; }
+
+.posttitle a { font-style: normal; }
+
+#primary .callout { margin-left: 10px; }
+
+
+/*-------------------------------------------	
+	Advanced Search
+-------------------------------------------*/
+#bigsearch dt { width: 359px; }
+ol dl { margin-top: -1.2em; }
+#primary .controls li.first { padding-left: 0; border: 0; }
+
+
+/*-------------------------------------------	
+	Newsletter & Feeds
+-------------------------------------------*/
+#centres .centre dd { font-style: normal; }
+#newsletter dd { margin-right: 5px; }
+h3#feeds { padding-top: 0; }
+
+
+/*-------------------------------------------	
+	Wide Sidebar
+-------------------------------------------*/
+body.widesidebar #secondary { width: 198px; margin-left: -3px; }
+
+
+/*-------------------------------------------	
+	Branch Detail
+-------------------------------------------*/
+#contact { margin: 15px 0; }
+
+
+/*-------------------------------------------	
+	Blog
+-------------------------------------------*/
+* html body.blog #primary form dl.identity { margin-right: 28px; }
+p.rssfeed { background: transparent url(/img/presentation/rss_icon.gif) no-repeat 0 1px; }
+
+
+/*-------------------------------------------	
+	Events
+-------------------------------------------*/
+.events #primary .metadata dd { font-size: 70%; }
+.blog #primary .metadata dd { font-size: 70%; }
+#secondary #calendarutil li#addtocalendar { background: transparent url(/img/presentation/calendar_icon_hover.gif) no-repeat 0 1px; }
+#secondary #calendarutil li#winners { background: transparent url(/img/presentation/winners_icon_hover.gif) no-repeat 0 1px; }
+
+
+/*-------------------------------------------	
+	The Music
+-------------------------------------------*/
+#primary #comment_form dl { font-size: 100%; }
+
+
+/*-------------------------------------------	
+	Titles
+-------------------------------------------*/
+.about h2.ga { background-image: url(/img/presentation/aboutus_headline_ga.gif); height: 37px; }

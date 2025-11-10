@@ -1,0 +1,9 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /stone/letter
+
+
+
+

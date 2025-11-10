@@ -1,0 +1,15 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/agroimport/archive
+RewriteRule ^a09([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^a156([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^a157([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^a158([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^ad09([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^ak09([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^akd09([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^bt150k09([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^cmp32([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule ^lt157([^/]*)\.html$ /catalog/agroimport/?translite=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]

@@ -1,0 +1,9 @@
+ErrorDocument 404 http://www.htz.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/htz/universal
+RewriteRule ^16131([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule ^16331([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

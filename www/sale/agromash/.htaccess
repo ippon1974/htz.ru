@@ -1,0 +1,15 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /sale/agromash
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+
+
+
+
+
+
+
+
+

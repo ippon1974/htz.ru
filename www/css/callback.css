@@ -1,0 +1,41 @@
+/* Callback */
+a.callme {text-decoration: none; color:#4682b4; border-bottom: 2px dotted #4682b4;}
+.callme a:hover {color:#ff5500;border-bottom: 1px dotted #ff5500;}
+
+.callme div.form {
+font-size:.9em; 
+z-index:2; 
+display:none; 
+position:absolute;
+text-align:left; 
+width: 410px; 
+border: solid 4px #f5deb3; 
+background-color: #f2f2e1; 
+margin:3px 0 0 -3px;
+padding: 7px 7px 3px 7px;}
+
+.callme div.form table {font-style:normal;font-family: arial;}
+.callme div.form table td {padding: 3px;}
+.callme div.form table tr:first-child td:first-child {color: #ff5500;}
+.callme div.form table button {font-style:normal;height:27px; width:130px;}
+.callme div.form .close {float:right; margin: -4px -4px; width: 15px; height: 15px; background: url('/img/presentation/delete.gif') no-repeat 0px -41px; line-height: 1px; font-size: 1px;cursor: pointer;}
+.callme div.form .close:hover {background-position: 0px -56px;}
+
+
+.callback_p {color:#000;}
+.callback_p a {color:#003366;}
+.callback_p strong a {color:#003366;}
+
+table.postmashine { margin: 0.5em 0 0 0; padding: 0 0 0 0; }
+table.postmashine td { border: none; background: #f2f2e1; margin: 0 0 0 0; padding: 0 0 0 0; }
+table.postmashine td p { font-size: 0.7em; margin: 0em 0 0 0;}
+
+div.callback_post {border: solid 4px #9acd32; padding: 10px; background: #ebf2ea; }
+div.callback_post p {color:#9acd32; margin: 0 0 0.5em 0;}
+div.callback_post p strong {text-transform: uppercase;}
+
+
+div.callback_post_error {border: solid 4px #f5deb3; padding: 10px; background: #f2f2e1; }
+div.callback_post_error p { color:#ff0000;}
+div.callback_post_error p strong {text-transform: uppercase; color:#ff0000;}
+/* END Callback */

@@ -1,0 +1,3 @@
+id	stone_status_id	stone_id	stone_type_id	stone_format_id	country_id	stone_en	stone_ru	stone_alternative_name_en	amount_stone	s_length	s_width	s_height	dt_add	dt_add_stone	add_info	description	keywords	img_patch	is_special	is_pdf	is_archive	price	price_type
+2	1	982	14	1	9	Kashmir Gold	Кашмир Голд					30	2014-09-30 00:02:27	2014-09-08 00:00:00				2_1	0	1	0	400.00	1
+1	1	1032	22	1	0	Brandy Ellou	Брэнди Желтый						2014-09-29 21:13:56	2014-09-10 00:00:00	Предложение № 1Классификация: Формат: СлебСтоимость за кв.м.: 17500 руб. с НДС.Склад: В наличии на складе. МО, Люберецкий район, п. Красково. 			1_1	0	1	0	500.00	1

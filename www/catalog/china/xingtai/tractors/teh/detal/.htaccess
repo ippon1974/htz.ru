@@ -1,0 +1,7 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/china/xingtai/tractors/teh/detal
+RewriteRule ^id/([^/]*)\.html$ /catalog/china/xingtai/tractors/teh/detal/?id=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

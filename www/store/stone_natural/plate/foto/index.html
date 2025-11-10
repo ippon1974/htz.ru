@@ -1,0 +1,114 @@
+@body[]
+<body class="store">
+<ul id="skip">
+<li><a href="#navigation" title="Пропустить навигацию">Пропустить навигацию</a></li>
+</ul>
+	
+<div id="headerwrap">
+<div id="header">
+			
+<ul id="utility">
+<li><a href="/about/contact/" title="Контакты">Контакты</a></li>
+<li><a href="/news/" title="Новости">Новости</a></li>
+<li id="glossary"><span><a href="/catalog/spare/" title="Каталог запчастей">Каталог запчастей</a></span></li>
+<li><a href="/map/" title="Карта сайта">Карта сайта</a></li>
+</ul>
+			
+<h1 title="^my_company_name_[]"><a href="/" title="^my_company_name_[]"><img src="/i/logo.gif" alt="^my_company_name_[]" /></a></h1>
+		
+<ul id="languageswitch">
+<li class="first">Русский</li>
+<li><a href="/en/">English</a></li>
+</ul>
+			
+</div>		
+	
+</div>	
+	
+<div id="searchwrapper">
+
+<div id="search">
+<form method="get" action="/cgi-bin/search/search.pl"  >
+<div>
+<input type="hidden" name="stpos" value="0" />
+</div>
+
+<p id="searchlabel"><label for="search_textbox">Поиск</label></p>
+<dl>
+<dt><input class="filled" type="text" id="search_textbox" name="query" value="Найти" tabindex="1" /></dt>
+<dd><input type="image" src="/img/widgets/go_button.gif" alt="Поиск по сайту" tabindex="2" /></dd>
+<dd><a href="http://spare.htz.ru/" title="Поиск по каталогу запчастей">Найти запчасть</a></dd>
+</dl>
+</form>
+
+^navi[]
+
+</div>		
+		
+</div>	
+
+<div id="content">
+<div id="primary">
+<div id="tehnobody">
+
+^if(def $request:uri){<p><a href="/store/stone_natural/plate/">Плитка</a></p>}{}
+
+<h2>^title[]</h2>
+</div>
+
+^html_foto[][]
+	
+	</div>
+	
+<div id="secondary">
+
+<h3>Контакты</h3>
+<p>Пн &ndash; Пт с 10 до 19</p>
+<p>^my_phone[]</p>
+<p>^in_store_special_civel[]</p>
+
+<div class="fi_store">
+^plate_stone[]
+^plate_size[]
+^plate_color_right[]
+
+<dl>
+<dt>Стоимость</dt>
+<dd><a href="/store/stone_natural/plate/pay/">Сортировать по цене</a></dd>
+</dl>
+</div>
+
+</div>
+
+^navigation[]
+^navigation1[]
+^navigation2[]
+^navigation3[]
+
+<script language="JavaScript" type="text/javascript">
+<!--
+cnsd=document;cnsd.cookie='b=b';cnsc=cnsd.cookie?1:0;
+cnst=escape(cnsd.title);cnst=cnst.replace(/\+/g,'%2B');
+cnsa=navigator.appName;
+cnsn=(cnsa.substring(0,2)=='Mi')?0:1;cnss=screen;cnspx=(cnsn==0)?cnss.colorDepth:cnss.pixelDepth;
+document.write('<img src="http://www.htz.ru/php/cnstats/cntg.php?c='+cnsc+'&amp;amp;e='+cnss.width+'.'+cnss.height+'&amp;d='+cnspx+'&amp;r='+escape(cnsd.referrer)+'&amp;p='+escape(cnsd.location)+'&amp;t='+cnst+'" width="1" height="1" alt="" >');
+// -->
+</script>
+<noscript>
+<img src="http://www.htz.ru/php/cnstats/cntg.php?468&amp;c=0" width="1" height="1" alt="" />
+</noscript>
+</div>	
+
+<div id="footerwrap">
+
+^footer[] 
+		
+</div>
+	
+</div>
+
+	
+	
+
+
+</body></html>

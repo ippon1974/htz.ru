@@ -1,0 +1,7 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/htz/spec
+RewriteRule ^156([^/]*)\.html$ /catalog/htz/?translite=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

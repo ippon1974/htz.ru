@@ -1,0 +1,69 @@
+@main[]
+
+# create Feed object and set channel's fields in place.
+# you can specify any channel's field which described in RSS 2 specification.
+$oFeed[^FeedRss::create[
+	$.title[RSS title]
+	$.link[http://$env:SERVER_NAME/news/]
+	$.description[ÕÓ‚ÓÒÌÓÈ Í‡Ì‡Î ÍÓÏÔ‡ÌËË ŒŒŒ "—“–Œ…œ–Œ≈ “ÃŒÕ“¿∆"]
+
+#	default docs value
+#	$.docs[http://www.htz.ru/news/rss/]
+
+#	default generator value
+#	$.generator[^if(def $env:PARSER_VERSION){$env:PARSER_VERSION}{Parser 3}]
+
+#	$.copyright[Copyright (c) STROYPROEKTMONTAZH]
+#	$.webMaster[mail@htz.ru]
+#	$.ttl(10)
+#	$.image[
+#		<title>Short image description</title>
+#		<url>http://$env:SERVER_NAME/link/to/image.jpg</url>
+#		<link>http://$env:SERVER_NAME/</link>
+#		<width>100</width>
+#		<height>100</height>
+#	]
+#	and so on
+]]
+
+
+# redefine some channel's fields if needed
+^oFeed.set[
+	$.title[ŒŒŒ "—“–Œ…œ–Œ≈ “ÃŒÕ“¿∆": ÕŒ¬Œ—“»]
+]
+
+
+# add items
+# you can specify any item's field which described in RSS 2 specification.
+# you can specify date fields as date objects or as a strings with date in sql format.
+
+
+^html_[]
+
+
+# print Feed's xml.
+# before printing the required fields will be checked.
+# by default all necessary HTTP headers will be set (last-modified, content-type)
+^oFeed.print[
+	$.sVersion[2.0]
+
+#	you must specify which timezone will be used while printing date fields.
+#	as described in RFC822 you can use with safety GMT, UTC, some USA timezones or time offset.
+#	in case if timezone which was specified not equal to server timezone
+#	you must manually roll all channel's and item's date fields during definition.
+	$.sTZ[+0300]
+#	$.sTZ[GMT]
+
+#	the number of items which will be printed. by default all items will be printed.
+	$.iItemLimit(15)
+
+#	order items by pubDate field. by default items will be printed in order as they were added.
+	$.bOrderItems(true)
+
+#	suppress XML declaration.
+#	$.bOmitXMLDeclaration(true)
+
+#	suppress HTTP headers.
+#	$.bOmitHTTPHeaders(true)
+]
+#end @main[]

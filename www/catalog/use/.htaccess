@@ -1,0 +1,9 @@
+ErrorDocument 404 http://www.htz.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /catalog/use
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+RewriteRule ^tehno/([^/]*)\.html$ /catalog/use/?id=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]

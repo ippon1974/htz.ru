@@ -1,0 +1,12 @@
+/*Callback Mini*/
+* {margin: 0;padding: 0;}
+    body {font: 65% Arial, background: #fff; color: #333;}
+    hr {border: 0 hidden; border-top: 1px solid #d1d1d1; height: 0; clear: both;}
+    sup{font-size: 0.9em;}
+    a {color:;}
+    a:hover {color: #ff6347;}
+    a:visited {}
+    .clear {clear: both; min-height: 1px; height: 1px; line-height: 1px; width: 1px; font-size: 1px;}
+   .layout {min-width: 980px ;max-width: 2000px;margin: 0 auto; padding: 0;}
+   .hlp{cursor:help;}
+/*END Callback Mini*/

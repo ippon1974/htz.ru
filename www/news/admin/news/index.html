@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<!-- Copyright (c) STROYPROEKTMONTAZH | http://www.htz.ru/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Администратор новостей</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	<meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+</head>
+
+<body>
+^use[NConvert.p]
+$oImg[^NConvert::create[
+	$.sScriptPath[/../data/bin]
+	$.sScriptName[nconvert]
+]]
+$now[^date::now[]]
+<center>
+<table align="center" border="0">
+<tr><td align="left" colspan="2"><p><a href="/news/admin/">Администратор</a> | Новости | <a href="/news/admin/price/">Прайс-лист</a></p><h1 style="font-weight: normal;">Администратор новостей</h1></td></tr>
+<tr><td align="left" colspan="2"><h2 style="font-weight: normal;">&#167; &laquo;<a href="typograf/" target="_blank">Типограф</a>&raquo;</h2><h2 style="font-weight: normal;">&para; <a href="edit_news/">Редактор</a></h2></td></tr>
+<form method="POST" enctype="multipart/form-data">
+<tr>
+<td colspan="2" valign="top" align="left">
+<input type="radio" name="article_type_id" value="2" checked="checked"> Новости рынка<BR>
+<input type="radio" name="article_type_id" value="1"> Новости компании<BR>
+<input type="radio" name="article_type_id" value="3"> Выставки<BR>
+<input type="radio" name="article_type_id" value="4"> Статьи<br /><br />
+
+Заголовок:<br /><textarea cols="50" name="title" rows="3"></textarea><br><br />
+Большой заголовок:<br /><textarea cols="50" name="lead" rows="10"></textarea><br><br />
+Текст полный:<br /><textarea cols="50" name="body" rows="15"></textarea><br>
+Публиковать?&nbsp;
+<input type="radio" name="is_published" value="1" checked="checked"> Да
+<input type="radio" name="is_published" value="0"> Нет<br /><br />
+Текущая дата:<br /><input name="dt" value="^now.sql-string[]"><br>
+Дата публикации:<br /><input name="dt_published" value="^now.sql-string[]" />
+</td></tr>
+<tr>
+<td>
+Фото новости: (<em>не обязательно</em>)<br />
+<input type="file" name="image" value="300">
+</p>
+<p> 
+<input type="submit" value="Разместить" name="posted" />&nbsp;&nbsp;&nbsp; 
+<input type="reset" value="Сброс" /> 
+</p> </td>
+<td>
+
+</td>
+</tr>
+</table>
+</form>
+
+#начало обработки 
+^if(def $form:article_type_id && def $form:title && def $form:lead && def $form:body && def $form:is_published && def $form:dt && def $form:dt_published){
+   ^connect[$connect_string]{
+      ^void:sql{insert into news 
+         (article_type_id, title, lead, body, is_published, dt, dt_published) 
+      values  
+         ('$form:article_type_id', '$form:title', '$form:lead', '$form:body', '$form:is_published', '$form:dt', '$form:dt_published')
+		  
+		  
+^if(def $form:image){
+$extension[^file:justext[$form:image.name]]
+$filename[^file:basename[$form:image.name]]
+$last_id{^int:sql{select last_insert_id()}}
+$new_name[^math:uid64[]]
+^form:image.save[binary;/upload/${new_name}.${extension}]
+  }
+
+} 
+	  …сообщение добавлено ${last_id}
+     } 
+}{ 
+   …для добавления новости необходимо заполнить все поля формы
+} 
+
+^connect[$connect_string]{
+# Добавляем в базу
+	^void:sql{UPDATE `news` SET image = '${new_name}.$extension', last_id ='${last_id}' WHERE `article_id` = '${last_id}' LIMIT 1}
+	}
+$img[^file:list[/upload/;${new_name}\.(jpg|jpeg|jpe|gif|png)^$]]
+^oImg.resize[/upload/$img.name;/upload/small/$img.name;120;400;$.bKeepRatio(1)$.bRemoveMeta(1)$.sResizeType[decr]]
+</center>
+
+</body>
+</html>

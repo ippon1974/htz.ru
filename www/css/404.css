@@ -1,0 +1,11 @@
+#content {
+position: absolute; 
+top: 50%; 
+left: 30%; 
+}
+
+img {
+	border: 0;
+}
+
+#footer { color: #cc3300;}

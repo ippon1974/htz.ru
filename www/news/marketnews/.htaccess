@@ -1,0 +1,18 @@
+ErrorDocument 404 http://www.htz.ru/error404.html
+AddType application/x-httpd-php5 .php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /news/marketnews
+RewriteRule ^2/([^/]*)\.html$ /news/marketnews/?id=$1 [L]
+RewriteRule ^year/([^/]*)/month/([^/]*)\.html$ /news/marketnews/?year=$1&month=$2 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+
+
+
+
+
+
+
+
+

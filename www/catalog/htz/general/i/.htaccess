@@ -1,0 +1,7 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /catalog/htz/general
+RewriteRule ^general/([^/]*)\.html$ /catalog/htz/general/?translite=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

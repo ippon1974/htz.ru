@@ -1,0 +1,8 @@
+<br />
+<h3>Реклама</h3>
+ $banner[^getBanner[]]
+ ^untaint[as-is]{
+  ^if($banner){
+  $banner.source
+  }{}
+ }
