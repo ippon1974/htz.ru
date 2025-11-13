@@ -176,7 +176,7 @@ db.p
 <link rel="shortcut icon" href="/ico.ico" type="image/x-icon">
 <link rel="canonical" href="https://htz.ru/"/>
 
-<link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
+<link rel="alternate" type="application/rss+xml" title="" href="http://htz.ru/news/rss/rss/" />
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
 <!--[if gte IE 7]><link href="/css/ie7.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
 <script src="/js/functions.js" type="text/javascript" charset="utf-8"></script>

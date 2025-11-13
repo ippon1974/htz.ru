@@ -1,7 +1,7 @@
 @header[]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<!-- Copyright (c) STROYPROEKTMONTAZH | http://www.htz.ru/ -->
+	<!-- Copyright (c) SPM | http://www.htz.ru/ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
@@ -21,7 +21,7 @@
 <!--[if gte IE 7]><link href="/css/ie7.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
 <script src="/js/functions.js" type="text/javascript" charset="utf-8"></script>	
 
-<link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
+<link rel="alternate" type="application/rss+xml" title="" href="http://htz.ru/news/rss/rss/" />
 
 </head>
 <body class="store">
@@ -34,8 +34,8 @@ $result[Наличие природного камня на нашем складе]
 
 @getALL[]
 ^hStock[]
-$stock_select_archive[^table::load[http://www.civek.ru/stock/export/export_stock.txt]]
-$currency_[^table::load[http://www.civek.ru/stock/export/export_currency.txt]]
+$stock_select_archive[^table::load[http://civek.ststde.ru/stock/export/export_stock.txt]]
+$currency_[^table::load[http://civek.ststde.ru/stock/export/export_currency.txt]]
 <h2>Наличие природного камня на нашем складе</h2>
 <p style="background: #FFDEAD^; padding: 2px 0 2px 10px^;">Контактный телефон в Москве: ^my_phone_new_h[]<br />Электронная почта: ^my_email_stone[]</p>
 <ul class="listing">
