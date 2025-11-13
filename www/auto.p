@@ -318,8 +318,7 @@ $sections6[^table::load[/menu6.cfg]]
 
 @navigation5[] 
 $sections5[^table::load[/menu5.cfg]]
-	
-	
+
    ^sections5.menu{ 
 	   $sitem[$sections5.uri]
 	   $parts[^sitem.split[/;lh]]
@@ -630,7 +629,7 @@ $result[^MAIN:pSQL.table{
 @showWeatherInfo[][d;fRss;xRss;result]
 $d[^date::now[]]
 ^cache[/../data/cache/yr/^math:md5[$d.year $d.month $d.day]](60*60*12){
-	$fRss[^file::load[text;http://www.htz.ru/sale/data/exchange.xml]]
+	$fRss[^file::load[text;http://htz.ru/sale/data/exchange.xml]]
 	$xRss[^xdoc::create{^untaint{$fRss.text}}]
 	$xRss[^xRss.transform[/../data/templates/exchange.xsl]] 
 	^xRss.string[$.method[html]]
@@ -712,7 +711,9 @@ $price_hash[^price.hash[id]]
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
         <strong><a href="/catalog/htz/$machines_s.classification_sub_sub_uri/$machines_s.translite/" title="Трактор $machines_s.namenklatura">$machines_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
-    }{}  
+    }{
+		<strong><a href="/catalog/htz/$machines_s.classification_sub_sub_uri/$machines_s.translite/" title="Трактор $machines_s.namenklatura">$machines_s.namenklatura</a></strong> &mdash^; Уточнить<br />
+	}  
 
   } 
 #@spec_tehno[]
@@ -745,11 +746,15 @@ $price_hash[^price.hash[id]]
 
 <dt>Техника &laquo^;МТЗ&raquo^;</dt>
   Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
-  ^machines_s.menu{
+  
+  $machines_s_s[^table::create[$machines_s;$.offset(35)]]
+  ^machines_s_s.menu{
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
-        <strong><a href="/catalog/mtz/detal/id/$machines_s.id/" title="Трактор $machines_s.namenklatura">$machines_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
-    }{}  
+        <strong><a href="/catalog/mtz/detal/id/$machines_s.id/" title="Трактор $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
+    }{
+		<strong><a href="/catalog/mtz/detal/id/$machines_s.id/" title="Трактор $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
+	}  
 
   }
 #@spec_tehno_MTZ[]

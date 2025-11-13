@@ -1,4 +1,4 @@
-ErrorDocument 404 http://www.htz.ru/error404.html
+ErrorDocument 404 http://htz.ru/error404.html
 AddType application/x-httpd-php5 .php
 
 RewriteEngine on
