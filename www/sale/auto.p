@@ -18,57 +18,23 @@
 <!--[if gte IE 7]><link href="/css/ie7.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
 <script src="/js/functions.js" type="text/javascript" charset="utf-8"></script>	
 
-<link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
+<link rel="alternate" type="application/rss+xml" title="" href="http://htz.ru/news/rss/rss/" />
 
 </head>
 #@header[]
 
-
 @newPrice[]
- ^HTZ[]
  ^CTZ[]
  ^MTZ[]
+^TAIM[]
+^AGROMASH[]
+ ^HTZ[]
  ^AGROIMPORT[]
- ^AGROMASH[]
- ^TAIM[]
  ^HONGDA[]
  ^FANGYUAN[]
  ^SANY[]
  ^ZOOMLION[]
 #@newPrice[]
-
-@HTZ[]
-^hMachines[]
- $mashine[^getMachines[]]
-  $mashine_s[^mashine.select($mashine.brand_id==5)]
-  $price[^getPriceMachines[]]
- 
-#hash таблицы с ценами по полю id 
-$price_hash[^price.hash[id]]  
-
- <h3>Техника &laquo^;$mashine_s.brand&raquo^; (Украина)</h3>
- <p>Стоимость техники &laquo^;$mashine_s.brand&raquo^; с учетом НДС 18%</p>
-<table class="price_table" cellspacing="0">
-<tr>
-	<th>Номенклатура</th>
-	<th>Стоянка</th>
-	<th>Цена</th>
-</tr>
-
-#перебираем записи таблицы с товарами 
-^mashine_s.menu{  
-    $mashine_price[$price_hash.[$mashine_s.id].price] 
-#   проверяем - есть ли цена на товар в нашем hash 
-     
-<tr>
-<td><a href="/catalog/htz/$mashine_s.classification_sub_sub_uri/$mashine_s.translite/">$mashine_s.namenklatura</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
-</tr>
- } 
-</tr>
-</table>
-#@HTZ[]
 
 @CTZ[]
 $mashine_price[^table::load[/catalog/ctz/nomenclature.cfg]]
@@ -123,6 +89,105 @@ $price_hash[^price.hash[id]]
 </tr>
 </table>
 #@MTZ[]
+
+@TAIM[]
+^hMachines[]
+ $mashine[^getMachines[]]
+  $mashine_s[^mashine.select($mashine.brand_id==8)]
+  $price[^getPriceMachines[]]
+ 
+#hash таблицы с ценами по полю id 
+$price_hash[^price.hash[id]]  
+
+ <h3>Техника $h_Machines.brand_id.[$mashine_s.brand_id] (Беларусь)</h3>
+ <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] с учетом НДС 18%</p>
+<table class="price_table" cellspacing="0">
+<tr>
+	<th>Номенклатура</th>
+	<th>Стоянка</th>
+	<th>Цена</th>
+</tr>
+
+#перебираем записи таблицы с товарами 
+^mashine_s.menu{  
+    $mashine_price[$price_hash.[$mashine_s.id].price] 
+#   проверяем - есть ли цена на товар в нашем hash 
+     
+<tr>
+<td><a href="/catalog/belarus/taim/mashine/detal/id/$mashine_s.id/">$mashine_s.name_ru</a></td>
+<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+</tr>
+ } 
+</tr>
+</table>
+#@TAIM[]
+
+@AGROMASH[]
+^hMachines[]
+ $mashine[^getMachines[]]
+  $mashine_s[^mashine.select($mashine.brand_id==7)]
+  $price[^getPriceMachines[]]
+ 
+#hash таблицы с ценами по полю id 
+$price_hash[^price.hash[id]]  
+
+ <h3>Техника $h_Machines.brand_id.[$mashine_s.brand_id] (Беларусь)</h3>
+ <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] с учетом НДС 18%</p>
+<table class="price_table" cellspacing="0">
+<tr>
+	<th>Номенклатура</th>
+	<th>Стоянка</th>
+	<th>Цена</th>
+</tr>
+
+#перебираем записи таблицы с товарами 
+^mashine_s.menu{  
+    $mashine_price[$price_hash.[$mashine_s.id].price] 
+#   проверяем - есть ли цена на товар в нашем hash 
+     
+<tr>
+<td><a href="http://htz.ru/catalog/belarus/agromash/mashine/detal/id/$mashine_s.id/">$mashine_s.name_ru</a></td>
+<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+</tr>
+ } 
+</tr>
+</table>
+#@AGROMASH[]
+
+@HTZ[]
+^hMachines[]
+ $mashine[^getMachines[]]
+  $mashine_s[^mashine.select($mashine.brand_id==5)]
+  $price[^getPriceMachines[]]
+ 
+#hash таблицы с ценами по полю id 
+$price_hash[^price.hash[id]]  
+
+ <h3>Техника &laquo^;$mashine_s.brand&raquo^; (Украина)</h3>
+ <p>Стоимость техники &laquo^;$mashine_s.brand&raquo^; с учетом НДС 18%</p>
+<table class="price_table" cellspacing="0">
+<tr>
+	<th>Номенклатура</th>
+	<th>Стоянка</th>
+	<th>Цена</th>
+</tr>
+
+#перебираем записи таблицы с товарами 
+^mashine_s.menu{  
+    $mashine_price[$price_hash.[$mashine_s.id].price] 
+#   проверяем - есть ли цена на товар в нашем hash 
+     
+<tr>
+<td><a href="/catalog/htz/$mashine_s.classification_sub_sub_uri/$mashine_s.translite/">$mashine_s.namenklatura</a></td>
+<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+</tr>
+ } 
+</tr>
+</table>
+#@HTZ[]
 
 @AGROIMPORT[]
 ^hMachines[]
@@ -290,70 +355,3 @@ $price_hash[^price.hash[id]]
 </tr>
 </table>
 #@ZOOMLION[]
-
-
-@AGROMASH[]
-^hMachines[]
- $mashine[^getMachines[]]
-  $mashine_s[^mashine.select($mashine.brand_id==7)]
-  $price[^getPriceMachines[]]
- 
-#hash таблицы с ценами по полю id 
-$price_hash[^price.hash[id]]  
-
- <h3>Техника $h_Machines.brand_id.[$mashine_s.brand_id] (Беларусь)</h3>
- <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] с учетом НДС 18%</p>
-<table class="price_table" cellspacing="0">
-<tr>
-	<th>Номенклатура</th>
-	<th>Стоянка</th>
-	<th>Цена</th>
-</tr>
-
-#перебираем записи таблицы с товарами 
-^mashine_s.menu{  
-    $mashine_price[$price_hash.[$mashine_s.id].price] 
-#   проверяем - есть ли цена на товар в нашем hash 
-     
-<tr>
-<td><a href="http://htz.ru/catalog/belarus/agromash/mashine/detal/id/$mashine_s.id/">$mashine_s.name_ru</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
-</tr>
- } 
-</tr>
-</table>
-#@ZOOMLION[]
-
-@TAIM[]
-^hMachines[]
- $mashine[^getMachines[]]
-  $mashine_s[^mashine.select($mashine.brand_id==8)]
-  $price[^getPriceMachines[]]
- 
-#hash таблицы с ценами по полю id 
-$price_hash[^price.hash[id]]  
-
- <h3>Техника $h_Machines.brand_id.[$mashine_s.brand_id] (Беларусь)</h3>
- <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] с учетом НДС 18%</p>
-<table class="price_table" cellspacing="0">
-<tr>
-	<th>Номенклатура</th>
-	<th>Стоянка</th>
-	<th>Цена</th>
-</tr>
-
-#перебираем записи таблицы с товарами 
-^mashine_s.menu{  
-    $mashine_price[$price_hash.[$mashine_s.id].price] 
-#   проверяем - есть ли цена на товар в нашем hash 
-     
-<tr>
-<td><a href="/catalog/belarus/taim/mashine/detal/id/$mashine_s.id/">$mashine_s.name_ru</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
-</tr>
- } 
-</tr>
-</table>
-#@TAIM[]
