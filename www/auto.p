@@ -706,6 +706,7 @@ $machines[^getMachines[]]
 $machines_s[^machines.select($machines.brand_id==5)]
 $price[^getPriceMachines[]]
 $price_hash[^price.hash[id]]
+<dt>Техника &laquo;ХТЗ&raquo;</dt>
   Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
   ^machines_s.menu{
    $machines_s_price[$price_hash.[$machines_s.id].price]
@@ -714,7 +715,6 @@ $price_hash[^price.hash[id]]
     }{
 		<strong><a href="/catalog/htz/$machines_s.classification_sub_sub_uri/$machines_s.translite/" title="Трактор $machines_s.namenklatura">$machines_s.namenklatura</a></strong> &mdash^; Уточнить<br />
 	}  
-
   } 
 #@spec_tehno[]
 
@@ -728,8 +728,7 @@ $price_hash[^price.hash[id]]
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
         <strong><a href="/catalog/agroimport/$machines_s.classification_sub_sub_uri/$machines_s.translite/" title="Трактор $machines_s.namenklatura">$machines_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
-    }{}  
-
+    }{} 
   } 
 #@spec_tehno[]
 
@@ -758,6 +757,27 @@ $price_hash[^price.hash[id]]
 
   }
 #@spec_tehno_MTZ[]
+
+
+@spec_tehno_TAIM[price_hash]
+$machines[^getMachines[]]
+$machines_s[^machines.select($machines.brand_id==8)]
+$price[^getPriceMachines[]]
+$price_hash[^price.hash[id]]
+
+<dt>Техника &laquo^;ТАиМ&raquo^;</dt>
+  Цены указаны <strong>без НДС</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  
+  $machines_s_s[^table::create[$machines_s;$.offset(0)]]
+  ^machines_s_s.menu{
+   $machines_s_price[$price_hash.[$machines_s.id].price]
+    ^if($machines_s_price){
+        <strong><a href="/catalog/belarus/taim/mashine/detal/id/$machines_s.id/" title="Машина $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
+    }{
+		<strong><a href="/catalog/belarus/taim/mashine/detal/id/$machines_s.id/" title="Машина $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
+	} 
+  }
+#@spec_tehno_TAIM[]
 	
 	
 @getCalendar[lparams][params]
