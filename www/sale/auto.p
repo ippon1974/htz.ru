@@ -26,8 +26,8 @@
 @newPrice[]
  ^CTZ[]
  ^MTZ[]
-^TAIM[]
-^AGROMASH[]
+ ^TAIM[]
+ ^AGROMASH[]
  ^HTZ[]
  ^AGROIMPORT[]
  ^HONGDA[]
@@ -100,7 +100,7 @@ $price_hash[^price.hash[id]]
 $price_hash[^price.hash[id]]  
 
  <h3>Техника $h_Machines.brand_id.[$mashine_s.brand_id] (Беларусь)</h3>
- <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] с учетом НДС 18%</p>
+ <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] без НДС</p>
 <table class="price_table" cellspacing="0">
 <tr>
 	<th>Номенклатура</th>

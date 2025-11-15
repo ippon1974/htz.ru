@@ -87,7 +87,7 @@
 			<dd>${h_Machines.customs.[$mashine_s.customs]}.</dd>
 			}{}
 			<dt>Телефон:</dt>
-			<dd>^my_phone[]</dd>
+			<dd>^my_phone[+7 (925) 585-33-71]</dd>
 			<dt>Эл. почта:</dt>
 			<dd>^mailto:print[mail@htz.ru][<strong>mail@htz.ru</strong>][ООО "СТРОЙПРОЕКТМОНТАЖ"]</dd>
 			<!--<dt><strong>Запрос</strong></dt>-->
