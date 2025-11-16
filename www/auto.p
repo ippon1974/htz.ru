@@ -901,31 +901,35 @@ $result[^MAIN:pSQL.table{
 <br />
 <div class="begun_banner_1">
 
- <div style="padding: 0.5em 0; font-size: 0.8em;">Реклама</div>
+ <div style="padding: 0.5em 0; font-size: 0.8em^;">Реклама</div>
  
-<dl>
-<dt><a style="border-bottom: none;" href="https://wcut.ru/" title="Гидроабразивная резка. Гидрорез." target="_blank">Гидроабразивная резка. Гидрорез.</a></dt>
-<dd>Услуги гидрорезки. Металл, гранит, мрамор, керамика, пластик (более 100 видов материалов)</dd>
+<dl style="margin: 0 0 0.5em 0^;">
+<dt><a style="border-bottom: none;font-size:0.74em^;" href="https://wcut.ru/" title="Гидроабразивная резка. Гидрорез." target="_blank">Гидроабразивная резка. Гидрорез.</a></dt>
+<dd style="font-size: 0.87em^;">Услуги гидрорезки. Металл, гранит, мрамор, керамика, пластик (более 100 видов материалов)</dd>
+----
 </dl>
  
-<dl>
-<dt><a style="border-bottom: none;" href="https://ivt.su/products/helios/" title="Институт высоких технологий Белгородского государственного университета" target="_blank">Институт высоких технологий Белгородского государственного университета</a></dt>
-<dd>Программно-аппаратный комплекс (ПАК) «Гелиос» разработан на базе технических решений Института высоких технологий Белгородского государственного университета. Компоненты комплекса внесены в реестр российской промышленной продукци</dd>
+<dl style="margin: 0 0 0.5em 0^;">
+<dt><a style="border-bottom: none;font-size:0.74em;" href="https://ivt.su/products/helios/" title="Институт высоких технологий Белгородского государственного университета" target="_blank">Институт высоких технологий Белгородского государственного университета</a></dt>
+<dd style="font-size: 0.87em^;">Программно-аппаратный комплекс (ПАК) «Гелиос» разработан на базе технических решений Института высоких технологий Белгородского государственного университета.</dd>
+----
 </dl>
 
-<dl>
-<dt><a style="border-bottom: none;" href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/krossovki_zhenskie_new_balance_530_4371425360?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" title="" target="_blank">Кроссовки New Balance 530. Беж. Китай.</a></dt>
-<dd>Доставка по России</dd>
+<dl style="margin: 0 0 0.5em 0^;">
+<dt><a style="border-bottom: none;font-size:0.74em;" href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/krossovki_zhenskie_new_balance_530_4371425360?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" title="" target="_blank">Кроссовки New Balance 530. Беж. Китай.</a></dt>
+<dd style="font-size: 0.87em^;">Доставка по России</dd>
+----
 </dl>
 
-<dl>
-<dt><a style="border-bottom: none;" href="http://izabor.com" title="Ограждения. Заборы. Автоматика. Ворота." target="_blank">Ограждения. Заборы. Автоматика. Ворота.</a></dt>
-<dd>Калитки и комплектующие под ключ.</dd>
+<dl style="margin: 0 0 0.5em 0^;">
+<dt><a style="border-bottom: none;font-size:0.74em;" href="http://izabor.com" title="Ограждения. Заборы. Автоматика. Ворота." target="_blank">Ограждения. Заборы. Автоматика. Ворота.</a></dt>
+<dd style="font-size: 0.87em^;">Калитки и комплектующие под ключ.</dd>
+----
 </dl>
 
-<dl>
-<dt><a style="border-bottom: none;" target="_blank" href="http://land.htz.ru" title="Продажа земельного участка под коммерческую деятельность в Белгородской области">Продажа земельного участка под коммерческую деятельность в Белгородской области</a></dt>
-<dd>По своему расположению участок подходит под строительство заправочных станций (АЗС), магазинов оптово-розничной торговли (Пятерочка, Магнит и т.д.), под строительство складских помещений, под оптову-розничную торговлю строительными материалами.</dd>
+<dl style="margin: 0 0 0.5em 0^;">
+<dt><a style="border-bottom: none;font-size:0.74em;" target="_blank" href="http://land.htz.ru" title="Продажа земельного участка под коммерческую деятельность в Белгородской области">Продажа земельного участка под коммерческую деятельность в Белгородской области</a></dt>
+<dd style="font-size: 0.87em^;">По своему расположению участок подходит под строительство заправочных станций (АЗС), магазинов оптово-розничной торговли (Пятерочка, Магнит и т.д.), под строительство складских помещений, под оптову-розничную торговлю строительными материалами.</dd>
 </dl>
 
 </div>
