@@ -757,13 +757,14 @@ $price_hash[^price.hash[id]]
 @spec_tehno_CTZ[price_hash]
 $machines[^getMachines[]]
 $machines_s[^machines.select($machines.brand_id==11)]
+^machines_s.sort($machines_s.id)[desc]
 $price[^getPriceMachines[]]
 $price_hash[^price.hash[id]]
 
 <dt>Техника &laquo^;ЧТЗ&raquo^;</dt>
   Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
   
-  $machines_s_s[^table::create[$machines_s;$.offset(0)]]
+  $machines_s_s[^table::create[$machines_s;$.offset(10)]]
   ^machines_s_s.menu{
    $machines_s_price[$price_hash.[$machines_s_s.id].price]
     ^if($machines_s_price){
