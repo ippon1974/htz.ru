@@ -141,14 +141,10 @@ Antispam.p
 db.p
 #@USE
 
-
-
 @main[]
 ^header[]
 ^body[]
 #@main[]
-
-
 
 @header[]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -758,6 +754,27 @@ $price_hash[^price.hash[id]]
   }
 #@spec_tehno_MTZ[]
 
+@spec_tehno_CTZ[price_hash]
+$machines[^getMachines[]]
+$machines_s[^machines.select($machines.brand_id==11)]
+$price[^getPriceMachines[]]
+$price_hash[^price.hash[id]]
+
+<dt>Техника &laquo^;ЧТЗ&raquo^;</dt>
+  Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  
+  $machines_s_s[^table::create[$machines_s;$.offset(0)]]
+  ^machines_s_s.menu{
+   $machines_s_price[$price_hash.[$machines_s_s.id].price]
+    ^if($machines_s_price){
+        <strong><a href="/catalog/ctz/$machines_s_s.classification_sub_sub_uri/$machines_s_s.translite/" title="$machines_s_s.name_ru">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
+    }{
+		<strong><a href="/catalog/ctz/$machines_s_s.classification_sub_sub_uri/$machines_s_s.translite/" title="$machines_s_s.name_ru">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
+	}  
+  }
+#@spec_tehno_CTZ[]
+
+
 
 @spec_tehno_TAIM[price_hash]
 $machines[^getMachines[]]
@@ -1088,6 +1105,7 @@ $h_Machines[
 		 $.8[ОАО &laquo^;ТАиМ&raquo^;]
 		 $.9[ПО &laquo^;МТЗ&raquo^;]
 		 $.10[&laquo^;XINGTAI&raquo^;]
+		 $.11[&laquo^;ЧТЗ&raquo^;]
    ]
  $.img_patch[
          $.1[/catalog/img/external]
