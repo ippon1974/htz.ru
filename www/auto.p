@@ -746,9 +746,9 @@ $price_hash[^price.hash[id]]
   ^machines_s_s.menu{
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
-        <strong><a href="/catalog/mtz/detal/id/$machines_s.id/" title="Трактор $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
+        <strong><a href="/catalog/mtz/detal/id/$machines_s_s.id/" title="$machines_s_s.name_ru">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
     }{
-		<strong><a href="/catalog/mtz/detal/id/$machines_s.id/" title="Трактор $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
+		<strong><a href="/catalog/mtz/detal/id/$machines_s_s.id/" title="$machines_s_s.name_ru">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
 	}  
 
   }
@@ -775,8 +775,6 @@ $price_hash[^price.hash[id]]
   }
 #@spec_tehno_CTZ[]
 
-
-
 @spec_tehno_TAIM[price_hash]
 $machines[^getMachines[]]
 $machines_s[^machines.select($machines.brand_id==8)]
@@ -790,9 +788,9 @@ $price_hash[^price.hash[id]]
   ^machines_s_s.menu{
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
-        <strong><a href="/catalog/belarus/taim/mashine/detal/id/$machines_s.id/" title="Машина $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
+        <strong><a href="/catalog/belarus/taim/mashine/detal/id/$machines_s.id/" title="$machines_s_s.name_ru">$machines_s_s.namenklatura</a></strong> &mdash^; ^eval($machines_s_price*^exchange_usd[]) руб.<br /> 
     }{
-		<strong><a href="/catalog/belarus/taim/mashine/detal/id/$machines_s.id/" title="Машина $machines_s.namenklatura">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
+		<strong><a href="/catalog/belarus/taim/mashine/detal/id/$machines_s.id/" title="$machines_s_s.name_ru">$machines_s_s.namenklatura</a></strong> &mdash^; Уточнить<br /> 
 	} 
   }
 #@spec_tehno_TAIM[]
