@@ -57,7 +57,7 @@
     <span>Цена:</span>
     $text_nds($text/6.55557)
    <h4>^number_format[^text.format[%.2f];,;.](2) руб.</h4>
-   <div class="price">^int2str:money2str($text) В том числе НДС 18%: ^number_format[^text_nds.format[%.2f];,;.](2) руб.</div>
+   <div class="price">^int2str:money2str($text) Без НДС.</div>
     }
    <dl id="info">
             ^if($mashine_s.classification){
