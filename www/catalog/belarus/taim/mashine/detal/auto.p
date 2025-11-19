@@ -87,20 +87,16 @@
 			<dd>${h_Machines.customs.[$mashine_s.customs]}.</dd>
 			}{}
 			<dt>Телефон:</dt>
-			<dd>^my_phone[+7 (925) 585-33-71]</dd>
+     		<dd>^my_phone[+7 (925) 585-33-71] (Whatsapp, Telegram)</dd>
 			<dt>Эл. почта:</dt>
-			<dd>^mailto:print[mail@htz.ru][<strong>mail@htz.ru</strong>][ООО "СТРОЙПРОЕКТМОНТАЖ"]</dd>
-			<!--<dt><strong>Запрос</strong></dt>-->
-			<!--<dd>
-<form class="callme" method="post">
-<input onclick="document.getElementById('divCallMe').style.display=document.getElementById('divCallMe').style.display!='block'?'block':'none'^; return false^;" type="Submit" style="font-size: 1.0em^; border-right: 2px solid #484848^; border-bottom: 2px solid #484848^; border-top: 2px solid #fcfcfc^; border-left: 2px solid #fcfcfc^; color:#000^; width: auto^; padding: 0 5px^; " value="Запрос" />
-</form>
-</dd>-->
-</dl>
-^Callback[]
+			<dd>^mailto:print[mail@htz.ru][<strong>mail@htz.ru</strong>][ООО "СПМ"]</dd>
+    </dl>
    }{}
   </div>
   <ul id="anchorlist">
+			 ^if(def $mashine_s.tech_id){
+				<li><a href="/catalog/belarus/taim/mashine/teh/$mashine_s.tech_id/" class="glossary" title="Технические характеристики $mashine_s.namenklatura">Технические характеристики $mashine_s.namenklatura</a><li>
+			 }
 			 ^if(def $mashine_s.tehno_info_uri){<li><a href="/catalog/belarus/agromash/mashine/teh/id/$mashine_s.tech_id/" class="glossary" title="Технические характеристики">Технические характеристики</a></li>}{}
              ^if(def $mashine_s.pdf){<li><a href="$mashine_s.pdf" class="glossarypdf" title="Буклет скачать">Буклет $mashine_s.namenklatura (<em style="color: #6D6D6D^; font-size: 0.8em^;">$f[^file::stat[/service/centerdownload/agroimport/pdf/220.pdf]] <strong>Байт:</strong> $f.size <strong>Год создания:</strong> $f.cdate.year $new_after[^date::now(-65)]</em>)</a></li>}{}
   </ul>

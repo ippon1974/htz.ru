@@ -86,19 +86,12 @@
 			<dt>Таможня:</dt>
 			<dd>${h_Machines.customs.[$mashine_s.customs]}.</dd>
 			}{}
-			<!--<dt>Телефон:</dt>
-			<dd>^my_phone[]</dd>-->
+			<dt>Телефон:</dt>
+			<dd>^my_phone[+7 (925) 585-33-71]</dd>
 			<dt>Эл. почта:</dt>
 			<dd>^mailto:print[mail@htz.ru][<strong>mail@htz.ru</strong>][ООО "СТРОЙПРОЕКТМОНТАЖ"]</dd>
-			<!--<dt><strong>Запрос</strong></dt>-->
-			<!--<dd>
-<form class="callme" method="post">
-<input onclick="document.getElementById('divCallMe').style.display=document.getElementById('divCallMe').style.display!='block'?'block':'none'^; return false^;" type="Submit" style="font-size: 1.0em^; border-right: 2px solid #484848^; border-bottom: 2px solid #484848^; border-top: 2px solid #fcfcfc^; border-left: 2px solid #fcfcfc^; color:#000^; width: auto^; padding: 0 5px^; " value="Запрос" />
-</form>
-</dd>-->
-</dl>
-^Callback[]
-   }{}
+	</dl>
+	}
   </div>
 
   <ul id="anchorlist">

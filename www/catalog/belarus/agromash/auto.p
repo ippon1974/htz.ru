@@ -27,21 +27,26 @@
 <body class="events b_agromash">
 #end@header[]
 
+@namenklatura[]
+^hMachines[]
+ $namenklatura[^getMachines[]]
+ $str[$request:uri]
+  $namenklatura_s[^namenklatura.select($namenklatura.brand_id==7)]
+   <ul id="section_id">
+   ^namenklatura_s.menu{
+    ^if($namenklatura_s.id==$form:id){
+	<li>$namenklatura_s.namenklatura</li>}{
+	^if($namenklatura_s.tech_id==$form:id){
+		<li class="$h_Machines.css.[$namenklatura_s.css]"><a href="/catalog/belarus/agromash/mashine/detal/id/$namenklatura_s.id/">$namenklatura_s.namenklatura</a></li>
+	}{
+		<li><a href="/catalog/belarus/agromash/mashine/detal/id/$namenklatura_s.id/">$namenklatura_s.namenklatura </a></li>
+	}
+	}
+   }
+   <ul>
+#@namenklatura[]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@navi_sub_nav[]
+ $navi_sub_nav[^getMachines[]]
+    ^if(^navi_sub_nav.locate[id;$form:id]){<div style="margin: 0 0 0.8em 0^; font-size: 1.5em^;"><a href="/catalog/belarus/agromash/mashine/$navi_sub_nav.classification_sub_sub_uri/">$h_Machines.classification.[$navi_sub_nav.classification]</a></div>}{} 
+#@navi_sub_nav[]

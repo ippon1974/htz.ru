@@ -100,7 +100,7 @@ $price_hash[^price.hash[id]]
 $price_hash[^price.hash[id]]  
 
  <h3>Техника $h_Machines.brand_id.[$mashine_s.brand_id] (Беларусь)</h3>
- <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] без НДС</p>
+ <p>Стоимость техники $h_Machines.brand_id.[$mashine_s.brand_id] без НДС. Рубли РФ.</p>
 <table class="price_table" cellspacing="0">
 <tr>
 	<th>Номенклатура</th>
@@ -116,7 +116,7 @@ $price_hash[^price.hash[id]]
 <tr>
 <td><a href="/catalog/belarus/taim/mashine/detal/id/$mashine_s.id/" title="$mashine_s.name_ru">$mashine_s.name_ru</a></td>
 <td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[])}{<span style="color:#ff0000^;">Уточнить</span>}</td>
 </tr>
  } 
 </tr>

@@ -1,6 +1,6 @@
 AddType application/x-httpd-php5 .php
 
 RewriteEngine On
-RewriteBase /catalog/belarus/taim
+RewriteBase /catalog/belarus/taim/mashine
 RewriteRule (.+)(/)$ $1.html [L,QSA]
 

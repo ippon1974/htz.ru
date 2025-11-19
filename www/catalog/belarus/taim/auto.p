@@ -36,7 +36,7 @@
 	  ^if($namenklatura_s.id==$form:id){
 	  	  <li>$namenklatura_s.namenklatura</li>
 	  }{
-	  	  <li><a href="/catalog/belarus/taim/mashine/detal/id/$namenklatura_s.id/">$namenklatura_s.namenklatura</a></li>
+	  	  <li><a title="$namenklatura_s.name_ru" href="/catalog/belarus/taim/mashine/detal/id/$namenklatura_s.id/">$namenklatura_s.namenklatura</a></li>
 	  }
 	  }
    </ul>
