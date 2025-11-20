@@ -25,7 +25,7 @@
 #end@header[]
 
 @title_htz[]
- Вся линейка техники производство Харьковского Тракторного Завода им. Серго Орджоникидзе. (ОАО «ХТЗ»).
+ Вся линейка техники производство Харьковского Тракторного Завода им. Серго Орджоникидзе.
 #@title[]
 
 @description[]
@@ -39,7 +39,6 @@
  $keywords[^getMachines[]]
   ^if(^keywords.locate[translite;$form:translite]){$result[$h_Machines.keywords.[$keywords.classification]]}{$result[Тракторы общего назначения заводской сборки ОАО &laquo^;ХТЗ&raquo^;.]}
 #@description[]
-
 
 @getHTZAll[]
 ^if(!def $form:translite){
