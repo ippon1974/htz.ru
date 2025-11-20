@@ -24,9 +24,9 @@
 #@header[]
 
 @newPrice[]
+ ^TAIM[]
  ^CTZ[]
  ^MTZ[]
- ^TAIM[]
  ^AGROMASH[]
  ^HTZ[]
  ^AGROIMPORT[]
@@ -92,7 +92,7 @@ $price_hash[^price.hash[id]]
 
 @TAIM[]
 ^hMachines[]
- $mashine[^getMachines[]]
+  $mashine[^getMachines[]]
   $mashine_s[^mashine.select($mashine.brand_id==8)]
   $price[^getPriceMachines[]]
  
@@ -108,7 +108,8 @@ $price_hash[^price.hash[id]]
 	<th>Цена</th>
 </tr>
 
-#перебираем записи таблицы с товарами 
+#перебираем записи таблицы с товарами
+^mashine_s.sort($price_hash.[$mashine_s.id].price)[desc]
 ^mashine_s.menu{  
     $mashine_price[$price_hash.[$mashine_s.id].price] 
 #   проверяем - есть ли цена на товар в нашем hash 
