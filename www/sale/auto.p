@@ -49,8 +49,8 @@ $mashine_price[^table::load[/catalog/ctz/nomenclature.cfg]]
  ^mashine_price.menu{
  <tr>
 <td><a href="$mashine_price.uri" title="$mashine_price.name">$mashine_price.name</a></td>
-<td><span><nobr>$mashine_price.parking</span></nobr></td>
-<td>^if(def $mashine_price.value){$mashine_price.value руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$mashine_price.parking</span></td>
+<td>^if(def $mashine_price.value){$mashine_price.value руб.}{<span>Уточнить</span>}</td>
 </tr>
  }
  </tr>
@@ -82,8 +82,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/mtz/detal/id/$mashine_s.id/" title="$mashine_s.name_ru">$mashine_s.namenklatura</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -116,8 +116,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/belarus/taim/mashine/detal/id/$mashine_s.id/" title="$mashine_s.name_ru">$mashine_s.name_ru</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[])}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[])}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -149,8 +149,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="http://htz.ru/catalog/belarus/agromash/mashine/detal/id/$mashine_s.id/" title="$mashine_s.name_ru">$mashine_s.name_ru</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</nobr></span></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -182,8 +182,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/htz/$mashine_s.classification_sub_sub_uri/$mashine_s.translite/" title="$mashine_s.name_ru">$mashine_s.namenklatura</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -215,8 +215,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/agroimport/$mashine_s.classification_sub_sub_uri/$mashine_s.translite/" title="$mashine_s.name_ru">$mashine_s.namenklatura</a></td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -248,8 +248,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/china/hongda/pump/$mashine_s.classification_sub_sub_uri/$mashine_s.translite/" title="Бетононасос $mashine_s.name_ru">$mashine_s.namenklatura</a> (<em style="font-size: 0.9em^;">$h_Machines.classification_sub.[$mashine_s.classification_sub]</em>)</td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -281,8 +281,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/china/fangyuan/pump/$mashine_s.classification_sub_sub_uri/$mashine_s.translite/" title="Бетононасос $mashine_s.name_ru">$mashine_s.namenklatura</a>  (<em style="font-size: 0.9em^;">$h_Machines.classification_sub.[$mashine_s.classification_sub]</em>)</td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -315,8 +315,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/china/sany/pump/$mashine_s_s.classification_sub_sub_uri/$mashine_s_s.translite/" title="Бетононасос $mashine_s.name_ru">$mashine_s_s.namenklatura</a> (<em style="font-size: 0.9em^;">$h_Machines.classification_sub.[$mashine_s_s.classification_sub]</em>)</td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>
@@ -349,8 +349,8 @@ $price_hash[^price.hash[id]]
      
 <tr>
 <td><a href="/catalog/china/zoomlion/pump/$mashine_s_s.classification_sub_sub_uri/$mashine_s_s.translite/" title="Бетононасос $mashine_s.name_ru">$mashine_s_s.namenklatura</a> (<em style="font-size: 0.9em^;">$h_Machines.classification_sub.[$mashine_s_s.classification_sub]</em>)</td>
-<td><span><nobr>$h_Machines.parking_citi.[$mashine_s_s.parking_citi]</span></nobr></td>
-<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span style="color:#ff0000^;">Уточнить</span>}</td>
+<td><span>$h_Machines.parking_citi.[$mashine_s_s.parking_citi]</span></td>
+<td>^if($mashine_price){^eval($mashine_price*^exchange_usd[]) руб.}{<span>Уточнить</span>}</td>
 </tr>
  } 
 </tr>

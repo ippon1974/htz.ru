@@ -930,18 +930,6 @@ $result[^MAIN:pSQL.table{
 </dl>
 
 <dl style="margin: 0 0 0.5em 0^;">
-<dt><a style="border-bottom: none;font-size:0.74em;" href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/krossovki_zhenskie_new_balance_530_4371425360?utm_campaign=native&utm_medium=item_page_ios&utm_source=soc_sharing_seller" title="" target="_blank">Кроссовки New Balance 530. Беж. Китай.</a></dt>
-<dd style="font-size: 0.87em^;">Доставка по России</dd>
-----
-</dl>
-
-<dl style="margin: 0 0 0.5em 0^;">
-<dt><a style="border-bottom: none;font-size:0.74em;" href="http://izabor.com" title="Ограждения. Заборы. Автоматика. Ворота." target="_blank">Ограждения. Заборы. Автоматика. Ворота.</a></dt>
-<dd style="font-size: 0.87em^;">Калитки и комплектующие под ключ.</dd>
-----
-</dl>
-
-<dl style="margin: 0 0 0.5em 0^;">
 <dt><a style="border-bottom: none;font-size:0.74em;" target="_blank" href="http://land.htz.ru" title="Продажа земельного участка под коммерческую деятельность в Белгородской области">Продажа земельного участка под коммерческую деятельность в Белгородской области</a></dt>
 <dd style="font-size: 0.87em^;">По своему расположению участок подходит под строительство заправочных станций (АЗС), магазинов оптово-розничной торговли (Пятерочка, Магнит и т.д.), под строительство складских помещений, под оптову-розничную торговлю строительными материалами.</dd>
 </dl>
