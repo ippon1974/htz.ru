@@ -82,7 +82,7 @@
 
 <p id="searchlabel"><label for="search_textbox">Поиск</label></p>
 <dl>
-<dt><input class="filled" type="text" id="search_textbox" name="query" value="Найти" tabindex="1" /></dt>
+<dt><input class="filled" type="text" id="search_textbox" name="query" value="" tabindex="1" /></dt>
 <dd><input type="image" src="/img/widgets/go_button.gif" alt="Поиск по сайту" tabindex="2" /></dd>
 <dd><a href="http://htz.ru/map/" title="Карта сайта">Карта сайта</a></dd>
 </dl>
