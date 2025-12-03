@@ -63,7 +63,7 @@
 
 <p id="searchlabel"><label for="search_textbox">Поиск</label></p>
 <dl>
-<dt><input class="filled" type="text" id="search_textbox" name="query" value="Найти" tabindex="1" /></dt>
+<dt><input class="filled" type="text" id="search_textbox" name="query" value="" tabindex="1" /></dt>
 <dd><input type="image" src="/img/widgets/go_button.gif" alt="Поиск по сайту" tabindex="2" /></dd>
 <dd><a href="http://spare.htz.ru/" title="Поиск по каталогу запчастей">Найти запчасть</a></dd>
 </dl>
@@ -73,8 +73,11 @@
 @title[]
 ^hMachines[]
  $title[^getMachines[]]
-  $title[^table::load[/_root.cfg]]
-  ^if(^title.locate[uri;$request:uri]){$result[$title.title]}{}
+   ^if(def $form:translite){
+	  ^if(^title.locate[translite;$form:translite]){$result[$title.name_ru]}
+   }{
+	  $result[Стационарные бетононасосы от компании SANY HOLDING CO., LTD (КНР)]
+   }
 #@title[]
 
 @description[]
@@ -96,13 +99,12 @@
  $PumpHngda[^getMachines[]]
  $PumpHngda_brand[^PumpHngda.select($PumpHngda.brand_id==2)]
   $PumpHngda_select[^PumpHngda_brand.select($PumpHngda.classification==1)] 
-   <h2>Стационарные бетононасосы от компании SANY HOLDING CO., LTD (КНР)</h2>
+   <h2>Стационарные бетононасосы SANY HOLDING CO., LTD (КНР)</h2>
    <p>Стационарный буксирный бетононасос SANY это современное решение, спроектированное и изготовленное на основе самых передовых строительных технологий.</p>
    <ul class="listing">
    ^PumpHngda_select.menu{^PumpHngdaPrint[]}
    </ul>
 }{
-
 
 ^hMachines[]
  $mashine[^getMachines[]]
@@ -178,7 +180,6 @@ $text_nds($text/6.55557)
 <ul id="anchorlist">
 			<li><a href="$mashine.tehno_info_uri" class="glossary" title="Технические характеристики">Технические характеристики</a></li>
 </ul>
-
 <img src="/catalog/china/sany/pump/i/${mashine.img}.jpg" alt="$mashine.name_ru">
 
 ^untaint[as-is]{
