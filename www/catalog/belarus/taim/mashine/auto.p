@@ -52,8 +52,9 @@
 			<li><a href="/catalog/belarus/taim/mashine/concrete_mix_self/" title="Бетоносместители автономные">Бетоносместители автономные</a></li>
 			<li><a href="/catalog/belarus/taim/mashine/snowplow_tractor/" title="Снегоочистители">Снегоочистители</a></li>
 			<li><a href="/catalog/belarus/taim/mashine/equipment_loading/" title="Погрузочное оборудование">Погрузочное оборудование</a></li>
-		    <li><a href="/catalog/belarus/taim/mashine/machine_municipal_sweepers/" title="Машины коммунальные подметальные">Машины коммунальные подметальные</a></li>
+		  <li><a href="/catalog/belarus/taim/mashine/machine_municipal_sweepers/" title="Машины коммунальные подметальные">Машины коммунальные подметальные</a></li>
 			<li><a href="/catalog/belarus/taim/mashine/equipment_bulldozer/" title="Бульдозерное оборудование">Бульдозерное оборудование</a></li>
+      <li><a href="/sale/taim/" title="Прайс лист техники ТАиМ"><strong>&laquo^;Прайс ТАиМ&raquo^;</strong></a></li>
   </ul>
   <ul class="listing">
   ^mashine_s.menu{ 
