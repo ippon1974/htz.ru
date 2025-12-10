@@ -740,7 +740,9 @@ $price[^getPriceMachines[]]
 $price_hash[^price.hash[id]]
 
 <dt>Техника &laquo^;МТЗ&raquo^;</dt>
-  Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  ^if(false){
+	Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  }
   
   $machines_s_s[^table::create[$machines_s;$.offset(35)]]
   ^machines_s_s.menu{
@@ -762,7 +764,9 @@ $price[^getPriceMachines[]]
 $price_hash[^price.hash[id]]
 
 <dt>Техника &laquo^;ЧТЗ&raquo^;</dt>
-  Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  ^if(false){
+	Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  }
   
   $machines_s_s[^table::create[$machines_s;$.offset(10)]]
   ^machines_s_s.menu{
