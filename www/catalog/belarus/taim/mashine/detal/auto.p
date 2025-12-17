@@ -76,11 +76,15 @@
 			<dt>Год выпуска:</dt>
 			<dd><strong>^dtf:format[%Y;]</strong> г.</dd>
 			}{}
+			^if($mashine_s.status==1){
 			<dt>Состояние:</dt>
-			<dd>Новый</dd>
+			<dd>Новый</dd>}
+			^if($mashine_s.status==2){
+			<dt>Состояние:</dt>
+			<dd>Б/У</dd>}
 			^if($mashine_s.parking){
 			<dt>Стоянка:</dt>
-			<dd>${h_Machines.parking.[$mashine_s.parking]}. г.${h_Machines.parking_citi.[$mashine_s.parking_citi]}.</dd>
+			<dd>${h_Machines.parking.[$mashine_s.parking]}. ${h_Machines.parking_citi.[$mashine_s.parking_citi]}</dd>
 			}{}
 			^if($mashine_s.customs){
 			<dt>Таможня:</dt>
@@ -101,7 +105,7 @@
              ^if(def $mashine_s.pdf){<li><a href="$mashine_s.pdf" class="glossarypdf" title="Буклет скачать">Буклет $mashine_s.namenklatura (<em style="color: #6D6D6D^; font-size: 0.8em^;">$f[^file::stat[/service/centerdownload/agroimport/pdf/220.pdf]] <strong>Байт:</strong> $f.size <strong>Год создания:</strong> $f.cdate.year $new_after[^date::now(-65)]</em>)</a></li>}{}
   </ul>
 
-^if(def $mashine_s.img){^if($mashine_s.img_def){<a href="/catalog/img/def/${mashine_s.img}.jpg"><img src="/catalog/img/detal/${mashine_s.img}.jpg" alt="$mashine_s.name_ru"></a>}{<img src="/catalog/img/detal/${mashine_s.img}.jpg" alt="$mashine_s.name_ru">}}{}
+^if(def $mashine_s.img){^if($mashine_s.img_def){<a href="/catalog/img/def/${mashine_s.img}.jpg" target="_blank"><img src="/catalog/img/detal/${mashine_s.img}.jpg" alt="$mashine_s.name_ru"></a>}{<img src="/catalog/img/detal/${mashine_s.img}.jpg" alt="$mashine_s.name_ru">}}{}
 
 ^if(def $mashine_s.body){
 ^untaint[as-is]{

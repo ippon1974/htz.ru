@@ -54,12 +54,13 @@
 			<li><a href="/catalog/belarus/taim/mashine/equipment_loading/" title="Погрузочное оборудование">Погрузочное оборудование</a></li>
 		  <li><a href="/catalog/belarus/taim/mashine/machine_municipal_sweepers/" title="Машины коммунальные подметальные">Машины коммунальные подметальные</a></li>
 			<li><a href="/catalog/belarus/taim/mashine/equipment_bulldozer/" title="Бульдозерное оборудование">Бульдозерное оборудование</a></li>
+      <li><a href="/catalog/belarus/taim/mashine/brush_equipment/" title="Оборудование щеточное">Оборудование щеточное</a></li>
       <li><a href="/sale/taim/" title="Прайс лист техники ТАиМ"><strong>&laquo^;Прайс ТАиМ&raquo^;</strong></a></li>
   </ul>
   <ul class="listing">
   ^mashine_s.menu{ 
     $mashine_price[$price_hash.[$mashine_s.id].price] 
-	$text(^eval($mashine_price*^exchange_usd[]))
+	  $text(^eval($mashine_price*^exchange_usd[]))
 	
 	<li>
     <dl>	
