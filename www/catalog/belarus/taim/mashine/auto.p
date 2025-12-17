@@ -72,5 +72,5 @@
     </li>
 	}
   </ul>
-}{}
+}
 #@getAGROIMPORTGen[]
