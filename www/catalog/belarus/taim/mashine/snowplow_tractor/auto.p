@@ -51,7 +51,7 @@
     <dl>	
     <dt>^if(def $mashine_s_s.img_front){<a href="/catalog/belarus/taim/mashine/detal/id/$mashine_s_s.id/" title="$mashine_s_s.title"><img src="/catalog/img/front/${mashine_s_s.img_front}.jpg" alt="$mashine_s_s.title" /></a>}{} <a href="/catalog/belarus/taim/mashine/detal/id/$mashine_s_s.id/" title="$mashine_s_s.title">$mashine_s_s.title</a></dt>
     <dd style="text-transform: uppercase^; font-size: 0.8em^; color: #669933^;">$h_Machines.classification_sub.[$mashine_s_s.classification_sub]</dd>					
-    <dd>^if($mashine_price){$text(^eval($mashine_price*^exchange_usd[])) <strong style="color:#ff0000^;">$text</strong> руб. <em style="color: #143B27^; font-size: 0.9em^;">$text_nds($text/6.55557) ^int2str:money2str($text) В том числе НДС 18%: ^number_format[^text_nds.format[%.2f];,;.](2) руб.}{}</em></dd>					
+    <dd>^if($mashine_price){$text(^eval($mashine_price*^exchange_usd[])) <strong style="color:#ff0000^;">$text</strong> руб. <em style="color: #143B27^; font-size: 0.9em^;">$text_nds($text/6.55557) ^int2str:money2str($text)}</em></dd>				
     <dd><p>$mashine_s_s.lead</p></dd>
     </dl>
     </li>
