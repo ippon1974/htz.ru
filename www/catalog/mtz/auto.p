@@ -1,6 +1,6 @@
 @navi_sub_nav[]
  $navi_sub_nav[^getMachines[]]
-    ^if(^navi_sub_nav.locate[id;$form:id]){<div style="margin: 0 0 0.8em 0^; font-size: 1.5em^;"><a href="/catalog/mtz/$navi_sub_nav.classification_sub_sub_uri/" title="$h_Machines.classification_item.[$navi_sub_nav.classification_item] $h_Machines.brand_id.[$navi_sub_nav.brand_id]">$h_Machines.classification_item.[$navi_sub_nav.classification_item] $h_Machines.brand_id.[$navi_sub_nav.brand_id]</a> / <strong>$mashine_s.namenklatura</strong></div>}{} 
+    ^if(^navi_sub_nav.locate[id;$form:id]){<div style="margin: 0 0 0.8em 0^; font-size: 1.1em^;"><a href="/catalog/mtz/$navi_sub_nav.classification_sub_sub_uri/" title="$h_Machines.classification_item.[$navi_sub_nav.classification_item] $h_Machines.brand_id.[$navi_sub_nav.brand_id]">$h_Machines.classification_item.[$navi_sub_nav.classification_item] $h_Machines.brand_id.[$navi_sub_nav.brand_id]</a> / <strong>$mashine_s.namenklatura</strong></div><br/>}{} 
 #@navi_sub_nav[]
 
 @namenklatura[]
