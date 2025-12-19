@@ -66,9 +66,9 @@ $parts_spl[$parts.0/$parts.1/$parts.2/$parts.3/]
 			<li><a href="/catalog/htz/universal/" title="Пахотно-пропашные трактора ХТЗ">Пахотно-пропашные трактора (ОАО &laquo^;ХТЗ&raquo^;)</a></li>
 			<li><a href="/catalog/htz/spec/" title="Спецтехника ХТЗ">Спецтехника (ОАО &laquo^;ХТЗ&raquo^;)</a></li>
 			<li><a href="/catalog/htz/small/" title="Тракторы малой мощности ХТЗ">Тракторы малой мощности (ОАО &laquo^;ХТЗ&raquo^;)</a></li>
-			<li><a href="/catalog/htz/all/" title=""><strong style="color: #ff6600^;"><em>Вся техника &laquo^;ХТЗ&raquo^; одним списком</em></strong></a></li>
-			<li><a href="/catalog/htz/teh/" title="Характеристики техники ХТЗ"><i><strong>Характеристики техники &laquo^;ХТЗ&raquo^;</strong></i></a></li>
-			<li><a href="/catalog/htz/spare/" title="Запчасти для тракторов ХТЗ"><i><strong>Запчасти для тракторов &laquo^;ХТЗ&raquo^;</strong></i></a></li>
+			<li><a href="/catalog/htz/all/" title="">Вся техника &laquo^;ХТЗ&raquo^; одним списком</a></li>
+			<li><a href="/catalog/htz/teh/" title="Характеристики техники ХТЗ">Характеристики техники &laquo^;ХТЗ&raquo^;</a></li>
+			<li><a href="/catalog/htz/spare/" title="Запчасти для тракторов ХТЗ">Запчасти для тракторов &laquo^;ХТЗ&raquo^;</a></li>
 </ul>
 
 <h3 id="our_education_programmes">Прошлое и будущее ОАО &laquo^;ХТЗ&raquo^;</h3> 
