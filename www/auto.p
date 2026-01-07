@@ -922,7 +922,7 @@ $result[^MAIN:pSQL.table{
  <div style="padding: 0.5em 0; font-size: 0.8em^;">Реклама</div>
  
 <dl style="margin: 0 0 0.5em 0^;">
-<dt><a style="border-bottom: none;font-size:0.74em^;" href=/catalog/belarus/taim/mashine/detal/id/132/"" title="Парковый пылесос. Автономный." target="_blank">Парковый пылесос. Автономный.</a></dt>
+<dt><a style="border-bottom: none;font-size:0.74em^;" href="/catalog/belarus/taim/mashine/detal/id/132/" title="Парковый пылесос. Автономный." target="_blank">Парковый пылесос. Автономный.</a></dt>
 <dd style="font-size: 0.87em^;">Пылесосы для листы. В наличии.</dd>
 ----
 </dl>
