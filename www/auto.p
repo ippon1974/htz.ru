@@ -940,13 +940,14 @@ $result[^MAIN:pSQL.table{
 </dl>
 
 <dl style="margin: 0 0 0.5em 0^;">
-<dt><a style="border-bottom: none;font-size:0.74em;" target="_blank" href="http://land.htz.ru" title="Продажа земельного участка под коммерческую деятельность в Белгородской области">Продажа земельного участка под коммерческую деятельность в Белгородской области</a></dt>
-<dd style="font-size: 0.87em^;">По своему расположению участок подходит под строительство заправочных станций (АЗС), магазинов оптово-розничной торговли (Пятерочка, Магнит и т.д.), под строительство складских помещений, под оптову-розничную торговлю строительными материалами.</dd>
+<dt><a style="border-bottom: none;font-size:0.74em;" target="_blank" href="https://www.avito.ru/moskva/telefony/antenna_dlya_trubki_radiotelefona_senao_258_plus_1875137602?slocation=639010&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiI5cHl5dUxWc1VieGJ2RmtyIjt9l5MSqD8AAAA" title="Антенна для трубки радиотелефона Senao-258 Plus">Антенна для трубки радиотелефона Senao-258 Plus</a></dt>
+<dd style="font-size: 0.87em^;">Антeннa cовмеcтимa c paдиoтeлeфонами: Sеnaо SN 258 Spоrt, Sеnaо SN 258 Flаshlight. Paбoчая чаcтота: 240—390 МГц. Цвет: сeрая, чepная. </dd>
+----
 </dl>
 
 <dl style="margin: 0 0 0.5em 0^;">
-<dt><a style="border-bottom: none;font-size:0.74em;" target="_blank" href="https://www.avito.ru/moskva/telefony/antenna_dlya_trubki_radiotelefona_senao_258_plus_1875137602?slocation=639010&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiI5cHl5dUxWc1VieGJ2RmtyIjt9l5MSqD8AAAA" title="Антенна для трубки радиотелефона Senao-258 Plus">Антенна для трубки радиотелефона Senao-258 Plus</a></dt>
-<dd style="font-size: 0.87em^;"> Антeннa cовмеcтимa c paдиoтeлeфонами: Sеnaо SN 258 Spоrt, Sеnaо SN 258 Flаshlight. Paбoчая чаcтота: 240—390 МГц. Цвет: сeрая, чepная. </dd>
+<dt><a style="border-bottom: none;font-size:0.74em;" target="_blank" href="http://land.htz.ru" title="Продажа земельного участка под коммерческую деятельность в Белгородской области">Продажа земельного участка под коммерческую деятельность в Белгородской области</a></dt>
+<dd style="font-size: 0.87em^;">По своему расположению участок подходит под строительство заправочных станций (АЗС), магазинов оптово-розничной торговли (Пятерочка, Магнит и т.д.), под строительство складских помещений, под оптову-розничную торговлю строительными материалами.</dd>
 </dl>
 
 </div>
