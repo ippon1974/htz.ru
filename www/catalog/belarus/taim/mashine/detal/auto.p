@@ -91,7 +91,7 @@
 			<dd>${h_Machines.customs.[$mashine_s.customs]}.</dd>
 			}{}
 			<dt>Телефон:</dt>
-     		<dd>^my_phone[+7 (925) 585-33-71] (Whatsapp, Telegram)</dd>
+     		<dd>^my_phone[+7 (925) 585-33-71] (MAX, Telegram)</dd>
 			<dt>Эл. почта:</dt>
 			<dd>^mailto:print[mail@htz.ru][<strong>mail@htz.ru</strong>][ООО "СПМ"]</dd>
     </dl>

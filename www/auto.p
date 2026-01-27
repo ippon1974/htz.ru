@@ -430,11 +430,11 @@ $result[&laquo^;СПМ&raquo^;]
 #@my_phone[]
 
 @my_phone_reklama[]
-<noindex>+ 7 (925) 585 - 33 - 71 (Whatsapp, Telegram)</noindex>
+<noindex>+ 7 (925) 585 - 33 - 71 (MAX, Telegram)</noindex>
 #@my_phone_reklama[]
 
 @my_phone_mtz[]
-<noindex>+ 7 (925) 585 - 33 - 71 (Whatsapp, Telegram)</noindex>
+<noindex>+ 7 (925) 585 - 33 - 71 (MAX, Telegram)</noindex>
 #@my_phone[]
 
 @my_phone_catalogstone[]
@@ -446,23 +446,23 @@ $result[&laquo^;СПМ&raquo^;]
 #@my_phone_storeshop[]
 
 @my_phone_ctz[]
-Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
+Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
 #@my_phone_ctz[]
 
 @my_phone_shantui[]
-Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
+Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
 #@my_phone_shantui[]
 
 @my_phone_shehwa[]
-Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
+Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
 #@my_phone_shehwa[]
 
 @my_phone_hongda[]
-Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
+Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
 #@my_phone_hongda[]
 
 @my_phone_sany[]
-Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
+Нет в наличии. Возможно под заказ.<br />Уточнить по тел.: <noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex><br />Режим работы: Пн-Пт с 10:00 до 19:00
 #@my_phone_sany[]
 
 @my_phone_sendmail[]
@@ -470,11 +470,11 @@ $result[<noindex></noindex>]
 #@my_phone_sendmail[]
 
 @my_phone_new_h[]
-$result[<noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex>]
+$result[<noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex>]
 #@my_phone_new_h[]
 
 @my_phone_waterjet[]
-$result[<noindex>+7 (925) 585-33-71 (Whatsapp, Telegram)</noindex>]
+$result[<noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex>]
 #@my_phone_waterjet[]
 
 @my_email_sendmail[]
