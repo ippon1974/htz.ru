@@ -413,7 +413,7 @@ $result[&laquo^;СПМ&raquo^;]
 #@my_company_name[]
 
 @my_email_grid[]
-^mailto:print[grid@htz.ru][<strong>grid@htz.ru</strong>]["СПМ"]
+^mailto:print[mail@htz.ru][<strong>mail@htz.ru</strong>]["СПМ"]
 #@my_email[]
 
 
@@ -482,7 +482,8 @@ $result[mail@htz.ru]
 #@my_email_sendmail[]
 
 @my_adress_civekwaterjet[]
-$result[Посёлок ВУГИ, 1с4, Люберцы, Московская область, 140004. Территория института &laquo^;ННЦ ГП - ИГД им. А.А. Скочинского&raquo^;]
+$result[121357, г.Москва, ул.Верейская,д.29 С 82]
+#$result[Посёлок ВУГИ, 1с4, Люберцы, Московская область, 140004. Территория института &laquo^;ННЦ ГП - ИГД им. А.А. Скочинского&raquo^;]
 #@my_adress_civekwaterjet[]
   
 @exchange_usd[]
