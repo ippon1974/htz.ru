@@ -63,9 +63,9 @@ $materials_id[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 	 }
 
 	}
-   </ul>
+   </ul><br />
    <p style="padding: 0.5em 0 0 0^; font-size: 1.1em^;"><a style="color:red^;" href="/services/cutting/" title="Полный прайс-лист на раскрой гидроабразивом">&#8594^; Полный прайс-лист</a></p>
-
+   <br />
     $materials_item[^table::load[/services/cutting/materials_list.cfg]]
 	<h3>Материалы</h3>
     <ul id="section_id">
