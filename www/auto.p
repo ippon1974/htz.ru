@@ -487,11 +487,11 @@ $result[121357, г.Москва, ул.Верейская,д.29 С 82]
 #@my_adress_civekwaterjet[]
   
 @exchange_usd[]
-85
+90
 #@exchange_usd[]
 
 @exchange_euro[]
-110
+115
 #@exchange_euro[] 
   
 @date[]
