@@ -69,8 +69,8 @@ $result[]
 
 
 @menu_slab_stone_center[]
- $path[$request:path]
- $parts[^path.split[/;lh]]
+ $str[$request:uri]
+ $parts[^str.split[/;lh]]
  $menu_slab_stone_center[^table::load[/services/makestone/catalogstone/menu_slab_stone_center.cfg]]
  ^stone_slab_center_cell[]
 #@menu_slab_stone_center[]

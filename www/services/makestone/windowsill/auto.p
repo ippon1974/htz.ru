@@ -68,8 +68,8 @@ $result[]
 #@navi_sub_nav[]
 
 @menu_windowsill_stone_center[]
- $path[$request:path]
- $parts[^path.split[/;lh]]
+ $str[$request:uri]
+ $parts[^str.split[/;lh]]
  $menu_windowsill_stone_center[^table::load[/services/makestone/windowsill/menu_windowsill_stone_center.cfg]]
  ^item_stone_center_cell[]
 #@menu_windowsill_stone_center[]
@@ -91,8 +91,8 @@ $menu_windowsill_stone[^table::load[/services/makestone/windowsill/menu_windowsi
 #@menu_windowsill_stone_right[]
 
 @item_windowsill_stone_right[]
-$path[$request:path]
-$parts[^path.split[/;lh]]
+$str[$request:uri]
+$parts[^str.split[/;lh]]
 ^if($menu_windowsill_stone.uri eq $request:uri){ 
   <li style="font-size: 1.1em^; margin: 0^;padding: 0 4px 0 4px^;"><span style="background-color: #FFFFCC^;">$menu_windowsill_stone.section</span></li>
 }{ 
