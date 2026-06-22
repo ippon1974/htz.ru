@@ -164,6 +164,8 @@ $menu_products_stone_right[^table::load[/services/makestone/menu_products_stone_
 #@menu_products_stone_right[]
 
 @products_item[]
+$str[$request:uri]
+$parts[^str.split[/;lh]]
 ^if($menu_products_stone_right.uri eq $request:uri){ 
   <li style="font-size: 1.1em^; margin: 0^;padding: 0 4px 0 4px^;"><span style="background-color: #FFFFCC^;">$menu_products_stone_right.name</span></li>
 }{ 
