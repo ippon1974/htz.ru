@@ -68,8 +68,8 @@ $result[]
 #@navi_sub_nav[]
 
 @menu_table_stone_center[]
- $path[$request:path]
- $parts[^path.split[/;lh]]
+ $str[$request:uri]
+ $parts[^str.split[/;lh]]
  $menu_table_stone_center[^table::load[/services/makestone/table/menu_table_stone_center.cfg]]
  ^item_table_cell[]
 #@menu_table_stone_center[]
@@ -91,8 +91,8 @@ $menu_table_stone[^table::load[/services/makestone/table/menu_table_stone.cfg]]
 #@menu_table_stone_right[]
 
 @item_table_stone_right[]
-$path[$request:path]
-$parts[^path.split[/;lh]]
+$str[$request:uri]
+$parts[^str.split[/;lh]]
 ^if($menu_table_stone.uri eq $request:uri){ 
   <li style="font-size: 1.1em^; margin: 0^;padding: 0 4px 0 4px^;"><span style="background-color: #FFFFCC^;">$menu_table_stone.section</span></li>
 }{ 
