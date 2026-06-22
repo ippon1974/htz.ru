@@ -1,0 +1,7 @@
+AddType application/x-httpd-php5 .php
+
+RewriteEngine On
+RewriteBase /services/makestone/step/granite/detail
+RewriteRule ^id/([^/]*)\.html$ /services/makestone/step/granite/detail/?id=$1 [L]
+RewriteRule (.+)(/)$ $1.html [L,QSA]
+

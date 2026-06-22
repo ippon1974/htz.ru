@@ -1,0 +1,216 @@
+@header[]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<!-- Copyright (c) STROYPROEKTMONTAZH | http://www.htz.ru/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>^title[]</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta name="description" content="^title[] | ^description[]" />
+<meta name="keywords" content="^title[] | ^keywords[]" />
+
+<script type="text/javascript" src="/js/jquery.min.js"> </script>
+<script type="text/javascript" src="/js/main.js"> </script>
+
+<link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/makestone/css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
+<link rel="shortcut icon" href="/ico.ico" /> 
+<link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
+<!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
+<!--[if gte IE 7]><link href="/css/ie7.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
+<script src="/js/functions.js" type="text/javascript" charset="utf-8"></script>
+
+<style type="text/css" media="all">
+a {
+	text-decoration: none;
+}
+a:visited {
+	color: Purple;
+	text-decoration: none;
+}
+</style>
+</head>
+
+
+@title[]
+$title[^table::load[/_root.cfg]]
+^if(^title.locate[uri;$request:uri]){ 
+$result[$title.title]
+}{ 
+$result[]
+} 
+#@title[]
+
+@description[]
+$description[^table::load[/_root.cfg]]
+^if(^description.locate[uri;$request:uri]){ 
+$result[$description.description]
+}{ 
+$result[]
+} 
+#@description[]
+
+@keywords[]
+$keywords[^table::load[/_root.cfg]]
+^if(^keywords.locate[uri;$request:uri]){ 
+$result[$keywords.keywords]
+}{ 
+$result[]
+} 
+#@keywords[]
+
+@navi_sub_nav[]
+ $navi_sub_nav[^table::load[/services/cutting/materials_list.cfg]]
+    ^if(^navi_sub_nav.locate[uri;$request:uri]){<div style="margin: 0 0 0.8em 0^; font-size: 1.2em^;"><a href="/services/cutting/" title="Услуги гидроабразивной резки">Услуги гидроабразивной резки</a> / <strong>$navi_sub_nav.nameletter</strong></div>}{} 
+#@navi_sub_nav[]
+
+
+@menu_slab_stone_center[]
+ $path[$request:path]
+ $parts[^path.split[/;lh]]
+ $menu_slab_stone_center[^table::load[/services/makestone/catalogstone/menu_slab_stone_center.cfg]]
+ ^stone_slab_center_cell[]
+#@menu_slab_stone_center[]
+
+@stone_slab_center_cell[]
+ ^if(^menu_slab_stone_center.locate[item;$parts.4]){$result[<a href="/services/makestone/" title="Изделия из камня">Изделия из камня</a> / <a href="/services/makestone/catalogstone/" title="Слебы">Слебы</a> / ^if(def $form:id){<a href="$menu_slab_stone_center.uri" title="$menu_slab_stone_center.section">$menu_slab_stone_center.section</a> / }{<span style="background: #FFFFCC^;">$menu_slab_stone_center.section</span>}]}{
+  $result[<a href="/services/makestone/" title="Изделия из камня">Изделия из камня</a>]
+ }
+#@stone_slab_center_cell[]
+
+
+@agate[item;name]
+$agate[^db::getAgateSlab[$.limit(1)]] 
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.agat_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.agat_img}.webp" alt="Слеб из $name ${$item.agat_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.agat_name}">Слеб из $name ${$item.agat_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@agate[]
+
+@aglomerate[item;name]
+$aglomerate[^db::getAglomerateSlab[$.limit(1)]] 
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.aglomerate_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.aglomerate_img}.webp" alt="Слеб из $name ${$item.aglomerate_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.aglomerate_name}">Слеб из $name ${$item.aglomerate_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@aglomerate[]
+
+@amethyst[item;name]
+$amethyst[^db::getAmethystSlab[$.limit(1)]] 
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.amethyst_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.amethyst_img}.webp" alt="Слеб из $name ${$item.amethyst_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.amethyst_name}">Слеб из $name ${$item.amethyst_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@amethyst[]
+
+@granite[item;name]
+$granite[^db::getGraniteSlab[$.limit(1)]] 
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.g_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.g_img}.webp" alt="Слеб из $name ${$item.g_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.g_name}">Слеб из $name ${$item.g_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@granite[]
+
+@labradorite[item;name]
+$labradorite[^db::getLabradoriteSlab[$.limit(1)]]
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.labradorite_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.labradorite_img}.webp" alt="Слеб из $name ${$item.labradorite_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.labradorite_name}">Слеб из $name ${$item.labradorite_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@labradorite[]
+
+@marble[item;name]
+$marble[^db::getMarbleSlab[$.limit(1)]]
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.m_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.m_img}.webp" alt="Слеб из $name ${$item.m_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.m_name}">Слеб из $name ${$item.m_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@marble[]
+
+@onix[item;name]
+$onix[^db::getOnixSlab[$.limit(2)]]
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.onix_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.onix_img}.webp" alt="Слеб из $name ${$item.onix_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.onix_name}">Слеб из $name ${$item.onix_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@onix[]
+
+@quartz[item;name]
+$quartz[^db::getQuartzSlab[$.limit(1)]]
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.quartz_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.quartz_img}.webp" alt="Слеб из $name ${$item.quartz_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.quartz_name}">Слеб из $name ${$item.quartz_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@quartz[]
+
+@travertine[item;name]
+$travertine[^db::getTravertineSlab[$.limit(1)]]
+<li>
+<dl>
+<dt><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.travertine_name}"><img src="/services/makestone/catalogstone/$item/img/list/${$item.travertine_img}.webp" alt="Слеб из $name ${$item.travertine_name}" /></a></dt>
+<dd class="delta"><a href="/services/makestone/catalogstone/$item/detail/id/${$item.id}/" title="Слеб из $name ${$item.travertine_name}">Слеб из $name ${$item.travertine_name}</a></dd>
+<dd class="delta">Полный список <a href="/services/makestone/catalogstone/$item/" title="Полный список слебов из $name">слебов из $name</a></dd>
+</dl>
+</li>
+#@travertine[]
+
+@makestone_show_catalog[]
+
+^hMakeStone[]
+
+<div id="makestone_show_list">
+
+<h3>Работаем с физическими и юридическими лицами.</h3>
+
+<ul class="listing">
+^granite[granite;гранита]
+^marble[marble;мрамора]
+^onix[onix;оникса]
+^aglomerate[aglomerate;агломерата]
+^quartz[quartz;кварца]
+^travertine[travertine;травертина]
+^labradorite[labradorite;ламбродарита]
+^agate[agate;агата]
+^amethyst[amethyst;аметиста]
+</ul>
+
+<h3>Расположение производства:</h3>
+<p>121357, г.Москва, ул.Верейская,д.29 С 82<br />
+Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.<br />
+Контактный телефон: ^my_phone_waterjet[]<br />
+Электронная почта: ^my_email[]</p>
+
+</div>
+#@makestone_show[]
+
+@works_secondary[]
+<div id="makestone_show_right">
+<h3>Каталог камня</h3>
+</div>

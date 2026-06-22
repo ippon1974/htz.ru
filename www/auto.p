@@ -282,7 +282,7 @@ $sections7[^table::load[/menu7.cfg]]
       ^if($sections7.uri eq $request:uri){
 	  <li class="$sections7.section_id"><strong>$sections7.name</strong></li>
 	  }{
-      <li class="$sections7.section_id"><a href="$sections7.uri">$sections7.name</a></li>
+      <li class="$sections7.section_id"><a href="$sections7.uri" title="$sections7.name">$sections7.name</a></li>
 	  }
    }
 </ul>
@@ -291,7 +291,7 @@ $sections7[^table::load[/menu7.cfg]]
 <li class="events"><a href="/catalog/">Техника</a>
 <ul>
    ^sections.menu{ 
-      ^navigation_cell[] 
+      ^navigation_cell[]
    } 
 </ul></li>
 <li class="education"><a href="/sale/">Прайс</a>
@@ -303,7 +303,7 @@ $sections6[^table::load[/menu6.cfg]]
       ^if($sections6.uri eq $request:uri){
 	  <li class="$sections6.section_id"><strong>$sections6.name</strong></li>
 	  }{
-     <li class="$sections6.section_id"><a href="$sections6.uri">$sections6.name</a></li>
+     <li class="$sections6.section_id"><a href="$sections6.uri" title="$sections6.name">$sections6.name</a></li>
 	  }
    }
 </ul></li>
@@ -367,7 +367,7 @@ $sections3[^table::load[/menu4.cfg]]
 ^if($sections.uri eq $request:uri){
 <li class="$sections.section_id"><strong>$sections.name</strong></li>
 }{ 
-<li class="$sections.section_id"><a href="$sections.uri">$sections.name</a></li>
+<li class="$sections.section_id"><a href="$sections.uri" title="$sections.name">$sections.name</a></li>
 }
 
 @navigation1_cell[]
@@ -704,7 +704,7 @@ $machines_s[^machines.select($machines.brand_id==5)]
 $price[^getPriceMachines[]]
 $price_hash[^price.hash[id]]
 <dt>Техника &laquo;ХТЗ&raquo;</dt>
-  Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  Цены указаны <strong>с НДС22%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
   ^machines_s.menu{
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
@@ -720,7 +720,7 @@ $machines[^getMachines[]]
 $machines_s[^machines.select($machines.brand_id==6)]
 $price[^getPriceMachines[]]
 $price_hash[^price.hash[id]]
-  Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+  Цены указаны <strong>с НДС22%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
   ^machines_s.menu{
    $machines_s_price[$price_hash.[$machines_s.id].price]
     ^if($machines_s_price){
@@ -742,7 +742,7 @@ $price_hash[^price.hash[id]]
 
 <dt>Техника &laquo^;МТЗ&raquo^;</dt>
   ^if(false){
-	Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+	Цены указаны <strong>с НДС22%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
   }
   
   $machines_s_s[^table::create[$machines_s;$.offset(35)]]
@@ -766,7 +766,7 @@ $price_hash[^price.hash[id]]
 
 <dt>Техника &laquo^;ЧТЗ&raquo^;</dt>
   ^if(false){
-	Цены указаны <strong>с НДС18%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
+	Цены указаны <strong>с НДС22%</strong><br /><em>на ^dtf:format[%d %h %Y;$tArticle.dt;$dtf:rr-locale]г</em>.<br />
   }
   
   $machines_s_s[^table::create[$machines_s;$.offset(10)]]

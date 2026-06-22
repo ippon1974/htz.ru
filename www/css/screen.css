@@ -330,6 +330,7 @@ a[rel="license"]:first-child, a[rel="license"] img { border: none; }
 		.sheet_music #navigation li li.sheet_music a, 
 		.b_services #navigation li li.b_services a,
 		.b_grille #navigation li li.b_grille a,
+		.b_makestone #navigation li li.b_makestone a,
 		.treoir #navigation li li.treoir a { color: #eb4; border-bottom: 1px solid #eb4; }
 
         .competitions #navigation strong { font-size: 0.9em; text-transform: none; color: #eb4; padding-left: 25px;}
@@ -351,6 +352,8 @@ a[rel="license"]:first-child, a[rel="license"] img { border: none; }
 		.sparehtz #navigation strong { font-size: 0.9em; color: #eb4; text-transform: none; padding-left: 25px;}
 		.b_services #navigation strong { font-size: 0.9em; color: #eb4; text-transform: none; padding-left: 25px;}
 		.b_grille #navigation strong { font-size: 0.9em; color: #eb4; text-transform: none; padding-left: 25px;}
+		.b_makestone #navigation strong { font-size: 0.9em; color: #eb4; text-transform: none; padding-left: 25px;}
+
 		
 			.dowland #navigation strong { font-size: 0.9em; color: #eb4; text-transform: none; padding-left: 25px;}
 			.sct_exam #navigation strong { font-size: 0.9em; color: #eb4; text-transform: none; padding-left: 25px;}
