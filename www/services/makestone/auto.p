@@ -190,7 +190,7 @@ $menu_catalog_stone_right[^table::load[/services/makestone/menu_catalog_stone_ri
 #@menu_catalog_stone_right[]
 
 @catalog_stone_item[]
-$path[$request:path]
+$str[$request:uri]
 $parts[^path.split[/;lh]]
 
 ^if($menu_catalog_stone_right.uri eq $request:uri){ 
