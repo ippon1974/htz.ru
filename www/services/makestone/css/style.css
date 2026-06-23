@@ -10,6 +10,20 @@
          /* Если браузер не поддерживает woff2, загрузит woff */
          url("/services/makestone/fonts/roboto.woff") format("woff");
   }
+
+
+  #content #primary  .menu_slab_stone_center a{
+    color: #369;
+  }
+
+  #content #primary  .menu_slab_stone_center a:visited{
+    color: #369;
+  }
+
+  #content #primary  .menu_slab_stone_center a:hover{
+    color: #600;
+  }
+
   
 #makestone_show h2 {
     font-family: "Roboto", "Arial", sans-serif;
