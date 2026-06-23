@@ -141,18 +141,6 @@ $h_makestone[
 </div>
 #@makestone_show[]
 
-@location_area[]
-<h3>Расположение производства:</h3>
-<p>121357, г.Москва, ул.Верейская,д.29 С 82<br />
-Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.<br />
-Контактный телефон: ^my_phone_waterjet[]<br />
-Электронная почта: ^my_email[]</p>
-<p>
-<strong>Прилегающие населенные пункты</strong>: Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково<br />
-</p>
-#@location_area[]
-
-
 @menu_products_stone_right[]
 <h3>Изделия</h3>
 $menu_products_stone_right[^table::load[/services/makestone/menu_products_stone_right.cfg]]
@@ -191,7 +179,7 @@ $menu_catalog_stone_right[^table::load[/services/makestone/menu_catalog_stone_ri
 
 @catalog_stone_item[]
 $str[$request:uri]
-$parts[^path.split[/;lh]]
+$parts[^str.split[/;lh]]
 
 ^if($menu_catalog_stone_right.uri eq $request:uri){ 
   <li style="font-size: 1.1em^; margin: 0^;padding: 0 4px 0 4px^;"><span style="background-color: #FFFFCC^;">$menu_catalog_stone_right.name</span></li>
@@ -203,6 +191,17 @@ $parts[^path.split[/;lh]]
 	}
 } 
 #@catalog_stone_item[]
+
+@location_area[]
+<h3>Расположение производства:</h3>
+<p>121357, г.Москва, ул.Верейская,д.29 С 82<br />
+Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.<br />
+Контактный телефон: ^my_phone_waterjet[]<br />
+Электронная почта: ^my_email[]</p>
+<p>
+<strong>Прилегающие населенные пункты</strong>: Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково<br />
+</p>
+#@location_area[]
 
 
 @works_secondary[]

@@ -77,11 +77,11 @@ $count(^MAIN:pSQL.int{
 	WHERE
 		is_published = 1
 })
-$items(25)
+$items(50)
 $opage[^scroller::init[$count;$items;page]]
 ^opage.print[
 	$.target_url[/services/makestone/step/agate/]
-	$.nav_count(25)
+	$.nav_count(50)
 	$.mode[html]
 ]
 $agate[^MAIN:pSQL.table{
