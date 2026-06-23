@@ -36,6 +36,14 @@
     font-weight: bold;
 }
 
+#makestone_show p a:visited.begin_list{
+    color: #369;;
+}
+
+#makestone_show p a:hover.begin_list{
+    color: #600;
+}
+
 
 #makestone_show_right{
     font-family: "Roboto", "Arial", sans-serif;
@@ -74,6 +82,14 @@ ul.menu_stone_tablestone li{
 
 ul.menu_stone_tablestone li a{
     font-size: 1.1em;
+}
+
+ul.menu_stone_tablestone li a:visited{
+    color: #369;
+}
+
+ul.menu_stone_tablestone li a:hover{
+    color: #600;
 }
 
 ul.menu_stone_tablestone li a:hover{

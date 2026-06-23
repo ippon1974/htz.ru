@@ -77,7 +77,7 @@ $result[]
 
 @stone_slab_center_cell[]
  ^if(^menu_slab_stone_center.locate[item;$parts.4]){$result[<a href="/services/makestone/" title="Изделия из камня">Изделия из камня</a> / <a href="/services/makestone/catalogstone/" title="Слебы">Слебы</a> / ^if(def $form:id){<a href="$menu_slab_stone_center.uri" title="$menu_slab_stone_center.section">$menu_slab_stone_center.section</a> / }{<span style="background: #FFFFCC^;">$menu_slab_stone_center.section</span>}]}{
-  $result[<a href="/services/makestone/" title="Изделия из камня">Изделия из камня</a>]
+  $result[<a href="/services/makestone/" title="Изделия из камня">Изделия из камня</a> / <span style="background: #FFFFCC^;">Слебы</span>]
  }
 #@stone_slab_center_cell[]
 
