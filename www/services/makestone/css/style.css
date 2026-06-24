@@ -157,6 +157,19 @@ ul.menu_stone_tablestone li a:hover{
     line-height: 1.6;
 }
 
+#primary div.menu_tabletop_center a{
+    color: #369;
+}
+
+#primary div.menu_tabletop_center a:visited{
+    color: #369;
+}
+
+#primary div.menu_tabletop_center a:hover{
+    color: #600;
+}
+
+
 .foo{
     all: unset;
     margin: 0 0 1em 0;
