@@ -6,4 +6,5 @@ Disallow: /admin/
 Disallow: /php/
 Disallow: /test/
 Disallow: /typograf/
+Sitemap: http://htz.ru/sitemap.xml
 
