@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/js/main.js"> </script>
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/makestone/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
