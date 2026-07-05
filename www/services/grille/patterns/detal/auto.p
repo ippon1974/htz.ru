@@ -13,7 +13,6 @@
 
 <link rel="stylesheet" type="text/css" href="/css/callback_mini.css">
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
-
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 

@@ -63,7 +63,6 @@ $nextLeft[^db::getGrilleNextLeft[$.id(^form:id.int(0))]]
 $nextRight[^db::getGrilleNextRight[$.id(^form:id.int(0))]]
 ^navi_sub_nav[]
 <h2>$showGrille.grille_name</h2>
-<p>Калькулятор вентиляционных решеток (<a href="http://airconcept.ru/catalog/grills" target="_blank">airconcept.ru</a>)</p>
 <h3>ID: $showGrille.id</h3>
 <div id="tehnobody">
 	^if(def $showGrille.grille_desc){<h3>О работе</h3>^untaint[as-is]{$showGrille.grille_desc}}{}
