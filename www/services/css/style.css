@@ -1,0 +1,217 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+  
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Roboto"),
+         /* Если не получилось, загрузит woff2 */
+         url("/services/fonts/roboto.woff2") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("/services/fonts/roboto.woff") format("woff");
+  }
+
+
+  #content #primary  .menu_slab_stone_center a{
+    color: #369;
+  }
+
+  #content #primary  .menu_slab_stone_center a:visited{
+    color: #369;
+  }
+
+  #content #primary  .menu_slab_stone_center a:hover{
+    color: #600;
+  }
+
+#primary div h1 {
+    font-family: "Roboto", "Arial", sans-serif;
+    
+}
+  
+#makestone_show h2 {
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 2.0em; 
+    font-weight: bold;
+    color: rgb(64, 40, 3);
+}
+
+#makestone_show h3 {
+    font-family: "Roboto", "Arial", sans-serif;
+    color: rgb(64, 40, 3);
+    padding: 0 0 5px;
+    border-bottom: 1px dashed #ddc;
+}
+
+#makestone_show p {
+    font-family: "Roboto", "Arial", sans-serif;
+    color: rgb(11, 10, 10);
+}
+
+#makestone_show p a.begin_list{
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#makestone_show p a:visited.begin_list{
+    color: #369;;
+}
+
+#makestone_show p a:hover.begin_list{
+    color: #600;
+}
+
+#makestone_show p a {
+    color: #369;;
+}
+#makestone_show p a:visited {
+    color: #369;;
+}
+
+#makestone_show p a:hover {
+    color: #600;;
+}
+
+
+#makestone_show_right{
+    font-family: "Roboto", "Arial", sans-serif;
+}
+
+#makestone_show_list{
+    font-family: "Roboto", "Arial", sans-serif;
+}
+
+#makestone_show_list ul li dl dd.delta{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#makestone_show_list ul li dl dd.delta a{
+    color: #369;
+}
+
+#makestone_show_list ul li dl dd.delta a:visited{
+    color: #369;
+}
+
+#makestone_show_list ul li dl dd.delta a:hover{
+    color: #600;
+}
+
+#makestone_show_list ul li dl dd.delta_scroll{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#makestone_show_list ul li a{
+    color: #369;
+}
+
+#makestone_show_list ul li a:visited{
+    color: #369;
+}
+
+#makestone_show_list ul li a:hover{
+    color: #600;
+}
+
+p.scroller{
+    font-size: 2em;
+    color: rgba(40, 38, 38, 0.818);
+}
+
+
+ul.menu_stone_tablestone{
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu_stone_tablestone li{
+    background: none !important;
+    display: block;
+}
+
+
+ul.menu_stone_tablestone li a{
+    font-size: 1.1em;
+}
+
+ul.menu_stone_tablestone li a:visited{
+    color: #369;
+}
+
+ul.menu_stone_tablestone li a:hover{
+    color: #600;
+}
+
+ul.menu_stone_tablestone li a:hover{
+    background: #FFFFCC;
+}
+
+#primary div h1 {
+    color:#993300;
+    font-size: 2.8em;
+    padding: 0 0 10px;
+    border-bottom: 1px dashed #ddc;
+    margin: 0 0 0.5em;
+}
+
+#primary div h3 {
+    margin: 0 0 1.5em;
+}
+
+#makestone_show_list h3 {
+    margin: 0 0 0.5em 0;
+}
+
+#makestone_show_list p {
+    color:#333333;
+}
+
+#makestone_show_list p a {
+    font-weight: bold;
+}
+
+#makestone_show_list p.send_email {
+    font-weight: bold;
+}
+
+#makestone_show_list ul {
+    margin: 0 0 1.5em 0;
+    padding: 0;
+}
+
+#makestone_show_list ul li {
+    margin: 0;
+    padding: 0;
+    background: none !important;
+}
+
+#makestone_show_list ul li a {
+    font-weight: bold;
+}
+
+#primary div.menu_tabletop_center{
+    line-height: 1.6;
+}
+
+#primary div.menu_tabletop_center a{
+    color: #369;
+}
+
+#primary div.menu_tabletop_center a:visited{
+    color: #369;
+}
+
+#primary div.menu_tabletop_center a:hover{
+    color: #600;
+}
+
+
+.foo{
+    all: unset;
+    margin: 0 0 1em 0;
+    border-bottom: 1px dashed #ddc;
+    margin: 0 0 1em 0;
+}

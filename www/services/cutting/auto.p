@@ -15,7 +15,7 @@
 <script type="text/javascript" src="/js/main.js"> </script>
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
-<link rel="stylesheet" type="text/css" href="/services/makestone/css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
@@ -178,9 +178,9 @@ $materials_item[^table::load[/services/cutting/materials_list.cfg]]
 @materialsSelectItem[]
 $materials_item[^table::load[/services/cutting/materials_list.cfg]]
 $materials[^db::getMaterialPrice[]]
-<div id="tehnobody">
+<div id="">
 ^navi_sub_nav[]
-<h2>^if(^materials_item.locate[uri;$request:uri]){${materials_item.nameletter}. Стоимость раскроя с помощью технологии гидроабразивной резки.}{}</h2>
+<h1>^if(^materials_item.locate[uri;$request:uri]){${materials_item.nameletter}. Стоимость раскроя. Гидроабразивная резка.}{}</h1>
 <span>^dtf:format[%d %h %Y;]</span>
 <br /><br />
 <p>Стоимость раскроя гидроабразивом указана в рублях РФ за 1 (один) погонный метр.</p>
