@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback_mini.css">
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -59,7 +60,7 @@ $showPatterns[^db::getWaterjetPatterns[$.id(^form:id.int(0))]]
 $nextLeft[^db::getNextLeft[$.id(^form:id.int(0))]]
 $nextRight[^db::getNextRight[$.id(^form:id.int(0))]]
 ^navi_sub_nav[]
-<h2>Шаблон &laquo^;${showPatterns.pattern_name_ru}&raquo^; для производства декоративной решетки</h2>
+<h1>Шаблон &laquo^;${showPatterns.pattern_name_ru}&raquo^; для производства декоративной решетки</h1>
 <h3>ID: $showPatterns.id</h3>
 <div id="tehnobody">
     ^if(def $nextLeft.id){<span class="leftstr"><a style="text-decoration: none^; border-bottom: none^;" href="/services/grille/patterns/detal/id/$nextLeft.id/" title="Предыдущий шаблон">&#8592^;</a></span>}{}
