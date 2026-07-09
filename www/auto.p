@@ -430,11 +430,11 @@ $result[&laquo^;ÑÏÌ&raquo^;]
 #@my_phone[]
 
 @my_phone_reklama[]
-<noindex>+ 7 (925) 585 - 33 - 71 (MAX, Telegram)</noindex>
+<noindex>+ 7 (925) 585 - 33 - 71 (MAX)</noindex>
 #@my_phone_reklama[]
 
 @my_phone_mtz[]
-<noindex>+ 7 (925) 585 - 33 - 71 (MAX, Telegram)</noindex>
+<noindex>+ 7 (925) 585 - 33 - 71 (MAX)</noindex>
 #@my_phone[]
 
 @my_phone_catalogstone[]
@@ -470,11 +470,11 @@ $result[<noindex></noindex>]
 #@my_phone_sendmail[]
 
 @my_phone_new_h[]
-$result[<noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex>]
+$result[<noindex>+7 (925) 585-33-71 (MAX)</noindex>]
 #@my_phone_new_h[]
 
 @my_phone_waterjet[]
-$result[<noindex>+7 (925) 585-33-71 (MAX, Telegram)</noindex>]
+$result[<noindex>+7 (925) 585-33-71 (MAX)</noindex>]
 #@my_phone_waterjet[]
 
 @my_email_sendmail[]

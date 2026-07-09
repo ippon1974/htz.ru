@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/js/main.js"> </script>
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
@@ -63,7 +64,7 @@ $result[]
 
 @menu_service[]
 $menu_service[^table::load[/services/menu_service.cfg]]
-<ul id="anchorlist">
+<ul class="listservice">
 ^menu_service.menu{
 <li><a href="$menu_service.uri" title="$menu_service.name">$menu_service.name</a><p>$menu_service.desc</p><li>
 }
