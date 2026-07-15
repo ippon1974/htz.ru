@@ -3,11 +3,10 @@ function BottomPanelApp() {
   const { useState } = React;
   const { useRef } = React;
   
-  // 1. Состояние для отслеживания видимости панели
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '' });
+  const [isLoading, setIsLoading] = useState(false);
   
-  // Состояние видимости самой формы
   const [isFormVisible, setIsFormVisible] = useState(true);
   
   const myhRef = useRef(null);
@@ -16,8 +15,8 @@ function BottomPanelApp() {
   
   const handleSubmit = (e) => {
 	  e.preventDefault();
-	  setIsFormVisible(false); // Скрываем форму после отправки
-	  console.log('Отправка данных:', formData);
+	  setIsFormVisible(false);
+	  console.log(formData);
 	  };
 	  
   if (!setIsPanelOpen) return null;
@@ -25,16 +24,14 @@ function BottomPanelApp() {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-    
-      {/* 2. Кнопка для вызова панели */}
+  
       <button 
         onClick={() => setIsPanelOpen(true)}
         style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
       >
-        Открыть панель
+        Запрос
       </button>
 
-      {/* 3. Оверлей (затемнение фона), клик по которому закрывает панель */}
       {isPanelOpen && (
         <div 
           onClick={() => setIsPanelOpen(false)}
@@ -45,25 +42,24 @@ function BottomPanelApp() {
         />
       )}
 
-      {/* 4. Сама панель, выезжающая снизу */}
       <div 
         style={{
           position: 'fixed',
           left: 0,
           right: 0,
-          bottom: isPanelOpen ? '0' : '-100%', // Появление или скрытие за экраном
+          bottom: isPanelOpen ? '0' : '-100%', 
           backgroundColor: '#efba46',
           padding: '30px 20px',
-		  borderTopLeftRadius: '0px',
+		      borderTopLeftRadius: '0px',
           borderTopRightRadius: '0px',
           boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
-          transition: 'bottom 0.3s ease-in-out', // Плавная анимация
+          transition: 'bottom 0.3s ease-in-out', 
           zIndex: 101
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h3>{text}</h3>
-          {/* Кнопка закрытия внутри панели */}
+          
           <button 
             onClick={() => setIsPanelOpen(false)}
             style={{ color: 'blue', border: 'none', background: 'transparent', fontSize: '20px', cursor: 'pointer' }}
@@ -74,25 +70,22 @@ function BottomPanelApp() {
 		
 		<div style={{height: '45vh'}}>
 		
-        <p>Здесь может располагаться любое содержимое: фильтры, меню, настройки.</p>
-		
-		
-		{/* Условный рендеринг: показываем форму или текст */}
+        <p>Место для всего </p>
+        
         {isFormVisible ? (
           <div>
-		  <form onSubmit={handleSubmit}>
+		   <form onSubmit={handleSubmit}>
           <input type="text" 
 				onChange={(e) => setFormData({ ...formData, name: e.target.value })} 
-				placeholder="Ваше имя" value={formData.name} 
+				placeholder="как" value={formData.name} 
 				/>
-		  
-          <button type="submit">Отправить</button>
+          <button type="submit">Запрос</button>
         </form>
 		  </div>
         ) : (
           <div className="success-message">
-            <h2>Спасибо!</h2>
-            <p>Ваша форма успешно отправлена.</p>
+            <h2>Запрос отправлен</h2>
+            <p>все ок не бойтесь нас мы негры</p>
           </div>
         )}
 		
