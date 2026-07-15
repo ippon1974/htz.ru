@@ -1,4 +1,4 @@
-		function MyComponent() {
+function MyComponent() {
             const greeting = "Привет Вован это тест JSX";
             return (
                 <div className="container">
