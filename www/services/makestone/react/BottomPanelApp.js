@@ -52,7 +52,7 @@ function BottomPanelApp() {
           left: 0,
           right: 0,
           bottom: isPanelOpen ? '0' : '-100%', // Появление или скрытие за экраном
-          backgroundColor: '#FFF',
+          backgroundColor: '#efba46',
           padding: '30px 20px',
 		  borderTopLeftRadius: '0px',
           borderTopRightRadius: '0px',
