@@ -1,26 +1,36 @@
 function BottomPanelApp() {
-	
+  const { useEffect } = React;
   const { useState } = React;
-  const { useRef } = React;
-  
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '' });
-  const [isLoading, setIsLoading] = useState(false);
-  
   const [isFormVisible, setIsFormVisible] = useState(true);
-  
-  const myhRef = useRef(null);
-  
+  const [isLoading, setIsLoading] = useState(false);
+
+  NProgress.configure({ 
+    parent: '#my-container',
+    showSpinner: false, 
+    speed: 150,
+    trickleSpeed: 10
+  });
+
   let text = document.querySelector("title").innerText;
-  
+
   const handleSubmit = (e) => {
 	  e.preventDefault();
 	  setIsFormVisible(false);
+    setIsLoading(true);
+    NProgress.start();
+
+    setTimeout(() => {
+      setIsLoading(false);
+      NProgress.done();
+    }, 1500);
+
+
 	  console.log(formData);
 	  };
 	  
   if (!setIsPanelOpen) return null;
-  
 
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
@@ -42,7 +52,7 @@ function BottomPanelApp() {
         />
       )}
 
-      <div 
+      <div id ="my-container"
         style={{
           position: 'fixed',
           left: 0,
@@ -58,11 +68,12 @@ function BottomPanelApp() {
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        
           <h3>{text}</h3>
           
           <button 
             onClick={() => setIsPanelOpen(false)}
-            style={{ color: 'blue', border: 'none', background: 'transparent', fontSize: '20px', cursor: 'pointer' }}
+            style={{ color: '#600', border: 'none', background: 'transparent', fontSize: '20px', cursor: 'pointer' }}
           >
             &times;
           </button>
@@ -71,16 +82,21 @@ function BottomPanelApp() {
 		<div style={{height: '45vh'}}>
 		
         <p>Место для всего </p>
-        
+
         {isFormVisible ? (
-          <div>
-		   <form onSubmit={handleSubmit}>
-          <input type="text" 
+
+       <div>
+		   <form onSubmit={handleSubmit} disabled={isLoading}>
+        <input type="text" 
 				onChange={(e) => setFormData({ ...formData, name: e.target.value })} 
 				placeholder="как" value={formData.name} 
 				/>
-          <button type="submit">Запрос</button>
+        <button type="submit">
+        {isLoading ? 'Loading...' : 'Отправить'}
+        </button>
+
         </form>
+
 		  </div>
         ) : (
           <div className="success-message">
@@ -95,6 +111,7 @@ function BottomPanelApp() {
     </div>
   );
 }
+
 // Render the component into the DOM container
         const container = document.getElementById('root');
         const root = ReactDOM.createRoot(container);

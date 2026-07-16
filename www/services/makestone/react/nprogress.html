@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример NProgress</title>
+    
+    <!-- 1. Подключаем стили NProgress -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+</head>
+<body>
+
+    <h2>Индикатор загрузки NProgress</h2>
+    <p>Нажмите на кнопки, чтобы увидеть прогресс-бар в действии.</p>
+
+    <!-- Кнопки управления -->
+    <button onclick="NProgress.start()">Начать загрузку</button>
+    <button onclick="NProgress.done()">Завершить загрузку</button>
+
+    <!-- 2. Подключаем JS библиотеки NProgress -->
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+    <!-- Скрипт для симуляции реального процесса (опционально) -->
+    <script>
+        // Можно настроить параметры, например, убрать вращающийся значок (спиннер)
+        NProgress.configure({ trickleSpeed: 350, minimum: 0.955, showSpinner: false, speed: 2500 });
+
+        // Пример: симуляция загрузки страницы
+        window.onload = function() {
+            NProgress.start(); // Запуск при начале загрузки страницы
+            NProgress.set(0.8)
+			NProgress.inc()
+            // Завершаем через 2 секунды (симуляция полной загрузки)
+            setTimeout(function() {
+                NProgress.done();
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
