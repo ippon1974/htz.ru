@@ -1,15 +1,16 @@
 function BottomPanelApp() {
-  const { useEffect } = React;
   const { useState } = React;
+  const{ useLayoutEffect } = React;
+  const{ useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false });
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   NProgress.configure({ 
     parent: '#my-container',
     showSpinner: false, 
-    speed: 150,
+    speed: 1050,
     trickleSpeed: 10
   });
 
@@ -17,19 +18,38 @@ function BottomPanelApp() {
 
   const handleSubmit = (e) => {
 	  e.preventDefault();
-	  setIsFormVisible(false);
-    setIsLoading(true);
-    NProgress.start();
 
+    setIsFormVisible(false);
+    setIsLoading(true);
+
+    NProgress.start();
+    
     setTimeout(() => {
       setIsLoading(false);
       NProgress.done();
     }, 1500);
-
-
 	  console.log(formData);
 	  };
-	  
+
+
+    function infoblockreturn() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('done!');
+        },6500);
+      });
+   }
+   
+   infoblockreturn().then((done) => {
+    const elements = document.getElementsByClassName('myDiv');
+    const element = document.getElementById('myDiv');
+    if (element) {
+      element.textContent = "Success!";
+     }
+     console.log(done);
+   });
+
+   
   if (!setIsPanelOpen) return null;
 
   return (
@@ -81,27 +101,62 @@ function BottomPanelApp() {
 		
 		<div style={{height: '45vh'}}>
 		
-        <p>Место для всего </p>
-
         {isFormVisible ? (
 
        <div>
+
 		   <form onSubmit={handleSubmit} disabled={isLoading}>
-        <input type="text" 
-				onChange={(e) => setFormData({ ...formData, name: e.target.value })} 
-				placeholder="как" value={formData.name} 
+       
+       <div className="parent-form">
+
+       <div className="form-group">
+        <input 
+        type="text"
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}				
+        placeholder="ФИО" value={formData.name}
 				/>
+       </div>
+
+       <div className="form-group">
+        <input type="text" 
+				onChange={(e) => setFormData({ ...formData, phone: e.target.value })} 
+				placeholder="Телефон" value={formData.phone} 
+				/>
+        </div>
+
+        <div className="form-group">
+        <input type="text" 
+				onChange={(e) => setFormData({ ...formData, email: e.target.value })} 
+				placeholder="Электропочта" value={formData.email} 
+				/>
+        </div>
+
+        <div className="form-group">
+        <textarea
+				onChange={(e) => setFormData({ ...formData, message: e.target.value })} 
+				placeholder="Сообщение" value={formData.message} 
+				/>
+       </div>
+      
+       <div className="form-group">
+        <input type="checkbox"
+				onChange={(e) => setFormData({ ...formData, check: e.target.checked })} 
+				value={formData.check} 
+				/>
+        </div>
+
+        <div className="form-group">
         <button type="submit">
         {isLoading ? 'Loading...' : 'Отправить'}
         </button>
-
+        </div>
+        </div>
         </form>
-
-		  </div>
+		   </div>
         ) : (
+
           <div className="success-message">
-            <h2>Запрос отправлен</h2>
-            <p>все ок не бойтесь нас мы негры</p>
+            <h1 id="myDiv"></h1>
           </div>
         )}
 		
