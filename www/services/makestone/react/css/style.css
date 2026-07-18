@@ -1,3 +1,11 @@
 .parent-form{
     background-color: bisque;
 }
+
+input[type="text"] {
+    background-color: rgb(213, 207, 207); /* Uses a hex code */
+  }
+  
+  input[type="number"] {
+    background-color: white; /* Uses an RGB value */
+  }

@@ -3,40 +3,11 @@ function BottomPanelApp(props) {
   const{ useLayoutEffect } = React;
   const{ useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', age: '', check: false});
-  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false });
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-
-  const validateName = (name) => {
-    return typeof name === 'string' && name.trim().length > 2;
-  };
-  const [name, setName] = useState('');
-  const [nameValid, setNameValid] = useState(validateName(''));
-  const onNameChange = (e) => {
-    setName(e.target.value);
-    setNameValid(validateName(e.target.value));
-    setFormData({ ...formData, name: e.target.value });
- }
-
-  const validateAge = (age) =>  age>=5;
-  const [age, setAge] = useState('');
-  const [ageValid, setAgeValid] = useState(validateAge(''));
-  const onAgeChange = (e) => {
-    setAge(e.target.value);
-    setAgeValid(validateAge(e.target.value));
-    setFormData({ ...formData, age: e.target.value });
- }
-
-  const validateCheck = (check) =>  check === false;
-  const [check, setCheck] = useState('');
-  const [checkValid, setCheckValid] = useState(validateCheck(false));
-  const onCheckChange = (e) => {
-    setCheck(e.target.checked);
-    setCheckValid(validateCheck(e.target.checked));
-    setFormData({ ...formData, check: e.target.checked });
- }
+  
 
   NProgress.configure({ 
     parent: '#my-container',
@@ -50,12 +21,6 @@ function BottomPanelApp(props) {
   const handleSubmit = (e) => {
 	  e.preventDefault();
 
-
-    if(nameValid && ageValid && !checkValid){
-      console.log(`Имя: ${name} Возраст: ${age} Права ${check}`);
-  }
-  else console.log("Данные не корректны")
-   
     setIsFormVisible(false);
     setIsLoading(true);
     NProgress.start();
@@ -125,7 +90,7 @@ function BottomPanelApp(props) {
         
           <h3>{text}</h3>
           
-          <button
+          <button 
             onClick={() => setIsPanelOpen(false)}
             style={{ color: '#600', border: 'none', background: 'transparent', fontSize: '20px', cursor: 'pointer' }}
           >
@@ -139,32 +104,55 @@ function BottomPanelApp(props) {
 
        <div>
 
-      <form onSubmit={handleSubmit}>
-            
+		   <form onSubmit={handleSubmit} disabled={isLoading}>
+       
+       <div className="parent-form">
 
-                <label>Имя:</label><br />
-                <input type="text" 
-                    value={name} 
-                    onChange={onNameChange}
-                    style={{backgroundColor:ageValid?'white':'white', border: nameValid?"medium solid green":"medium solid red"}} />
-                   <br /><br />
-                <label>Возраст:</label><br />
-                <input type="number" 
-                    value={age} 
-                    onChange={onAgeChange}  
-                    style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
-                <br /><br />
-                <label>Права:</label><br />
-                <input type="checkbox" className="custom-box"
-                    value={check} 
-                    onChange={onCheckChange} 
-                     />
-            
-             <button disabled={!nameValid || !ageValid || checkValid} type="submit">
-             Отправить
-            </button>
+       <div className="form-group">
+        <input 
+        type="text"
+        onChange={(e) => setFormData({ ...formData, name: e.target.value})}
+        placeholder="ФИО"
+        value={formData.name}
+        //style={{borderColor: nameValid?"green":"red"}}
+				/>
+       </div>
+
+       <div className="form-group">
+        <input type="text" 
+				onChange={(e) => setFormData({ ...formData, phone: e.target.value })} 
+				placeholder="Телефон" value={formData.phone} 
+				/>
+        </div>
+
+        <div className="form-group">
+        <input type="text" 
+				onChange={(e) => setFormData({ ...formData, email: e.target.value })} 
+				placeholder="Электропочта" value={formData.email} 
+				/>
+        </div>
+
+        <div className="form-group">
+        <textarea
+				onChange={(e) => setFormData({ ...formData, message: e.target.value})} 
+				placeholder="Сообщение" value={formData.message} 
+				/>
+       </div>
+      
+       <div className="form-group">
+        <input type="checkbox"
+				onChange={(e) => setFormData({ ...formData, check: e.target.checked })} 
+				value={formData.check} 
+				/>
+        </div>
+
+        <div className="form-group">
+        <button type="submit">
+        {isLoading ? 'Loading...' : 'Отправить'}
+        </button>
+        </div>
+        </div>
         </form>
-
 		   </div>
         ) : (
 
