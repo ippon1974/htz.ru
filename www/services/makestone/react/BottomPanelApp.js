@@ -1,11 +1,26 @@
-function BottomPanelApp(props) {
+function BottomPanelApp() {
   const { useState } = React;
+  const { useEffect } = React;
+  const { useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false});
   const [errors, setErrors] = useState({});
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
+
+ // 1. Create a reference to target the first input element
+ const inputRef = useRef(null);
+
+ useEffect(() => {
+   // 2. Trigger focus as soon as the component loads into the DOM
+   if (inputRef.current) {
+    inputRef.current.focus();
+   }
+ }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
+
+
+  
   const validateName = (name) => {return typeof name === 'string' && name.trim().length > 2;};
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(validateName(''));
@@ -164,10 +179,11 @@ function BottomPanelApp(props) {
       <form onSubmit={handleSubmit}>
             
                 <label>Имя:</label><br />
-                   <input type="text" 
+                   <input type="text" autoFocus
+                    ref={inputRef}
                     value={name} 
                     onChange={onNameChange}
-                    style={{backgroundColor:ageValid?'white':'white', border: nameValid?"medium solid green":"medium solid red"}} />
+                    style={{backgroundColor:nameValid?'white':'white', border: nameValid?"medium solid green":"medium solid red"}} />
                    <br /><br />
 
                    <label>Телефон:</label><br />
