@@ -105,7 +105,7 @@ $result[
 			<dd>Если у вас есть вопросы по изготовлению изделий из природного камня: <strong>камины</strong>, <strong>подоконники</strong>, <strong>лестницы</strong>, <strong>цокали</strong>, <strong>кухни</strong>, <strong>бордюры</strong> обращайтесь за помощью по телефон: ^my_phone[]</dd>
 			
 </dl>
-^mailform[]
+^rem{ ^mailform[] }
 ^rem{ Callback }
 <p><img src="/stone/img/$allstone.img" alt="^if(def $allstone.name_en){^allstone.name_en.match[[\[\]]][g]{}}{$allstone.name_en}" /></p>
 <p>P.S. <em>$allstone.application</em></p>

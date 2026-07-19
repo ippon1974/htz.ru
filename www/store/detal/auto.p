@@ -81,14 +81,15 @@
 			<dd>^my_email_stone[]</dd>
 			<dt><a href="/store/stone_natural/services/">Изделия из камня</a>:</dt>
 			<dd>Если у вас есть вопросы по изготовлению изделий из природного камня: <strong>камины</strong>, <strong>подоконники</strong>, <strong>лестницы</strong>, <strong>цокали</strong>, <strong>кухни</strong>, <strong>бордюры</strong> обращайтесь за помощью по телефону: ^my_phone[]</dd>
-			<dt><strong>Запрос</strong></dt>
+			^rem{<<dt><strong>Запрос </strong></dt>}
 			<dd>
-            <form class="callme" method="post">
+			^rem{<form class="callme" method="post">
             <input onclick="document.getElementById('divCallMe').style.display=document.getElementById('divCallMe').style.display!='block'?'block':'none'^; return false^;" type="Submit" style="font-size: 1.0em^; border-right: 2px solid #484848^; border-bottom: 2px solid #484848^; border-top: 2px solid #fcfcfc^; border-left: 2px solid #fcfcfc^; color:#000^; width: auto^; padding: 0 5px^; " value="Запрос" />
-            </form>
+            </form>}
+            
             </dd>
 </dl>
-^Callback[]
+^rem{^Callback[]}
 </div>
 <div>
 <div style="float: leftt^; clear: both^;">
