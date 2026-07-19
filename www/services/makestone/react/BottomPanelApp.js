@@ -20,7 +20,6 @@ function BottomPanelApp() {
  }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
 
 
-  
   const validateName = (name) => {return typeof name === 'string' && name.trim().length > 2;};
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(validateName(''));
@@ -180,7 +179,7 @@ function BottomPanelApp() {
             
                 <label>Имя:</label><br />
                    <input type="text" autoFocus
-                    ref={inputRef}
+                    //ref={inputRef}
                     value={name} 
                     onChange={onNameChange}
                     style={{backgroundColor:nameValid?'white':'white', border: nameValid?"medium solid green":"medium solid red"}} />
