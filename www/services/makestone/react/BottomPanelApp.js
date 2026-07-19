@@ -1,23 +1,45 @@
 function BottomPanelApp(props) {
   const { useState } = React;
-  const{ useLayoutEffect } = React;
-  const{ useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', age: '', check: false});
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false});
   const [errors, setErrors] = useState({});
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-
-  const validateName = (name) => {
-    return typeof name === 'string' && name.trim().length > 2;
-  };
+  const validateName = (name) => {return typeof name === 'string' && name.trim().length > 2;};
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(validateName(''));
   const onNameChange = (e) => {
     setName(e.target.value);
     setNameValid(validateName(e.target.value));
     setFormData({ ...formData, name: e.target.value });
+ }
+
+  const validatePhone = (phone) => {return typeof phone === 'string' && phone.trim().length > 2;};
+  const [phone, setPhone] = useState('');
+  const [phoneValid, setPhoneValid] = useState(validatePhone(''));
+  const onPhoneChange = (e) => {
+    setPhone(e.target.value);
+    setPhoneValid(validatePhone(e.target.value));
+    setFormData({ ...formData, phone: e.target.value });
+ }
+
+  const validateEmail = (email) => {return typeof email === 'string' && email.trim().length > 2;};
+  const [email, setEmail] = useState('');
+  const [emailValid, setEmailValid] = useState(validateEmail(''));
+  const onEmailChange = (e) => {
+    setEmail(e.target.value);
+    setEmailValid(validateEmail(e.target.value));
+    setFormData({ ...formData, email: e.target.value });
+ }
+
+  const validateMessage = (message) => {return typeof message === 'string' && message.trim().length > 2;};
+  const [message, setMessage] = useState('');
+  const [messageValid, setMessageValid] = useState(validateMessage(''));
+  const onMessageChange = (e) => {
+    setMessage(e.target.value);
+    setMessageValid(validateMessage(e.target.value));
+    setFormData({ ...formData, message: e.target.value });
  }
 
   const validateAge = (age) =>  age>=5;
@@ -51,8 +73,8 @@ function BottomPanelApp(props) {
 	  e.preventDefault();
 
 
-    if(nameValid && ageValid && !checkValid){
-      console.log(`Имя: ${name} Возраст: ${age} Права ${check}`);
+    if(nameValid && phoneValid && emailValid && messageValid && !checkValid){
+      console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
   }
   else console.log("Данные не корректны")
    
@@ -141,26 +163,47 @@ function BottomPanelApp(props) {
 
       <form onSubmit={handleSubmit}>
             
-
                 <label>Имя:</label><br />
-                <input type="text" 
+                   <input type="text" 
                     value={name} 
                     onChange={onNameChange}
                     style={{backgroundColor:ageValid?'white':'white', border: nameValid?"medium solid green":"medium solid red"}} />
                    <br /><br />
-                <label>Возраст:</label><br />
-                <input type="number" 
-                    value={age} 
-                    onChange={onAgeChange}  
-                    style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
-                <br /><br />
+
+                   <label>Телефон:</label><br />
+                   <input type="tel" 
+                    value={phone} 
+                    onChange={onPhoneChange}
+                    style={{backgroundColor:phoneValid?'white':'white', border: phoneValid?"medium solid green":"medium solid red"}} />
+                   <br /><br />
+
+                   <label>Элетропочта:</label><br />
+                   <input type="text"
+                    value={email} 
+                    onChange={onEmailChange}
+                    style={{backgroundColor:emailValid?'white':'white', border: emailValid?"medium solid green":"medium solid red"}} />
+                   <br /><br />
+
+                   <label>Сообщение:</label><br />
+                   <textarea
+                    value={message} 
+                    onChange={onMessageChange}
+                    style={{backgroundColor:messageValid?'white':'white', border: messageValid?"medium solid green":"medium solid red"}} />
+                   <br /><br />
+                
+                  {/* <label>Лет:</label><br />
+                  <input type="number" 
+                      value={age} 
+                      onChange={onAgeChange}  
+                      style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
+                  <br /><br /> */}
+                  
                 <label>Права:</label><br />
                 <input type="checkbox" className="custom-box"
                     value={check} 
                     onChange={onCheckChange} 
                      />
-            
-             <button disabled={!nameValid || !ageValid || checkValid} type="submit">
+             <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
              Отправить
             </button>
         </form>
