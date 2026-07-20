@@ -104,39 +104,27 @@ $navi_sub_nav[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 @detailMaterials[]
 ^if(def $form:id){
 $showMaterialsPrice[^db::getMaterialPrice[$.id(^form:id.int(0))]]
-^navi_sub_nav[]
-<h2>${showMaterialsPrice.material_name_ru}. Толщина: ${showMaterialsPrice.material_size} мм. Разрезать гидроабразивом.</h2>
-<div id="tehnobody">
-    <span>^dtf:format[%d %h %Y;]</span>
-    <h3>Услуги гидроабразивной резки в Москве и МО.</h3>
-    $text(^eval($showMaterialsPrice.material_price_rub))
-    <span>Цена раскроя гидроабразивом за 1 (один) погонный метр.</span>
-    $text_nds($text/6.55557)
-   <h4>^number_format[^text.format[%.2f];,;.](2) руб.</h4>
-   <div class="price">^int2str:money2str($text) за 1 (один) погонный метр.</div>
-   <dl id="info">
-            <dt>Регион:</dt>
-			<dd>Москва и Московская область</dd>
-			<dt>Телефон:</dt>
-			<dd>^my_phone_waterjet[]</dd>
-			<dt>Почта:</dt> 
-			<dd>^my_email[]</dd>
-			<dt>Режим работы</dt>
-			<dd>Пн-Пт с 9:00 до 19:00</dd>
-			</dl>
-			
-			<h3>Принимаем форматы файлоф</h3>
+
+<div id="">^navi_sub_nav[]
+<h1>${showMaterialsPrice.material_name_ru}. Толщина листа: ${showMaterialsPrice.material_size} мм. Гидроабразивная резка.</h1>
+</div>
+<div id="">
+
+     
+	 $text(^eval($showMaterialsPrice.material_price_rub))
+	<p>Стоимость раскроя гидроабразивом за один погонный метр без НДС: <strong>^number_format[^text.format[%.2f];,;.](2)</strong> руб. Толщина листа: ${showMaterialsPrice.material_size} мм.</p>
+			<h3>Принимаем файлы с вашими чертежами</h3>
 			<ul>
-			<li>Для простых чертежей: PDF, TXT, JPG, GIF, скан</li>
-			<li>Для сложных чертежей: DWG, DXF, Ai</li>
+			<li>Для простых чертежей, форматы: PDF, TXT, JPG, GIF, скан</li>
+			<li>Для сложных чертежей, форматы: DWG, DXF, Ai</li>
 			</ul>
 			
-			<div style="background-color: #FFFFE0^; padding:5px 5px^;">
+			<div>
 			<h3>Минимальный заказ</h3>
-			<p style="font-size: 1.3em^;">Не менее 15000 тыс. рублей.</p>
+			<p>Не менее 15000 тыс. рублей.</p>
 			</div>
 
-			<h3>Параметры станка &laquo^;Multi Cam&raquo^;</h3>
+			<h3>Параметры станка</h3>
 			<br />
 			<table cellspacing="0">
             <tr>
@@ -158,7 +146,7 @@ $showMaterialsPrice[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 			</table>
 			
 			<h3>Расположение производства</h3>
-			<p style="font-size: 1.3em^;">^my_adress_civekwaterjet[]</p>
+			<p style="font-size: 1.3em^;">^my_adress_civekwaterjet[]<br />Электронная почта для заказа: ^my_email[]</p>
             <h3>Прилегающие населенные пункты</h3>
 			<p style="font-size: 1.3em^;">Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково</p>
 	</div>
