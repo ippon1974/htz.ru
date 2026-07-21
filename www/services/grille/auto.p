@@ -72,7 +72,6 @@ $result[]
 $showGrille[^db::getGrille[]]
 $showPatterns[^db::getWaterjetPatterns[]]
 <p>Компания &laquo^;Civek Water Jet&raquo^; предлагает Вам свои услуги по производству декоративных решеток из различных материалов.</p>
-<p>Калькулятор вентиляционных решеток (<a href="http://airconcept.ru/catalog/grills" target="_blank">airconcept.ru</a>)</p>
 <ul class="listing">
 ^showGrille.menu{
 <li>
