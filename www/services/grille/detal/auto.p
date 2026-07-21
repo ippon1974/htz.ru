@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -50,7 +51,7 @@ $result[$keywords.pattern_keywords]
 @navi_sub_nav[]
 ^hWaterjetMaterials[]
 $navi_sub_nav[^db::getGrille[$.id(^form:id.int(0))]]
-<div style="margin: 0 0 0.8em 0^; font-size: 1.2em^;"><a href="/services/grille/" title="Производство декоративных решеток">Производство декоративных решеток</a> / <strong>$navi_sub_nav.grille_name</strong></div>
+<div style="margin: 0 0 0.8em^; font-size: 1.2em^;"><a href="/services/grille/" title="Производство декоративных решеток">Производство декоративных решеток</a> / <strong>$navi_sub_nav.grille_name</strong></div>
 #@navi_sub_nav[]
 
 @detailGrille[]
@@ -62,7 +63,7 @@ $showPatterns[^db::getWaterjetPatterns[]]
 $nextLeft[^db::getGrilleNextLeft[$.id(^form:id.int(0))]]
 $nextRight[^db::getGrilleNextRight[$.id(^form:id.int(0))]]
 ^navi_sub_nav[]
-<h2>$showGrille.grille_name</h2>
+<h1>$showGrille.grille_name</h1>
 <h3>ID: $showGrille.id</h3>
 <div id="tehnobody">
 	^if(def $showGrille.grille_desc){<h3>О работе</h3>^untaint[as-is]{$showGrille.grille_desc}}{}

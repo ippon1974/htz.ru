@@ -9,6 +9,26 @@ function BottomPanelApp() {
   const [isLoading, setIsLoading] = useState(false);
 
 
+  async function getData() {
+    try {
+      const response = await fetch('http://localhost:3000/posts/');
+      
+      // Проверяем, прошел ли запрос успешно
+      if (!response.ok) {
+        throw new Error('Ошибка на сервере');
+      }
+      
+      const data = await response.json();
+      console.log('Данные JSON ', data);
+      
+    } catch (error) {
+      console.log('Что-то пошло не так:', error.message);
+    }
+  }
+  getData();
+
+
+
  // 1. Create a reference to target the first input element
  const inputRef = useRef(null);
 
@@ -85,8 +105,7 @@ function BottomPanelApp() {
 
   const handleSubmit = (e) => {
 	  e.preventDefault();
-
-
+  
     if(nameValid && phoneValid && emailValid && messageValid && !checkValid){
       console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
   }

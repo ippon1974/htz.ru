@@ -105,9 +105,10 @@ $navi_sub_nav[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 ^if(def $form:id){
 $showMaterialsPrice[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 
-<div id="">^navi_sub_nav[]
+<div>^navi_sub_nav[]
 <h1>${showMaterialsPrice.material_name_ru}. Толщина листа: ${showMaterialsPrice.material_size} мм. Гидроабразивная резка.</h1>
 </div>
+
 <div id="">
 
      

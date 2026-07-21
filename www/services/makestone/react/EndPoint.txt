@@ -1,0 +1,3 @@
+http://90.156.202.71:7000/materials/all
+http://90.156.202.71:7000/news/all
+http://90.156.202.71:7000/works/all
