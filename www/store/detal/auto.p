@@ -52,8 +52,6 @@
  }{}
 #@keywords[]
 
-
-
 @Info[]
 ^if(def $form:id){
  $info[^getProductsStore[$.id(^form:id.int(0))]]
