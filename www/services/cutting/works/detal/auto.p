@@ -13,8 +13,8 @@
 
 <link rel="stylesheet" type="text/css" href="/css/callback_mini.css">
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
-
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -83,7 +83,9 @@ $navi_sub_nav[^db::getWaterjetWorks[$.id(^form:id.int(0))]]
 ^hWaterjetMaterials[]
 $showWorks[^db::getWaterjetWorks[$.id(^form:id.int(0))]]
 ^navi_sub_nav[]
-<h2>${showWorks.work_title}. $h_waterjet_material.material_name_ru.[$showWorks.work_materials_type_id] толщиной ${showWorks.work_materials_size} мм. Гидроабразив.</h2>
+<div>
+<h1>${showWorks.work_title}. $h_waterjet_material.material_name_ru.[$showWorks.work_materials_type_id] толщиной ${showWorks.work_materials_size} мм. Гидроабразив.</h1>
+</div>
 <div id="tehnobody">
             <dl id="info">
 			<dt>Технология:</dt>

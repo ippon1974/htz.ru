@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/js/main.js"> </script>
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <link rel="alternate" type="application/rss+xml" title="" href="http://www.htz.ru/news/rss/rss/" />
@@ -73,8 +74,4 @@ $works_list[^db::getWaterjetWorks[]]
 <ul class="listing">
 	^works_list.menu{<li><dl><dt class="dateindex">^dtf:format[%d.%m.%Y;$works_list.work_delivery_dt]</dt><dd><a href="/services/cutting/works/detal/id/$works_list.id/" title="${works_list.work_title}. Гидроабразив.">$works_list.work_title</a></dd><dd>Материал: ${h_waterjet_material.material_name_ru.[$works_list.work_materials_type_id]}. Толщина: ${works_list.work_materials_size} мм. Длина раскроя: ${works_list.work_meters_count} пог. метр.</dd></dl></li>}
 </ul>
-
-
-
-
 #@works_list[]
