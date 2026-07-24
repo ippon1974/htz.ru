@@ -1,8 +1,7 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
-//header("Access-Control-Allow-Origin: *"); // Adjust for security as needed
-header('Access-Control-Allow-Origin: https://htz.ru/');
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Origin: *"); // Adjust for security as needed
+header("Access-Control-Allow-Methods: POST, GET");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 $inputJSON = file_get_contents('php://input');
@@ -26,4 +25,12 @@ if (json_last_error() === JSON_ERROR_NONE) {
     );
 }
 echo json_encode($response);
+
+$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$txt = "Mickey Mouse\n";
+fwrite($myfile, $txt);
+$txt = $inputJSON;
+fwrite($myfile, $txt);
+fclose($myfile);
+
 ?>

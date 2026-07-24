@@ -3,4 +3,3 @@ AddType application/x-httpd-php5 .php
 RewriteEngine On
 RewriteBase /services/makestone/react/json
 RewriteRule (.+)(/)$ $1.html [L,QSA]
-

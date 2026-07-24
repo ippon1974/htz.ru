@@ -110,21 +110,35 @@ $showMaterialsPrice[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 </div>
 
 <div id="">
+      $text(^eval($showMaterialsPrice.material_price_rub))
+     <table cellspacing="0">
+            <tr>
+            <th>Материал</th>
+			<th style="text-align: center^; vertical-align: middle^;">Толщина листа</th>
+			<th style="text-align: center^; vertical-align: middle^;">Цена за 1 пог. метр.</th>
+			<th>НДС</th>
+			</tr>
+			<tr>
+			<td>${showMaterialsPrice.material_name_ru}</td>
+			<td style="text-align: center^; vertical-align: middle^;">${showMaterialsPrice.material_size} мм.</td>
+			<td style="text-align: center^; vertical-align: middle^;"><strong>^number_format[^text.format[%.2f];,;.](2) </strong>руб</td>
+			<td>Нет</td>
+			</tr>
+			</table>
 
-     
-	 $text(^eval($showMaterialsPrice.material_price_rub))
-	<p>Стоимость раскроя гидроабразивом за один погонный метр без НДС: <strong>^number_format[^text.format[%.2f];,;.](2)</strong> руб. Толщина листа: ${showMaterialsPrice.material_size} мм.</p>
+	        <p>Стоимость раскроя гидроабразивом за один погонный метр без НДС: <strong>^number_format[^text.format[%.2f];,;.](2)</strong> руб. Толщина листа: ${showMaterialsPrice.material_size} мм.</p>
+			
+            <div>
+			<h3>Минимальный заказ</h3>
+			<p>Не менее 15000 тыс. рублей.</p>
+			</div>
+
 			<h3>Принимаем файлы с вашими чертежами</h3>
 			<ul>
 			<li>Для простых чертежей, форматы: PDF, TXT, JPG, GIF, скан</li>
 			<li>Для сложных чертежей, форматы: DWG, DXF, Ai</li>
 			</ul>
 			
-			<div>
-			<h3>Минимальный заказ</h3>
-			<p>Не менее 15000 тыс. рублей.</p>
-			</div>
-
 			<h3>Параметры станка</h3>
 			<br />
 			<table cellspacing="0">

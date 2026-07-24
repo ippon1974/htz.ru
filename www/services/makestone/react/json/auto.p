@@ -8,6 +8,7 @@ $hes[
 	$.boy[$request:method] 
 	$.field[$parts.0]
 	$.body[$request:body]
+	$.leb[$response.body]
 ]
 
 $h[ 
