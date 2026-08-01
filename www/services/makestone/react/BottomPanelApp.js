@@ -28,7 +28,6 @@ function BottomPanelApp() {
   getData();
 
 
-
  // 1. Create a reference to target the first input element
  const inputRef = useRef(null);
 
@@ -173,6 +172,7 @@ function BottomPanelApp() {
           borderTopRightRadius: '0px',
           boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
           transition: 'bottom 0.3s ease-in-out', 
+          scrollBehavior: "smooth",
           zIndex: 101
         }}
       >
@@ -188,7 +188,7 @@ function BottomPanelApp() {
           </button>
         </div>	
 		
-		<div style={{height: '45vh'}}>
+		<div style={{height: '45vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
 		
         {isFormVisible ? (
 
@@ -201,28 +201,28 @@ function BottomPanelApp() {
                     //ref={inputRef}
                     value={name} 
                     onChange={onNameChange}
-                    style={{backgroundColor:nameValid?'white':'white', border: nameValid?"medium solid green":"medium solid red"}} />
+                    style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
                    <br /><br />
 
                    <label>Телефон:</label><br />
                    <input type="tel" 
                     value={phone} 
                     onChange={onPhoneChange}
-                    style={{backgroundColor:phoneValid?'white':'white', border: phoneValid?"medium solid green":"medium solid red"}} />
+                    style={{backgroundColor:phoneValid?'white':'white', border: phoneValid?"thin solid green":"thin solid red"}} />
                    <br /><br />
 
                    <label>Элетропочта:</label><br />
                    <input type="text"
                     value={email} 
                     onChange={onEmailChange}
-                    style={{backgroundColor:emailValid?'white':'white', border: emailValid?"medium solid green":"medium solid red"}} />
+                    style={{backgroundColor:emailValid?'white':'white', border: emailValid?"thin solid green":"thin solid red"}} />
                    <br /><br />
 
                    <label>Сообщение:</label><br />
                    <textarea
                     value={message} 
                     onChange={onMessageChange}
-                    style={{backgroundColor:messageValid?'white':'white', border: messageValid?"medium solid green":"medium solid red"}} />
+                    style={{backgroundColor:messageValid?'white':'white', border: messageValid?"thin solid green":"thin solid red"}} />
                    <br /><br />
                 
                   {/* <label>Лет:</label><br />
@@ -241,6 +241,12 @@ function BottomPanelApp() {
              Отправить
             </button>
         </form>
+
+           <br /> <br /> <br /> <br />
+           <br /> <br /> <br /> <br />
+           <br /> <br /> <br /> <br />
+           <br /> <br /> <br /> <br />
+           <br /> <br /> <br /> <br />
 
 		   </div>
         ) : (

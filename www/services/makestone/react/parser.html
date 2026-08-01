@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <head>
-    <title>Test POST</title>
+    <meta charset="UTF-8">
+    <title>Document Title</title>
 </head>
   
 <body>
+$now[^date::now[]]
 
-<h1>OSEL</h1>
+<h1>Test POST</h1>
 
 <form id="formElem">
-  <input type="text" name="name" value="Vovan">
-  <input type="text" name="surname" value="Osel">
+  <input type="hidden" name="page_title" value="">
+  <input type="hidden" name="page_uri" id="urlInput" value="">
+  <input type="hidden" name="dt" value="^now.sql-string[]">
+  <input type="text" name="name" value="name"><br /><br />
+  <input type="text" name="phone" value="+79255853371"><br /><br />
+  <input type="text" name="email" value="box@wcut.ru"><br /><br />
+  <textarea name="message" value=""></textarea><br /><br />
+  <input type="checkbox" name="check" value="1" />
   <button type="submit">Submit</button>
 </form>
 
 <script>
+    
+	const pageTitle = document.title;
+	document.getElementById('page_title').value = pageTitle;
+	
+	// ∆дем полной загрузки страницы
+	window.onload = function() {
+	// ѕолучаем текущий URL и присваиваем его значению пол€ input
+	document.getElementById('urlInput').value = location.href;
+	};
 
+ console.log("urk ", window.location.href);
  formElem.onsubmit = async (e) => {
   e.preventDefault();
+  
   object= {};
   const formData = new FormData(formElem);
+  const dt = formData.get('dt'); 
   const name = formData.get('name'); 
-  const surname = formData.get('surname');
+  const phone = formData.get('phone');
+  const email = formData.get('email');
+  const message = formData.get('message');
+  const check = formData.get('check');
   formData.forEach((value, key) => object[key] = value);
   var txt = JSON.stringify(object);
   console.log(txt);
@@ -36,7 +59,7 @@
     return;
   }
   const data = await response.json(); // Safe to call now
-  console.log("data ", data);
+  console.log("data from Server..." , data);
 };
 
 </script>
