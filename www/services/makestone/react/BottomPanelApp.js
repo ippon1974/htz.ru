@@ -11,7 +11,7 @@ function BottomPanelApp() {
 
   async function getData() {
     try {
-      const response = await fetch('http://localhost:3000/posts/');
+      const response = await fetch('http://htz.ru/api/post/order/makestone');
       
       // Проверяем, прошел ли запрос успешно
       if (!response.ok) {
@@ -167,7 +167,7 @@ function BottomPanelApp() {
           right: 0,
           bottom: isPanelOpen ? '0' : '-100%', 
           backgroundColor: '#efba46',
-          padding: '30px 20px',
+          padding: '20px 20px',
 		      borderTopLeftRadius: '0px',
           borderTopRightRadius: '0px',
           boxShadow: '0 -2px 10px rgba(0,0,0,0.1)',
@@ -178,21 +178,24 @@ function BottomPanelApp() {
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
-          <h3>{text}</h3>
-          
-          <button
+        {/* <h1></h1>
+
+        <button
             onClick={() => setIsPanelOpen(false)}
             style={{ color: '#600', border: 'none', background: 'transparent', fontSize: '20px', cursor: 'pointer' }}
           >
             &times;
-          </button>
-        </div>	
+          </button> */}
+          
+        </div>
 		
-		<div style={{height: '45vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
+		<div style={{height: '70vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
 		
+     <h3>{text}</h3>
+
         {isFormVisible ? (
 
-       <div>
+      <div>
 
       <form onSubmit={handleSubmit}>
             
