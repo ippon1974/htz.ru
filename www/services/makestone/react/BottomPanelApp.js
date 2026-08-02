@@ -11,7 +11,7 @@ function BottomPanelApp() {
 
   async function getData() {
     try {
-      const response = await fetch('http://htz.ru/api/post/order/makestone');
+      const response = await fetch('https://htz.ru/api/post/order/makestone/');
       
       // Проверяем, прошел ли запрос успешно
       if (!response.ok) {
