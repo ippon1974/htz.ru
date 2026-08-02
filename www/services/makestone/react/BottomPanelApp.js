@@ -189,7 +189,7 @@ function BottomPanelApp() {
           
         </div>
 		
-		<div style={{height: '70vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
+		<div style={{height: '60vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
 		
      <h3>{text}</h3>
 
