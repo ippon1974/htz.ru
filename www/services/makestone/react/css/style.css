@@ -10,7 +10,19 @@ input[type="text"] {
     background-color: white; /* Uses an RGB value */
   }
 
- 
+
+  #my-container  .modalHeight{
+    max-height: 65vh;
+    overflow-y: auto;
+    scrollbar-color: "#369 #ecfdf5";
+    scrollbar-width: thin;
+  }
+
+  #my-container > div.modalHeight > .success-message {
+    max-height: 65vh;
+  }
+
+
 .parent {
   display: grid;
   grid-template-areas:

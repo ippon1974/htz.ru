@@ -188,7 +188,7 @@ function BottomPanelApp() {
           
         </div>
 		
-		<div style={{height: '65vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
+      <div className="modalHeight">
 		
      <h3>{text}</h3>
 
@@ -261,6 +261,7 @@ function BottomPanelApp() {
 
           <div className="success-message">
             <h1 id="myDiv"></h1>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           </div>
         )}
 		
