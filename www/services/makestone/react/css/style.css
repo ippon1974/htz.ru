@@ -9,3 +9,183 @@ input[type="text"] {
   input[type="number"] {
     background-color: white; /* Uses an RGB value */
   }
+
+ 
+.parent {
+  display: grid;
+  grid-template-areas:
+    "head head head"
+    "address form contacts"
+    "map map map"
+    "copypage copypage copypage";
+  gap: 8px;
+}
+
+@media (max-width:321px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+    /* grid-template-columns: auto; */
+  }
+}
+
+@media (max-width:361px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:376px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:384px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:386px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:394px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:415px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:429px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:431px){
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:481px) {
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:768px) {
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+@media (max-width:1024px) {
+  .parent{
+    grid-template-areas:
+            "head head head"
+            "form form form"
+            "address address address"
+            "contacts contacts contacts"
+            "map map map"
+            "copypage copypage copypage";
+  }
+}
+
+.modal_header {
+  grid-area: head;
+}
+
+.modal_address {
+  grid-area: address;
+}
+
+.modal_form {
+  grid-area: form;
+}
+
+.modal_contacts {
+  grid-area: contacts;
+}
+
+.modal_map {
+  grid-area: map;
+}
+
+.modal_copy {
+  grid-area: copypage;
+}

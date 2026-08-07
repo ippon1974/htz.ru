@@ -7,8 +7,7 @@ function BottomPanelApp() {
   const [errors, setErrors] = useState({});
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-
-
+  
   async function getData() {
     try {
       const response = await fetch('https://htz.ru/api/post/order/makestone/');
@@ -142,7 +141,7 @@ function BottomPanelApp() {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-  
+
       <button 
         onClick={() => setIsPanelOpen(true)}
         style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
@@ -189,11 +188,11 @@ function BottomPanelApp() {
           
         </div>
 		
-		<div style={{height: '60vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
+		<div style={{height: '65vh', overflowY: 'auto', scrollbarColor: '#369 #ecfdf5', scrollbarWidth: 'thin'}}>
 		
      <h3>{text}</h3>
 
-        {isFormVisible ? (
+      {isFormVisible ? (
 
       <div>
 
@@ -244,47 +243,18 @@ function BottomPanelApp() {
              Отправить
             </button>
         </form>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-           <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+  
+<br />
+           
+<div class="parent">
+    <div class="modal_header">modal_header</div>
+    <div class="modal_address">modal_address</div>
+    <div class="modal_form">modal_form</div>
+    <div class="modal_contacts">modal_contacts</div>
+    <div class="modal_map">modal_map</div>
+    <div class="modal_copy">modal_copy</div>
+</div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 		   </div>
         ) : (
