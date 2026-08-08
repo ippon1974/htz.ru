@@ -10,11 +10,10 @@ input[type="text"] {
     background-color: white; /* Uses an RGB value */
   }
 
-
   #my-container  .modalHeight{
     max-height: 65vh;
     overflow-y: auto;
-    scrollbar-color: "#369 #ecfdf5";
+    scrollbar-color: #600 #f1f1f1;
     scrollbar-width: thin;
   }
 
@@ -30,6 +29,7 @@ input[type="text"] {
     "address form contacts"
     "map map map"
     "copypage copypage copypage";
+  grid-template-columns: auto; 
   gap: 8px;
 }
 
@@ -42,7 +42,7 @@ input[type="text"] {
             "contacts contacts contacts"
             "map map map"
             "copypage copypage copypage";
-    /* grid-template-columns: auto; */
+    grid-template-columns: auto; 
   }
 }
 

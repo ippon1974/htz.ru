@@ -190,72 +190,75 @@ function BottomPanelApp() {
 		
       <div className="modalHeight">
 		
-     <h3>{text}</h3>
-
       {isFormVisible ? (
 
       <div>
-
+    
+<div class="parent">
+    <div class="modal_header"><h3>{text}</h3></div>
+    <div class="modal_address">
+      <p>121357, г.Москва, ул.Верейская,д.29 С 82</p>
+    </div>
+    <div class="modal_form">
+      
       <form onSubmit={handleSubmit}>
             
-                <label>Имя:</label><br />
-                   <input type="text" autoFocus
-                    //ref={inputRef}
-                    value={name} 
-                    onChange={onNameChange}
-                    style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
-                   <br /><br />
+            <label>Имя:</label><br />
+               <input type="text" autoFocus
+                //ref={inputRef}
+                value={name} 
+                onChange={onNameChange}
+                style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
+               <br /><br />
 
-                   <label>Телефон:</label><br />
-                   <input type="tel" 
-                    value={phone} 
-                    onChange={onPhoneChange}
-                    style={{backgroundColor:phoneValid?'white':'white', border: phoneValid?"thin solid green":"thin solid red"}} />
-                   <br /><br />
+               <label>Телефон:</label><br />
+               <input type="tel" 
+                value={phone} 
+                onChange={onPhoneChange}
+                style={{backgroundColor:phoneValid?'white':'white', border: phoneValid?"thin solid green":"thin solid red"}} />
+               <br /><br />
 
-                   <label>Элетропочта:</label><br />
-                   <input type="text"
-                    value={email} 
-                    onChange={onEmailChange}
-                    style={{backgroundColor:emailValid?'white':'white', border: emailValid?"thin solid green":"thin solid red"}} />
-                   <br /><br />
+               <label>Элетропочта:</label><br />
+               <input type="text"
+                value={email} 
+                onChange={onEmailChange}
+                style={{backgroundColor:emailValid?'white':'white', border: emailValid?"thin solid green":"thin solid red"}} />
+               <br /><br />
 
-                   <label>Сообщение:</label><br />
-                   <textarea
-                    value={message} 
-                    onChange={onMessageChange}
-                    style={{backgroundColor:messageValid?'white':'white', border: messageValid?"thin solid green":"thin solid red"}} />
-                   <br /><br />
-                
-                  {/* <label>Лет:</label><br />
-                  <input type="number" 
-                      value={age} 
-                      onChange={onAgeChange}  
-                      style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
-                  <br /><br /> */}
-                  
-                <label>Права:</label><br />
-                <input type="checkbox" className="custom-box"
-                    value={check} 
-                    onChange={onCheckChange} 
-                     />
-             <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
-             Отправить
-            </button>
-        </form>
-  
-<br />
-           
-<div class="parent">
-    <div class="modal_header">modal_header</div>
-    <div class="modal_address">modal_address</div>
-    <div class="modal_form">modal_form</div>
-    <div class="modal_contacts">modal_contacts</div>
+               <label>Сообщение:</label><br />
+               <textarea
+                value={message} 
+                onChange={onMessageChange}
+                style={{backgroundColor:messageValid?'white':'white', border: messageValid?"thin solid green":"thin solid red"}} />
+               <br /><br />
+            
+              {/* <label>Лет:</label><br />
+              <input type="number" 
+                  value={age} 
+                  onChange={onAgeChange}  
+                  style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
+              <br /><br /> */}
+              
+            <label>Права:</label><br />
+            <input type="checkbox" className="custom-box"
+                value={check} 
+                onChange={onCheckChange} 
+                 />
+         <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
+         Отправить
+        </button>
+    </form>
+
+    </div>
+    <div class="modal_contacts">
+      <p>Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
+Контактный телефон: +7 (925) 585-33-71 (MAX)
+Электронная почта: mail@htz.ru</p>
+    </div>
     <div class="modal_map">modal_map</div>
-    <div class="modal_copy">modal_copy</div>
+    <div class="modal_copy">2026 Сивек Ватаер Джет</div>
 </div>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
+         
 		   </div>
         ) : (
 
