@@ -186,27 +186,27 @@
 
 .modal_header {
   grid-area: head;
+  padding: 0px 10px;
 }
 
 .modal_address {
   grid-area: address;
   display: block;
   background-color: green;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .modal_form {
   grid-area: form;
   display: block;
-  background: rebeccapurple;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .modal_contacts {
   grid-area: contacts;
   display: block;
   background-color:blue;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .modal_map {
