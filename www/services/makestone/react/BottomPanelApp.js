@@ -7,7 +7,7 @@ function BottomPanelApp() {
   const [errors, setErrors] = useState({});
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   async function getData() {
     try {
       const response = await fetch('https://htz.ru/api/post/order/makestone/');
@@ -195,42 +195,53 @@ function BottomPanelApp() {
       <div>
     
 <div class="parent">
-    <div class="modal_header"><h3>{text}</h3></div>
+    <div class="modal_header"><h3>Предварительный запрос: {text} Задать ширину пооцен или с помощью скрипта для авто-растягивания под текст.</h3></div>
     <div class="modal_address">
       <p>121357, г.Москва, ул.Верейская,д.29 С 82</p>
     </div>
     <div class="modal_form">
       
       <form onSubmit={handleSubmit}>
-            
-            <label>Имя:</label><br />
-               <input type="text" autoFocus
-                //ref={inputRef}
+               <div>
+               <label for="name">Ваше имя:</label>
+               <input className="firstname" type="text" autoFocus
+                id="name"
+                name="name"
+                ref={inputRef}
                 value={name} 
                 onChange={onNameChange}
                 style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
-               <br /><br />
+               </div>
 
-               <label>Телефон:</label><br />
+               <div>
+               <label for="phone">Телефон:</label>
                <input type="tel" 
+                id="phone"
+                name="phone"
                 value={phone} 
                 onChange={onPhoneChange}
                 style={{backgroundColor:phoneValid?'white':'white', border: phoneValid?"thin solid green":"thin solid red"}} />
-               <br /><br />
+               </div>
 
-               <label>Элетропочта:</label><br />
+               <div>
+               <label for="email">Элетропочта:</label>
                <input type="text"
+               id="email"
+               name="email"
                 value={email} 
                 onChange={onEmailChange}
                 style={{backgroundColor:emailValid?'white':'white', border: emailValid?"thin solid green":"thin solid red"}} />
-               <br /><br />
+               </div>
 
-               <label>Сообщение:</label><br />
+               <div>
+               <label for="message">Сообщение:</label>
                <textarea
+                id="message"
+                name="message"
                 value={message} 
                 onChange={onMessageChange}
                 style={{backgroundColor:messageValid?'white':'white', border: messageValid?"thin solid green":"thin solid red"}} />
-               <br /><br />
+               </div>
             
               {/* <label>Лет:</label><br />
               <input type="number" 
@@ -238,15 +249,20 @@ function BottomPanelApp() {
                   onChange={onAgeChange}  
                   style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
               <br /><br /> */}
-              
-            <label>Права:</label><br />
+            <div>
+            <label for="check">Права:</label>
             <input type="checkbox" className="custom-box"
-                value={check} 
+                id="check"
+                name="check"
+                value={check}
                 onChange={onCheckChange} 
                  />
-         <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
-         Отправить
-        </button>
+            </div>
+            <div>
+            <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
+            Отправить
+            </button>
+            </div>
     </form>
 
     </div>
