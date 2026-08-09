@@ -22,6 +22,7 @@
     overflow: hidden; /* убирает полосы прокрутки */
     resize: none;     /* убирает уголок изменения размера */
     width: 100%;
+    box-sizing: border-box;
     height: 6em;
     font-size: 1.65em;
   }
