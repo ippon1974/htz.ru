@@ -207,7 +207,7 @@ function BottomPanelApp() {
                <input className="firstname" type="text" autoFocus
                 id="name"
                 name="name"
-                ref={inputRef}
+                // ref={inputRef}
                 value={name} 
                 onChange={onNameChange}
                 style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
