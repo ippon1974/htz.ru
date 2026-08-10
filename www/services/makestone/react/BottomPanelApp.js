@@ -249,14 +249,15 @@ function BottomPanelApp() {
                   onChange={onAgeChange}  
                   style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
               <br /><br /> */}
-            <div>
-            <label for="check">Права:</label>
-            <input type="checkbox" className="custom-box"
+
+            <div className="checkbox-container">
+            <input type="checkbox"
                 id="check"
                 name="check"
                 value={check}
                 onChange={onCheckChange} 
                  />
+            <label for="check">Права:</label>
             </div>
             <div>
             <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
@@ -268,8 +269,8 @@ function BottomPanelApp() {
     </div>
     <div class="modal_contacts">
       <p>Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
-Контактный телефон: +7 (925) 585-33-71 (MAX)
-Электронная почта: mail@htz.ru</p>
+      Контактный телефон: +7 (925) 585-33-71 (MAX)
+      Электронная почта: mail@htz.ru</p>
     </div>
     <div class="modal_map">modal_map</div>
     <div class="modal_copy">2026 Сивек Ватаер Джет</div>

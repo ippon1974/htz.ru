@@ -18,6 +18,7 @@
     font-size: 1.65em;
   }
 
+
   textarea {
     overflow: hidden; /* убирает полосы прокрутки */
     resize: none;     /* убирает уголок изменения размера */
@@ -27,6 +28,24 @@
     font-size: 1.65em;
   }
 
+  .checkbox-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100px;
+  }
+
+
+  .checkbox-container input {
+    transform: scale(0.5);
+  }
+
+  .checkbox-container label {
+    cursor: pointer;
+    transform: scale(1.0);
+  }
+
+
 .parent {
   display: grid;
   grid-template-areas:
@@ -34,9 +53,7 @@
     "address form contacts"
     "map map map"
     "copypage copypage copypage";
-  /* grid-template-columns: auto;  */
   grid-template-columns: 30% 40% 30%;
-  /* grid-template-columns: 1fr 2fr 1fr; */
 }
 
 @media (max-width:321px){
@@ -50,6 +67,11 @@
             "copypage copypage copypage";
     grid-template-columns: auto; 
   }
+
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
+  }
+
 }
 
 @media (max-width:361px){
@@ -61,6 +83,9 @@
             "contacts contacts contacts"
             "map map map"
             "copypage copypage copypage";
+  }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
   }
 }
 
@@ -74,6 +99,9 @@
             "map map map"
             "copypage copypage copypage";
   }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
+  }
 }
 
 @media (max-width:384px){
@@ -85,6 +113,9 @@
             "contacts contacts contacts"
             "map map map"
             "copypage copypage copypage";
+  }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
   }
 }
 
@@ -98,6 +129,9 @@
             "map map map"
             "copypage copypage copypage";
   }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
+  }
 }
 
 @media (max-width:394px){
@@ -109,6 +143,9 @@
             "contacts contacts contacts"
             "map map map"
             "copypage copypage copypage";
+  }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
   }
 }
 
@@ -122,6 +159,9 @@
             "map map map"
             "copypage copypage copypage";
   }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
+  }
 }
 
 @media (max-width:429px){
@@ -134,6 +174,9 @@
             "map map map"
             "copypage copypage copypage";
   }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
+  }
 }
 
 @media (max-width:431px){
@@ -145,6 +188,9 @@
             "contacts contacts contacts"
             "map map map"
             "copypage copypage copypage";
+  }
+  #my-container  .modalHeight{
+    scrollbar-color: #efba46 #f1f1f1;
   }
 }
 
