@@ -91,6 +91,11 @@ textarea {
   font-size: 1.0em;
 }
 
+#my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container label a{
+  color: #333366;
+  font-weight: bold;
+}
+
 .button {
   border: none;
   padding: 10px 20px;
