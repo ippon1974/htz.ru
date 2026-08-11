@@ -56,10 +56,15 @@
   gap: 10px;
 }
 
-.checkbox-container input {
-  /* transform: scale(1.5); */
+#my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container {
+  transform: scale(1.5);
   /* -webkit-transform: scale(50px); */
-  padding: 0;
+  -webkit-appearance: none; /* убирает стандартный стиль iOS */
+  appearance: none;
+  padding: 0px;
+  border-radius: 0;
+  width: 30px;
+  height: 30px;
 }
 
 .checkbox-container label {
