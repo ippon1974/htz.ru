@@ -58,6 +58,7 @@
 
 .checkbox-container input {
   transform: scale(1.5);
+  -webkit-transform: scale(1.5);
 }
 
 .checkbox-container label {
