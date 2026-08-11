@@ -28,7 +28,7 @@
 .modal_address {
   grid-area: address;
   display: block;
-  background-color: green;
+  /* background-color: green; */
   padding: 5px 10px;
 }
 
@@ -110,7 +110,7 @@ textarea {
 .modal_contacts {
   grid-area: contacts;
   display: block;
-  background-color:blue;
+  /* background-color:blue; */
   padding: 5px 10px;
 }
 
