@@ -17,7 +17,10 @@
     "address form contacts"
     "map map map"
     "copypage copypage copypage";
-  grid-template-columns: 25% 40% 35%;
+  /* grid-template-columns: 25% 40% 35%; */
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  grid-template-columns: 20%  50%  30%;
+
 }
 
 .modal_header {
