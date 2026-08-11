@@ -262,7 +262,7 @@ function BottomPanelApp() {
             <div>
             <button className="button"
             style={{
-              backgroundColor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'#CCCC00':'#600',
+              backgroundColor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'#CCCC00':'green',
               cursor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'none':'pointer',
               color:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'grey':'white'
             }}
