@@ -17,7 +17,7 @@
     "address form contacts"
     "map map map"
     "copypage copypage copypage";
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 25% 40% 35%;
 }
 
 .modal_header {
@@ -35,7 +35,7 @@
 .modal_form {
   grid-area: form;
   display: block;
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
 
 .modal_form div {
@@ -53,7 +53,7 @@
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 #my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container input[type="checkbox"]{
