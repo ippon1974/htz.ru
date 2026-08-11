@@ -58,8 +58,10 @@
 
 #my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container input[type="checkbox"]{
     appearance: none;
-    width: 1.35rem;
-    height: 1.35rem;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 1.45rem;
+    height: 1.45rem;
     border: 1px solid red;
     border-radius: 0;
     background-color: #fff;
@@ -72,6 +74,22 @@
   background-color:green;
   border: 1px solid green;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container {
  /* background: yellow; */
