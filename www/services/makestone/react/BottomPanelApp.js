@@ -257,7 +257,9 @@ function BottomPanelApp() {
                 value={check}
                 onChange={onCheckChange} 
                  />
-            <label for="check">Права:</label>
+            <label for="check">
+                Я согласен на <a href="/documents/policy/" target="_blank">обработку персональных данных</a>
+            </label>
             </div>
             <div>
             <button className="button"

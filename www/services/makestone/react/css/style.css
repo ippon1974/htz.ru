@@ -77,34 +77,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container {
- /* background: yellow; */
-}
-
-.checkbox-container label {
-  /* transform: scale(1.0); */
-} 
-
-
-
-
-
-
 textarea {
   overflow: hidden;
   resize: none;
@@ -114,26 +86,20 @@ textarea {
   font-size: 1.65em;
 }
 
+
+#my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container label{
+  font-size: 1.0em;
+}
+
 .button {
   border: none;
-  /* color: grey; */
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  /* cursor: pointer; */
-}
-
-.btn-disabled {
-  background-color: gray;
-  color: white;
-  transition: background-color 0.3s;
-}
-
-.btn-active {
-  background-color: green;
-  color: white;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
 }
 
 .modal_contacts {
