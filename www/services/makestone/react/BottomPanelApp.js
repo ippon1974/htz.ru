@@ -260,8 +260,15 @@ function BottomPanelApp() {
             <label for="check">Права:</label>
             </div>
             <div>
-            <button disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} type="submit">
-            Отправить
+            <button className="button"
+            style={{
+              backgroundColor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'#CCCC00':'#600',
+              cursor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'none':'pointer',
+              color:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'grey':'white'
+            }}
+            disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} 
+            type="submit">
+              Отправить
             </button>
             </div>
     </form>
