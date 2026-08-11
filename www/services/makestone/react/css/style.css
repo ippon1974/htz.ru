@@ -57,13 +57,17 @@
 }
 
 .checkbox-container input {
-  transform: scale(1.5);
-  -webkit-transform: scale(50px);
+  /* transform: scale(1.5); */
+  /* -webkit-transform: scale(50px); */
+  padding: 0;
 }
 
 .checkbox-container label {
   /* transform: scale(1.0); */
 } 
+
+
+
 
 
 textarea {
