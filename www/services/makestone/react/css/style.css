@@ -57,14 +57,15 @@
 }
 
 #my-container > div.modalHeight > div > div > div.modal_form > form > div.checkbox-container {
-  transform: scale(1.5);
+  /* transform: scale(1.0); */
   /* -webkit-transform: scale(50px); */
   -webkit-appearance: none; /* убирает стандартный стиль iOS */
   appearance: none;
-  padding: 0px;
+  /* padding: 0px; */
   border-radius: 0;
-  width: 30px;
-  height: 30px;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkbox-container label {
