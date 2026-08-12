@@ -99,7 +99,7 @@ function BottomPanelApp() {
     trickleSpeed: 10
   });
 
-  let text = document.querySelector("title").innerText;
+  let textTitle = document.querySelector("title").innerText;
 
   const handleSubmit = (e) => {
 	  e.preventDefault();
@@ -195,7 +195,9 @@ function BottomPanelApp() {
       <div>
     
 <div class="parent">
-    <div class="modal_header"><h3>Предварительный запрос: {text} Задать ширину пооцен или с помощью скрипта для авто-растягивания под текст.</h3></div>
+    <div class="modal_header"><h1>Предварительный запрос: {textTitle}.</h1>
+    <h2>Мы постараемся ответить на ваш запрос в течении 5-6 часов в рабочие дни.</h2>
+    </div>
     <div class="modal_address">
       <p>121357, г.Москва, ул.Верейская,д.29 С 82</p>
     </div>
@@ -257,8 +259,8 @@ function BottomPanelApp() {
                 value={check}
                 onChange={onCheckChange} 
                  />
-            <label for="check">
-                Я согласен на <a href="/documents/policy/" target="_blank">обработку персональных данных</a>
+            <label for="check" className="policy">
+                Я даю согласие на обработку моих персональных данных в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
             </label>
             </div>
             <div>
