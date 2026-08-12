@@ -21,9 +21,11 @@ $str[$mail_file_json.text]
    <p>Not data for insert</p><br />
 }
 
+^rem{
 ^if(def $str){
 ^file:delete[/api/post/order/makestone/mail.json] 
-}{result[File not found!]}  
+}{result[File not found!]} 
+}
 
 
 
