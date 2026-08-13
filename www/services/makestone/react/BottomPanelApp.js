@@ -284,7 +284,7 @@ function BottomPanelApp() {
       Электронная почта: mail@htz.ru</p>
     </div>
     <div class="modal_map">
-      {/* <div id="map" style="width: 600px; height: 400px"></div> */}
+      <div id="mymap" style="border: 1px solid green; width: 100%; height: 400px"></div>
     </div>
     <div class="modal_copy">© 2004—2026 «СПМ»</div>
 </div>
