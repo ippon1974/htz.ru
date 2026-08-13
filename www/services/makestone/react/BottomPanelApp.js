@@ -7,6 +7,14 @@ function BottomPanelApp() {
   const [errors, setErrors] = useState({});
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const { YMaps, Map, Placemark, YMap} = ReactYandexMaps;
+
+  const mapState = {
+    center: [55.709026, 37.425699], // Moscow coordinates
+    zoom: 17
+  };
+
+   
 
   async function getData() {
     try {
@@ -139,27 +147,8 @@ function BottomPanelApp() {
    
   if (!setIsPanelOpen) return null;
 
-
-  initMap();
-  async function initMap() {
-      await ymaps3.ready;
-
-      const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-
-      const map = new YMap(
-          document.getElementById('mymap'),
-          {
-              location: {
-                  center: [37.588144, 55.733842],
-                  zoom: 10
-              }
-          }
-      );
-
-      map.addChild(new YMapDefaultSchemeLayer());
-  }
-
   return (
+    
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
 
       <button 
@@ -304,11 +293,19 @@ function BottomPanelApp() {
       Электронная почта: mail@htz.ru</p>
     </div>
     <div class="modal_map">
-      <div id="mymap" style="border: 1px solid green; width: 100%; height: 400px"></div>
+    
+    <YMaps>
+          <div style={{ width: '100vw', height: '100vh' }}>
+            <Map defaultState={mapState} width="100%" height="100%">
+                <Placemark geometry={[55.709026, 37.425699]} />
+            </Map>
+          </div>
+    </YMaps>
+            
     </div>
     <div class="modal_copy">© 2004—2026 «СПМ»</div>
 </div>
-         
+
 		   </div>
         ) : (
 
