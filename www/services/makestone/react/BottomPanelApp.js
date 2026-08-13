@@ -38,7 +38,7 @@ function BottomPanelApp() {
  }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
 
 
-  const validateName = (name) => {return typeof name === 'string' && name.trim().length > 2;};
+  const validateName = (name) => {return typeof name === 'string' && name.trim().length > 1;};
   const [name, setName] = useState('');
   const [nameValid, setNameValid] = useState(validateName(''));
   const onNameChange = (e) => {
@@ -196,10 +196,10 @@ function BottomPanelApp() {
     
 <div class="parent">
     <div class="modal_header"><h1>Предварительный запрос: {textTitle}.</h1>
-    <h2>Мы постараемся ответить на ваш запрос в течении 5-6 часов в рабочие дни.</h2>
+    <h2>Мы постараемся ответить на ваш запрос в течении 5-6 часов в рабочее время.</h2>
     </div>
     <div class="modal_address">
-      <p>121357, г.Москва, ул.Верейская,д.29 С 82</p>
+      <p className="block_head">Российская Федерация, 121357, г.Москва, Можайский (ЗАО), ул.Верейская,д.29 С 82</p>
     </div>
     <div class="modal_form">
       
@@ -279,12 +279,14 @@ function BottomPanelApp() {
 
     </div>
     <div class="modal_contacts">
-      <p>Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
+      <p className="block_head">Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
       Контактный телефон: +7 (925) 585-33-71 (MAX)
       Электронная почта: mail@htz.ru</p>
     </div>
-    <div class="modal_map">modal_map</div>
-    <div class="modal_copy">2026 Сивек Ватаер Джет</div>
+    <div class="modal_map">
+      {/* <div id="map" style="width: 600px; height: 400px"></div> */}
+    </div>
+    <div class="modal_copy">© 2004—2026 «СПМ»</div>
 </div>
          
 		   </div>

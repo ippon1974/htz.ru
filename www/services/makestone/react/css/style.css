@@ -61,6 +61,14 @@
   padding: 5px 10px;
 }
 
+.modal_address .block_head {
+  padding: 0; margin: 0;
+  font-size: 1.5em;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: normal;
+  color: #600;
+}
+
 .modal_form {
   grid-area: form;
   display: block;
@@ -75,17 +83,19 @@
   text-transform: uppercase;
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 0.8em;
+  color: #600;
 }
 
 .modal_form div .policy {
   text-transform: none;
+  color: black;
 }
 
 #my-container > div.modalHeight > div > div > div.modal_form input {
   box-sizing: border-box;
   width: 100%;
   height: 40px;
-  font-size: 1.65em;
+  font-size: 1.5em;
 }
 
 .checkbox-container {
@@ -150,18 +160,23 @@ textarea {
 .modal_contacts {
   grid-area: contacts;
   display: block;
-  /* background-color:blue; */
   padding: 5px 10px;
+}
+
+.modal_contacts .block_head {
+  padding: 0; margin: 0;
+  font-size: 1.5em;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: normal;
+  color: #600;
 }
 
 .modal_map {
   grid-area: map;
-  background-color: red;
 }
 
 .modal_copy {
   grid-area: copypage;
-  background-color: aqua;
 }
 
 

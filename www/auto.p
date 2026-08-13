@@ -176,6 +176,7 @@ db.p
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
 <!--[if gte IE 7]><link href="/css/ie7.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
 <script src="/js/functions.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://api-maps.yandex.ru/v3/?apikey=a7577a6f-fcf7-4fda-b7d1-de5d2e28fa9e&lang=ru_RU"></script>
 </head>
 #@header[]
 

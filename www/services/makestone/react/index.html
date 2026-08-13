@@ -4,25 +4,51 @@
     <title>Слеб мрамор Крема Марфил</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+  <script src="https://api-maps.yandex.ru/v3/?apikey=a7577a6f-fcf7-4fda-b7d1-de5d2e28fa9e&lang=ru_RU"></script>
   <link href='css/nprogress.css' rel='stylesheet' />
   <link href='css/style.css' rel='stylesheet' />
+  <script>
+        initMap();
+
+        async function initMap() {
+            await ymaps3.ready;
+
+            const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+            const map = new YMap(
+                document.getElementById('mymap'),
+                {
+                    location: {
+                        center: [37.588144, 55.733842],
+                        zoom: 10
+                    }
+                }
+            );
+
+            map.addChild(new YMapDefaultSchemeLayer());
+        }
+    </script>
   </head>
   
   <body>
 	<h1 class="pageid">Слеб мрамор Крема Марфил</h1>
   <h2>^hello[]</h2>
    <p><a href="/">index</a></p>
+
+    <div id="mymap" style="border: 1px solid green; width: 100%; height: 400px"></div>
     <!-- We will put our React component inside this div. -->
     <div id="root"></div>
+    
 
     <script type="text/babel" src="BottomPanelApp.js"></script>
-   
+    
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 	  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src='js/nprogress.js'></script>
+    
     <!-- Load our React component. -->
 
   </body>
