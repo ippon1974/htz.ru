@@ -139,6 +139,26 @@ function BottomPanelApp() {
    
   if (!setIsPanelOpen) return null;
 
+
+  initMap();
+  async function initMap() {
+      await ymaps3.ready;
+
+      const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+      const map = new YMap(
+          document.getElementById('mymap'),
+          {
+              location: {
+                  center: [37.588144, 55.733842],
+                  zoom: 10
+              }
+          }
+      );
+
+      map.addChild(new YMapDefaultSchemeLayer());
+  }
+
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
 
