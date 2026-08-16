@@ -4,17 +4,78 @@ function BottomPanelApp() {
   const { useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false});
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});;
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const { YMaps, Map, Placemark, YMap} = ReactYandexMaps;
+  const { YMaps, Map, Placemark} = ReactYandexMaps;
+  
+  const [customization, setCustomization] = useState(null);
+  const { YMapComponentsProvider , YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+
+  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@latest');
+  
+  console.log(YMapMarker)
+  // const pkg = ymaps3.import('@yandex/ymaps3-default-ui-theme');
+
+
+
+
+
+
+  
+
+  useEffect(() => {
+    // Fetch your custom dark theme JSON file from the public folder or an API
+    fetch('data/map.json')
+      .then((res) => res.json())
+      .then((data) => setCustomization(data))
+      .catch((err) => console.error('Failed to load map customization JSON', err));
+  }, []);
+
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+
+    // Ensure ymaps3 is ready
+    ymaps3.ready.then(() => {
+
+      if (!mapRef.current) return;
+
+      // Create the map instance with dark theme
+      const map = new ymaps3.YMap(mapRef.current,{
+        location: { center: [37.425699, 55.709026], zoom: 17 }
+      });
+
+      // Add the default scheme layer with dark theme
+      const layer = new ymaps3.YMapDefaultSchemeLayer({
+      //  theme: 'light'
+       theme: 'dark'
+      });
+      map.addChild(layer);
+      map.addChild(new YMapDefaultFeaturesLayer());
+     
+      
+      const markerElement = document.createElement('div');
+      markerElement.className = 'custom-marker';
+      markerElement.innerHTML = '<div>Сивек Ватер Джет</div>';
+
+      const marker = new YMapMarker({
+        coordinates: [37.425699, 55.709026],
+        draggable: false
+      }, markerElement);
+    
+      map.addChild(marker);
+      
+
+    });
+  }, []);
+
+  if (!YMap) return <div>Loading map...</div>;
 
   const mapState = {
     center: [55.709026, 37.425699], // Moscow coordinates
-    zoom: 17
+    zoom: 15
   };
-
-   
 
   async function getData() {
     try {
@@ -44,6 +105,7 @@ function BottomPanelApp() {
     inputRef.current.focus();
    }
  }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
+
 
 
   const validateName = (name) => {return typeof name === 'string' && name.trim().length > 1;};
@@ -203,18 +265,18 @@ function BottomPanelApp() {
 
       <div>
     
-<div class="parent">
-    <div class="modal_header"><h1>Предварительный запрос: {textTitle}.</h1>
+<div className="parent">
+    <div className="modal_header"><h1>Предварительный запрос: {textTitle}.</h1>
     <h2>Мы постараемся ответить на ваш запрос в течении 5-6 часов в рабочее время.</h2>
     </div>
-    <div class="modal_address">
+    <div className="modal_address">
       <p className="block_head">Российская Федерация, 121357, г.Москва, Можайский (ЗАО), ул.Верейская,д.29 С 82</p>
     </div>
-    <div class="modal_form">
+    <div className="modal_form">
       
       <form onSubmit={handleSubmit}>
                <div>
-               <label for="name">Ваше имя:</label>
+               <label htmlFor ="name">Ваше имя:</label>
                <input className="firstname" type="text" autoFocus
                 id="name"
                 name="name"
@@ -225,7 +287,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label for="phone">Телефон:</label>
+               <label htmlFor ="phone">Телефон:</label>
                <input type="tel" 
                 id="phone"
                 name="phone"
@@ -235,7 +297,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label for="email">Элетропочта:</label>
+               <label htmlFor ="email">Элетропочта:</label>
                <input type="text"
                id="email"
                name="email"
@@ -245,7 +307,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label for="message">Сообщение:</label>
+               <label htmlFor ="message">Сообщение:</label>
                <textarea
                 id="message"
                 name="message"
@@ -268,7 +330,7 @@ function BottomPanelApp() {
                 value={check}
                 onChange={onCheckChange} 
                  />
-            <label for="check" className="policy">
+            <label htmlFor ="check" className="policy">
                 Я даю согласие на обработку моих персональных данных в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
             </label>
             </div>
@@ -287,23 +349,32 @@ function BottomPanelApp() {
     </form>
 
     </div>
-    <div class="modal_contacts">
+    <div className="modal_contacts">
       <p className="block_head">Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
       Контактный телефон: +7 (925) 585-33-71 (MAX)
       Электронная почта: mail@htz.ru</p>
     </div>
-    <div class="modal_map">
+    <div className="modal_map">
+
     
-    <YMaps>
-          <div style={{ width: '100vw', height: '100vh' }}>
+     
+    
+
+    <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
+
+    {/* <div id = 'mymap' style={{ width: '100%', height: '500px' }} />; */}
+    
+    {/* <YMaps>
+          <div style={{ width: '70vw', height: '30vh' }}>
             <Map defaultState={mapState} width="100%" height="100%">
                 <Placemark geometry={[55.709026, 37.425699]} />
             </Map>
           </div>
-    </YMaps>
-            
+   </YMaps> */}
+    
+ 
     </div>
-    <div class="modal_copy">© 2004—2026 «СПМ»</div>
+    <div className="modal_copy">© 2004—2026 «СПМ»</div>
 </div>
 
 		   </div>

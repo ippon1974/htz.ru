@@ -447,3 +447,13 @@ textarea {
             "copypage copypage copypage";
   }
 }
+
+.custom-marker{
+  background: green;
+  width: max-content;
+  color: white;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
