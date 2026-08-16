@@ -76,7 +76,7 @@ function BottomPanelApp() {
           "elements": "geometry",
           "stylers": [
             {
-              "color": "#f99d66"
+              "color": "#efba46"
             }
           ]
         },
