@@ -49,7 +49,65 @@ function BottomPanelApp() {
       // Add the default scheme layer with dark theme
       const layer = new ymaps3.YMapDefaultSchemeLayer({
       //  theme: 'light'
-       theme: 'dark'
+      //  theme: 'dark',
+      customization:[
+        {
+          "tags": {
+            "any": [
+              "water"
+            ]
+          },
+          "elements": "geometry",
+          "stylers": [
+            {
+              "color": "#2680ec"
+            }
+          ]
+        },
+        {
+          "tags": {
+            "any": [
+              "landscape",
+              "admin",
+              "land",
+              "transit"
+            ]
+          },
+          "elements": "geometry",
+          "stylers": [
+            {
+              "color": "#f99d66"
+            }
+          ]
+        },
+        {
+          "tags": {
+            "any": [
+              "road"
+            ]
+          },
+          "elements": "geometry",
+          "stylers": [
+            {
+              "color": "#4E4E4E"
+            }
+          ]
+        },
+        {
+          "tags": {
+            "any": [
+              "building"
+            ]
+          },
+          "elements": "geometry",
+          "stylers": [
+            {
+              "color": "#757474"
+            }
+          ]
+        }
+      ]
+
       });
       map.addChild(layer);
       map.addChild(new YMapDefaultFeaturesLayer());
