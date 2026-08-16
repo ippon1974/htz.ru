@@ -54,7 +54,6 @@ function BottomPanelApp() {
       map.addChild(layer);
       map.addChild(new YMapDefaultFeaturesLayer());
      
-      
       const markerElement = document.createElement('div');
       markerElement.className = 'custom-marker';
       markerElement.innerHTML = '<div>Сивек Ватер Джет</div>';
