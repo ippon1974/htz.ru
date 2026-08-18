@@ -4,25 +4,9 @@ function BottomPanelApp() {
   const { useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false});
-  const [errors, setErrors] = useState({});;
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const { YMaps, Map, Placemark} = ReactYandexMaps;
-  
-  const [customization, setCustomization] = useState(null);
   const { YMapComponentsProvider , YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
-
-  ymaps3.import.registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@latest');
-  
-  console.log(YMapMarker)
-  // const pkg = ymaps3.import('@yandex/ymaps3-default-ui-theme');
-
-
-
-
-
-
-  
 
   useEffect(() => {
     // Fetch your custom dark theme JSON file from the public folder or an API
@@ -32,24 +16,23 @@ function BottomPanelApp() {
       .catch((err) => console.error('Failed to load map customization JSON', err));
   }, []);
 
+
   const mapRef = useRef(null);
-
+  
   useEffect(() => {
-
     // Ensure ymaps3 is ready
     ymaps3.ready.then(() => {
 
       if (!mapRef.current) return;
 
-      // Create the map instance with dark theme
-      const map = new ymaps3.YMap(mapRef.current,{
+      // Create the map instance
+      const map = new YMap(mapRef.current,{
         location: { center: [37.425699, 55.709026], zoom: 17 }
       });
 
-      // Add the default scheme layer with dark theme
-      const layer = new ymaps3.YMapDefaultSchemeLayer({
-      //  theme: 'light'
-      //  theme: 'dark',
+      const layer = new YMapDefaultSchemeLayer({
+      //theme: 'light'
+      //theme: 'dark',
       customization:[
         {
           "tags": {
@@ -110,6 +93,7 @@ function BottomPanelApp() {
 
       });
       map.addChild(layer);
+
       map.addChild(new YMapDefaultFeaturesLayer());
      
       const markerElement = document.createElement('div');
@@ -122,17 +106,11 @@ function BottomPanelApp() {
       }, markerElement);
     
       map.addChild(marker);
-      
-
+  
     });
   }, []);
 
   if (!YMap) return <div>Loading map...</div>;
-
-  const mapState = {
-    center: [55.709026, 37.425699], // Moscow coordinates
-    zoom: 15
-  };
 
   async function getData() {
     try {
@@ -162,8 +140,6 @@ function BottomPanelApp() {
     inputRef.current.focus();
    }
  }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
-
-
 
   const validateName = (name) => {return typeof name === 'string' && name.trim().length > 1;};
   const [name, setName] = useState('');
@@ -263,6 +239,16 @@ function BottomPanelApp() {
      console.log(done);
    });
 
+   const currentUrl = window.location.href;
+   const d = new Date();
+   const year = d.getFullYear();
+   const month = String(d.getMonth() + 1).padStart(2, '0');
+   const day = String(d.getDate()).padStart(2, '0');
+   const hours = String(d.getHours()).padStart(2, '0');
+   const minutes = String(d.getMinutes()).padStart(2, '0');
+   const seconds = String(d.getSeconds()).padStart(2, '0');
+   const formatted = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+   console.log(formatted); 
    
   if (!setIsPanelOpen) return null;
 
@@ -332,6 +318,10 @@ function BottomPanelApp() {
     <div className="modal_form">
       
       <form onSubmit={handleSubmit}>
+      <input type="hidden" name="page_title" value={textTitle} />
+      <input type="hidden" name="page_uri" id="urlInput" value={currentUrl} />
+      <input type="hidden" name="user_check_private_agree" value="Я даю согласие на обработку моих персональных данных в соответствии с Политикой обработки персональных данных" />
+      <input type="hidden" name="dt" value={formatted} />
                <div>
                <label htmlFor ="name">Ваше имя:</label>
                <input className="firstname" type="text" autoFocus
@@ -413,23 +403,8 @@ function BottomPanelApp() {
     </div>
     <div className="modal_map">
 
-    
-     
-    
-
     <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
 
-    {/* <div id = 'mymap' style={{ width: '100%', height: '500px' }} />; */}
-    
-    {/* <YMaps>
-          <div style={{ width: '70vw', height: '30vh' }}>
-            <Map defaultState={mapState} width="100%" height="100%">
-                <Placemark geometry={[55.709026, 37.425699]} />
-            </Map>
-          </div>
-   </YMaps> */}
-    
- 
     </div>
     <div className="modal_copy">© 2004—2026 «СПМ»</div>
 </div>

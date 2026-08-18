@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@iminside/react-yandex-maps": "^1.2.7",
     "json-server": "^1.0.0-beta.15",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
