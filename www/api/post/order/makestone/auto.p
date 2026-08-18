@@ -9,9 +9,9 @@ $str[$mail_file_json.text]
 ^if(def $str){
    ^connect[$connect_string]{
       ^void:sql{insert into user_order_makestone 
-         (user_name, user_phone, user_email, user_message, user_check_private, page_title, page_uri, dt, is_published )
+         (user_check_private_agree, user_name, user_phone, user_email, user_message, user_check_private, page_title, page_uri, dt, is_published )
       values  
-         ('$h_h.name', '$h_h.phone', '$h_h.email', '$h_h.message', '$h_h.check', '$h_h.page_title', '$h_h.page_uri', '$h_h.dt', '1' )
+         ('$h_h.user_check_private_agree', '$h_h.name', '$h_h.phone', '$h_h.email', '$h_h.message', '$h_h.check', '$h_h.page_title', '$h_h.page_uri', '$h_h.dt', '1' )
 		 
 		 $last_insert_id{^int:sql{select last_insert_id()}}		 
 } 

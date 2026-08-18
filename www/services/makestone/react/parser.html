@@ -5,59 +5,64 @@
 </head>
   
 <body>
-$now[^date::now[]]
 
 <h1>Test POST</h1>
 
 <form id="formElem">
-  <input type="hidden" name="page_title" value="">
-  <input type="hidden" name="page_uri" id="urlInput" value="">
-  <input type="hidden" name="dt" value="^now.sql-string[]">
-  <input type="text" name="name" value="name"><br /><br />
+  <input type="hidden" name="page_title" value="page_title">
+  <input type="hidden" name="page_uri" id="urlInput" value="urlInput">
+  <input type="hidden" name="user_check_private_agree" value="я даю согласие на обработку моих персональных данных в соответствии с ѕолитикой обработки персональных данных">
+  <input type="hidden" name="dt" value="2026-07-28 16:53:39">
+  <input type="text" name="name" value=""><br /><br />
   <input type="text" name="phone" value="+79255853371"><br /><br />
   <input type="text" name="email" value="box@wcut.ru"><br /><br />
   <textarea name="message" value=""></textarea><br /><br />
   <input type="checkbox" name="check" value="1" />
   <button type="submit">Submit</button>
 </form>
-
 <script>
     
-	const pageTitle = document.title;
-	document.getElementById('page_title').value = pageTitle;
-	
-	// ∆дем полной загрузки страницы
-	window.onload = function() {
-	// ѕолучаем текущий URL и присваиваем его значению пол€ input
-	document.getElementById('urlInput').value = location.href;
-	};
-
- console.log("urk ", window.location.href);
  formElem.onsubmit = async (e) => {
   e.preventDefault();
   
   object= {};
   const formData = new FormData(formElem);
+  const page_title = formData.get('page_title'); 
+  const urlInput = formData.get('urlInput'); 
+  const user_check_private_agree = formData.get('user_check_private_agree'); 
   const dt = formData.get('dt'); 
+
   const name = formData.get('name'); 
   const phone = formData.get('phone');
   const email = formData.get('email');
   const message = formData.get('message');
   const check = formData.get('check');
   formData.forEach((value, key) => object[key] = value);
+  
   var txt = JSON.stringify(object);
-  console.log(txt);
+  console.log("ttttttt ", txt);
 
   const response = await fetch('https://htz.ru/api/post/order/makestone/', {
     method: 'post',
     body: txt
   });
 
+  // ѕровер€ем, успешен ли запрос
+if (!response.ok) {
+    throw new Error(`ќшибка сервера: ${response.status}`);
+}
+
+const contentType = response.headers.get('content-type');
+if (!contentType || !contentType.includes('application/json')) {
+    throw new Error("—ервер вернул не JSON!");
+}
+
   // Check if there is actually content to read
   if (response.status === 204 || response.headers.get("content-length") === "0") {
     console.log("Success, but no JSON body returned.");
     return;
   }
+
   const data = await response.json(); // Safe to call now
   console.log("data from Server..." , data);
 };
