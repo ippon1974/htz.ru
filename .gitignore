@@ -5,3 +5,4 @@ temphtz/
 www/.htaccess
 www/_test.html
 www/php
+www/api/post/order/makestone/mail.json
