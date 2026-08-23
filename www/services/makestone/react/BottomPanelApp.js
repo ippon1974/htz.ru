@@ -3,19 +3,28 @@ function BottomPanelApp() {
   const { useEffect } = React;
   const { useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false});
+  const [formData, setFormData] = useState({ 
+    page_title:'', 
+    page_uri:'', 
+    user_check_private_agree:'',
+    dt:'',
+    name: '', 
+    phone: '', 
+    email: '', 
+    message:'', 
+    check: false
+  });
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const { YMapComponentsProvider , YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
 
-  useEffect(() => {
-    // Fetch your custom dark theme JSON file from the public folder or an API
-    fetch('data/map.json')
-      .then((res) => res.json())
-      .then((data) => setCustomization(data))
-      .catch((err) => console.error('Failed to load map customization JSON', err));
-  }, []);
-
+  // useEffect(() => {
+  //   // Fetch your custom dark theme JSON file from the public folder or an API
+  //   fetch('data/map.json')
+  //     .then((res) => res.json())
+  //     .then((data) => setCustomization(data))
+  //     .catch((err) => console.error('Failed to load map customization JSON', err));
+  // }, []);
 
   const mapRef = useRef(null);
   
@@ -112,24 +121,23 @@ function BottomPanelApp() {
 
   if (!YMap) return <div>Loading map...</div>;
 
-  async function getData() {
-    try {
-      const response = await fetch('https://htz.ru/api/post/order/makestone/');
+  // async function getData() {
+  //   try {
+  //     const response = await fetch('https://htz.ru/api/post/order/makestone/');
       
-      // Проверяем, прошел ли запрос успешно
-      if (!response.ok) {
-        throw new Error('Ошибка на сервере');
-      }
+  //     // Проверяем, прошел ли запрос успешно
+  //     if (!response.ok) {
+  //       throw new Error('Ошибка на сервере');
+  //     }
       
-      const data = await response.json();
-      console.log('Данные JSON ', data);
+  //     const data = await response.json();
+  //     console.log('Данные JSON ', data);
       
-    } catch (error) {
-      console.log('Что-то пошло не так:', error.message);
-    }
-  }
-  getData();
-
+  //   } catch (error) {
+  //     console.log('Что-то пошло не так:', error.message);
+  //   }
+  // }
+  // getData();
 
  // 1. Create a reference to target the first input element
  const inputRef = useRef(null);
@@ -140,6 +148,17 @@ function BottomPanelApp() {
     inputRef.current.focus();
    }
  }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
+
+
+  const hiddenFieldsClick = (e) => {
+    const form = e.currentTarget.form;
+    const fd = new FormData(form);
+    const page_title = fd.get('page_title');
+    const page_uri = fd.get('page_uri');
+    const user_check_private_agree = fd.get('user_check_private_agree');
+    const dt = fd.get('dt');
+    setFormData({  ...formData, page_title: page_title, page_uri: page_uri, user_check_private_agree: user_check_private_agree,dt:dt})
+  }
 
   const validateName = (name) => {return typeof name === 'string' && name.trim().length > 1;};
   const [name, setName] = useState('');
@@ -194,7 +213,7 @@ function BottomPanelApp() {
     setCheckValid(validateCheck(e.target.checked));
     setFormData({ ...formData, check: e.target.checked });
  }
-
+ 
   NProgress.configure({ 
     parent: '#my-container',
     showSpinner: false, 
@@ -206,12 +225,12 @@ function BottomPanelApp() {
 
   const handleSubmit = (e) => {
 	  e.preventDefault();
-  
+
     if(nameValid && phoneValid && emailValid && messageValid && !checkValid){
-      console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
+      //console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
   }
   else console.log("Данные не корректны")
-   
+
     setIsFormVisible(false);
     setIsLoading(true);
     NProgress.start();
@@ -219,9 +238,11 @@ function BottomPanelApp() {
       setIsLoading(false);
       NProgress.done();
     }, 1500);
-	  console.log('Данные', formData);
+	  //console.log('Данные из формы ...', formData);
+    const jsonTotal = JSON.stringify(formData);
+    console.log('Данные из формы JSON ...', jsonTotal);
 	  };
-
+    
     function infoblockreturn() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -248,7 +269,7 @@ function BottomPanelApp() {
    const minutes = String(d.getMinutes()).padStart(2, '0');
    const seconds = String(d.getSeconds()).padStart(2, '0');
    const formatted = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-   console.log(formatted); 
+   //console.log(formatted); 
    
   if (!setIsPanelOpen) return null;
 
@@ -328,7 +349,7 @@ function BottomPanelApp() {
                 id="name"
                 name="name"
                 //ref={inputRef}
-                value={name} 
+                value={name}
                 onChange={onNameChange}
                 style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
                </div>
@@ -382,7 +403,7 @@ function BottomPanelApp() {
             </label>
             </div>
             <div>
-            <button className="button"
+            <button className="button" onClick={hiddenFieldsClick}
             style={{
               backgroundColor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'#CCCC00':'green',
               cursor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'none':'pointer',
@@ -406,12 +427,10 @@ function BottomPanelApp() {
     <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
 
     </div>
-    <div className="modal_copy">© 2004—2026 «СПМ»</div>
+    <div className="modal_copy">&copy; 2004&mdash;{year} «СПМ»</div>
 </div>
-
 		   </div>
         ) : (
-
           <div className="success-message">
             <h1 id="myDiv"></h1>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

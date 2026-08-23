@@ -1,0 +1,10 @@
+<td><a href="/services/makestone/react/testbody/download_documentation/" title="Договор о реализации туристического продукта в формате (.pdf)">Скачать</a>
+<div style="font-size: 0.8em; color:#7e7e7e;">
+	<strong>Тип файла</strong>:<br>Документ PDF (.pdf)<br>
+$f[^file::stat[contract.pdf]] 
+Размер в байтах: $f.size<br /> 
+Год создания: $f.cdate.year<br /> 
+$new_after[^date::now(-3)] 
+</tr>
+
+^footer[]

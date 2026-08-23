@@ -3,19 +3,28 @@ function BottomPanelApp() {
   const { useEffect } = React;
   const { useRef } = React;
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message:'', check: false});
+  const [formData, setFormData] = useState({ 
+    page_title:'', 
+    page_uri:'', 
+    user_check_private_agree:'',
+    dt:'',
+    name: '', 
+    phone: '', 
+    email: '', 
+    message:'', 
+    check: false
+  });
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const { YMapComponentsProvider , YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
 
-  useEffect(() => {
-    // Fetch your custom dark theme JSON file from the public folder or an API
-    fetch('data/map.json')
-      .then((res) => res.json())
-      .then((data) => setCustomization(data))
-      .catch((err) => console.error('Failed to load map customization JSON', err));
-  }, []);
-
+  // useEffect(() => {
+  //   // Fetch your custom dark theme JSON file from the public folder or an API
+  //   fetch('data/map.json')
+  //     .then((res) => res.json())
+  //     .then((data) => setCustomization(data))
+  //     .catch((err) => console.error('Failed to load map customization JSON', err));
+  // }, []);
 
   const mapRef = useRef(null);
   
@@ -98,7 +107,7 @@ function BottomPanelApp() {
      
       const markerElement = document.createElement('div');
       markerElement.className = 'custom-marker';
-      markerElement.innerHTML = '<div>РЎРёРІРµРє Р’Р°С‚РµСЂ Р”Р¶РµС‚</div>';
+      markerElement.innerHTML = '<div>Сивек Ватер Джет</div>';
 
       const marker = new YMapMarker({
         coordinates: [37.425699, 55.709026],
@@ -112,24 +121,23 @@ function BottomPanelApp() {
 
   if (!YMap) return <div>Loading map...</div>;
 
-  async function getData() {
-    try {
-      const response = await fetch('https://htz.ru/api/post/order/makestone/');
+  // async function getData() {
+  //   try {
+  //     const response = await fetch('https://htz.ru/api/post/order/makestone/');
       
-      // РџСЂРѕРІРµСЂСЏРµРј, РїСЂРѕС€РµР» Р»Рё Р·Р°РїСЂРѕСЃ СѓСЃРїРµС€РЅРѕ
-      if (!response.ok) {
-        throw new Error('РћС€РёР±РєР° РЅР° СЃРµСЂРІРµСЂРµ');
-      }
+  //     // Проверяем, прошел ли запрос успешно
+  //     if (!response.ok) {
+  //       throw new Error('Ошибка на сервере');
+  //     }
       
-      const data = await response.json();
-      console.log('Р”Р°РЅРЅС‹Рµ JSON ', data);
+  //     const data = await response.json();
+  //     console.log('Данные JSON ', data);
       
-    } catch (error) {
-      console.log('Р§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє:', error.message);
-    }
-  }
-  getData();
-
+  //   } catch (error) {
+  //     console.log('Что-то пошло не так:', error.message);
+  //   }
+  // }
+  // getData();
 
  // 1. Create a reference to target the first input element
  const inputRef = useRef(null);
@@ -140,6 +148,17 @@ function BottomPanelApp() {
     inputRef.current.focus();
    }
  }, [inputRef.current]); // Empty dependency array ensures this runs exactly once on mount
+
+
+  const hiddenFieldsClick = (e) => {
+    const form = e.currentTarget.form;
+    const fd = new FormData(form);
+    const page_title = fd.get('page_title');
+    const page_uri = fd.get('page_uri');
+    const user_check_private_agree = fd.get('user_check_private_agree');
+    const dt = fd.get('dt');
+    setFormData({  ...formData, page_title: page_title, page_uri: page_uri, user_check_private_agree: user_check_private_agree,dt:dt})
+  }
 
   const validateName = (name) => {return typeof name === 'string' && name.trim().length > 1;};
   const [name, setName] = useState('');
@@ -194,7 +213,7 @@ function BottomPanelApp() {
     setCheckValid(validateCheck(e.target.checked));
     setFormData({ ...formData, check: e.target.checked });
  }
-
+ 
   NProgress.configure({ 
     parent: '#my-container',
     showSpinner: false, 
@@ -206,12 +225,12 @@ function BottomPanelApp() {
 
   const handleSubmit = (e) => {
 	  e.preventDefault();
-  
+
     if(nameValid && phoneValid && emailValid && messageValid && !checkValid){
-      console.log(`РРјСЏ: ${name} РўРµР»РµС„РѕРЅ: ${phone} РџРѕС‡С‚Р°: ${email} РЎРѕРѕР±С‰РµРЅРёРµ: ${message} РџСЂР°РІР° ${check}`);
+      //console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
   }
-  else console.log("Р”Р°РЅРЅС‹Рµ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹")
-   
+  else console.log("Данные не корректны")
+
     setIsFormVisible(false);
     setIsLoading(true);
     NProgress.start();
@@ -219,9 +238,11 @@ function BottomPanelApp() {
       setIsLoading(false);
       NProgress.done();
     }, 1500);
-	  console.log('Р”Р°РЅРЅС‹Рµ', formData);
+	  //console.log('Данные из формы ...', formData);
+    const jsonTotal = JSON.stringify(formData);
+    console.log('Данные из формы JSON ...', jsonTotal);
 	  };
-
+    
     function infoblockreturn() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -248,7 +269,7 @@ function BottomPanelApp() {
    const minutes = String(d.getMinutes()).padStart(2, '0');
    const seconds = String(d.getSeconds()).padStart(2, '0');
    const formatted = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-   console.log(formatted); 
+   //console.log(formatted); 
    
   if (!setIsPanelOpen) return null;
 
@@ -260,7 +281,7 @@ function BottomPanelApp() {
         onClick={() => setIsPanelOpen(true)}
         style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
       >
-        Р—Р°РїСЂРѕСЃ
+        Запрос
       </button>
 
       {isPanelOpen && (
@@ -309,32 +330,32 @@ function BottomPanelApp() {
       <div>
     
 <div className="parent">
-    <div className="modal_header"><h1>РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ Р·Р°РїСЂРѕСЃ: {textTitle}.</h1>
-    <h2>РњС‹ РїРѕСЃС‚Р°СЂР°РµРјСЃСЏ РѕС‚РІРµС‚РёС‚СЊ РЅР° РІР°С€ Р·Р°РїСЂРѕСЃ РІ С‚РµС‡РµРЅРёРё 5-6 С‡Р°СЃРѕРІ РІ СЂР°Р±РѕС‡РµРµ РІСЂРµРјСЏ.</h2>
+    <div className="modal_header"><h1>Предварительный запрос: {textTitle}.</h1>
+    <h2>Мы постараемся ответить на ваш запрос в течении 5-6 часов в рабочее время.</h2>
     </div>
     <div className="modal_address">
-      <p className="block_head">Р РѕСЃСЃРёР№СЃРєР°СЏ Р¤РµРґРµСЂР°С†РёСЏ, 121357, Рі.РњРѕСЃРєРІР°, РњРѕР¶Р°Р№СЃРєРёР№ (Р—РђРћ), СѓР».Р’РµСЂРµР№СЃРєР°СЏ,Рґ.29 РЎ 82</p>
+      <p className="block_head">Российская Федерация, 121357, г.Москва, Можайский (ЗАО), ул.Верейская,д.29 С 82</p>
     </div>
     <div className="modal_form">
       
       <form onSubmit={handleSubmit}>
       <input type="hidden" name="page_title" value={textTitle} />
       <input type="hidden" name="page_uri" id="urlInput" value={currentUrl} />
-      <input type="hidden" name="user_check_private_agree" value="РЇ РґР°СЋ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РјРѕРёС… РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С… РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РџРѕР»РёС‚РёРєРѕР№ РѕР±СЂР°Р±РѕС‚РєРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…" />
+      <input type="hidden" name="user_check_private_agree" value="Я даю согласие на обработку моих персональных данных в соответствии с Политикой обработки персональных данных" />
       <input type="hidden" name="dt" value={formatted} />
                <div>
-               <label htmlFor ="name">Р’Р°С€Рµ РёРјСЏ:</label>
+               <label htmlFor ="name">Ваше имя:</label>
                <input className="firstname" type="text" autoFocus
                 id="name"
                 name="name"
                 //ref={inputRef}
-                value={name} 
+                value={name}
                 onChange={onNameChange}
                 style={{backgroundColor:nameValid?'white':'white', border: nameValid?"thin solid green":"thin solid red"}} />
                </div>
 
                <div>
-               <label htmlFor ="phone">РўРµР»РµС„РѕРЅ:</label>
+               <label htmlFor ="phone">Телефон:</label>
                <input type="tel" 
                 id="phone"
                 name="phone"
@@ -344,7 +365,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label htmlFor ="email">Р­Р»РµС‚СЂРѕРїРѕС‡С‚Р°:</label>
+               <label htmlFor ="email">Элетропочта:</label>
                <input type="text"
                id="email"
                name="email"
@@ -354,7 +375,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label htmlFor ="message">РЎРѕРѕР±С‰РµРЅРёРµ:</label>
+               <label htmlFor ="message">Сообщение:</label>
                <textarea
                 id="message"
                 name="message"
@@ -363,7 +384,7 @@ function BottomPanelApp() {
                 style={{backgroundColor:messageValid?'white':'white', border: messageValid?"thin solid green":"thin solid red"}} />
                </div>
             
-              {/* <label>Р›РµС‚:</label><br />
+              {/* <label>Лет:</label><br />
               <input type="number" 
                   value={age} 
                   onChange={onAgeChange}  
@@ -378,11 +399,11 @@ function BottomPanelApp() {
                 onChange={onCheckChange} 
                  />
             <label htmlFor ="check" className="policy">
-                РЇ РґР°СЋ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РјРѕРёС… РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С… РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ <a href="/documents/policy/" target="_blank">РџРѕР»РёС‚РёРєРѕР№ РѕР±СЂР°Р±РѕС‚РєРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</a>
+                Я даю согласие на обработку моих персональных данных в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
             </label>
             </div>
             <div>
-            <button className="button"
+            <button className="button" onClick={hiddenFieldsClick}
             style={{
               backgroundColor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'#CCCC00':'green',
               cursor:!nameValid || !phoneValid || !emailValid || !messageValid || checkValid?'none':'pointer',
@@ -390,28 +411,26 @@ function BottomPanelApp() {
             }}
             disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} 
             type="submit">
-              РћС‚РїСЂР°РІРёС‚СЊ
+              Отправить
             </button>
             </div>
     </form>
 
     </div>
     <div className="modal_contacts">
-      <p className="block_head">РџРЅ-РџС‚ СЃ 9:00 РґРѕ 19:00. Р’С‹С…РѕРґРЅС‹Рµ РґРЅРё: СЃСѓР±Р±РѕС‚Р° Рё РІРѕСЃРєСЂРµСЃРµРЅСЊРµ.
-      РљРѕРЅС‚Р°РєС‚РЅС‹Р№ С‚РµР»РµС„РѕРЅ: +7 (925) 585-33-71 (MAX)
-      Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°: mail@htz.ru</p>
+      <p className="block_head">Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
+      Контактный телефон: +7 (925) 585-33-71 (MAX)
+      Электронная почта: mail@htz.ru</p>
     </div>
     <div className="modal_map">
 
     <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
 
     </div>
-    <div className="modal_copy">В© 2004вЂ”2026 В«РЎРџРњВ»</div>
+    <div className="modal_copy">&copy; 2004&mdash;{year} «СПМ»</div>
 </div>
-
 		   </div>
         ) : (
-
           <div className="success-message">
             <h1 id="myDiv"></h1>
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
