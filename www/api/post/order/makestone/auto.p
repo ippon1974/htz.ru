@@ -20,12 +20,12 @@ $str[$mail_file_json.text]
 }{ 
    <p>Not data for insert</p><br />
 }
-$response:body[^file::load[text;/services/makestone/react/testbody/_blank.json]]
-^rem{
+
 ^if(def $str){
-^file:delete[/api/post/order/makestone/mail.json] 
-}{result[File not found!]} 
-}
+^file:delete[/api/post/order/makestone/mail.json]
+}{result[File not found!]}
+
+$response:body[^file::load[text;/services/makestone/react/testbody/_blank.json]]
 
 
 

@@ -127,7 +127,7 @@ $showMaterialsPrice[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 			</table>
 
 	        <p>Стоимость раскроя гидроабразивом за один погонный метр без НДС: <strong>^number_format[^text.format[%.2f];,;.](2)</strong> руб. Толщина листа: ${showMaterialsPrice.material_size} мм.</p>
-			
+			<p>Электронная почта для заказа: ^my_email[]</p>
             <div>
 			<h3>Минимальный заказ</h3>
 			<p>Не менее 15000 тыс. рублей.</p>
@@ -161,8 +161,8 @@ $showMaterialsPrice[^db::getMaterialPrice[$.id(^form:id.int(0))]]
 			</table>
 			
 			<h3>Расположение производства</h3>
-			<p style="font-size: 1.3em^;">^my_adress_civekwaterjet[]<br />Электронная почта для заказа: ^my_email[]</p>
-            <h3>Прилегающие населенные пункты</h3>
+			<p style="font-size: 1.3em^;">^my_adress_civekwaterjet[]</p>
+            <h3>Прилегающие районы Москвы</h3>
 			<p style="font-size: 1.3em^;">Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково</p>
 	</div>
 }
