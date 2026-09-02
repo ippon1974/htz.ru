@@ -196,15 +196,6 @@ function BottomPanelApp() {
     setFormData({ ...formData, message: e.target.value });
  }
 
-  const validateAge = (age) =>  age>=5;
-  const [age, setAge] = useState('');
-  const [ageValid, setAgeValid] = useState(validateAge(''));
-  const onAgeChange = (e) => {
-    setAge(e.target.value);
-    setAgeValid(validateAge(e.target.value));
-    setFormData({ ...formData, age: e.target.value });
- }
-
   const validateCheck = (check) =>  check === false;
   const [check, setCheck] = useState('');
   const [checkValid, setCheckValid] = useState(validateCheck(false));
@@ -299,7 +290,7 @@ function BottomPanelApp() {
           position: 'fixed',
           left: 0,
           right: 0,
-          bottom: isPanelOpen ? '0' : '-100%', 
+          bottom: isPanelOpen ? '0' : '-100%',
           backgroundColor: '#efba46',
           padding: '20px 20px',
 		      borderTopLeftRadius: '0px',
@@ -384,13 +375,6 @@ function BottomPanelApp() {
                 style={{backgroundColor:messageValid?'white':'white', border: messageValid?"thin solid green":"thin solid red"}} />
                </div>
             
-              {/* <label>Лет:</label><br />
-              <input type="number" 
-                  value={age} 
-                  onChange={onAgeChange}  
-                  style={{backgroundColor:ageValid?'white':'white', border: ageValid?"medium solid green":"medium solid red"}} />
-              <br /><br /> */}
-
             <div className="checkbox-container">
             <input type="checkbox"
                 id="check"
@@ -398,6 +382,7 @@ function BottomPanelApp() {
                 value={check}
                 onChange={onCheckChange} 
                  />
+
             <label htmlFor ="check" className="policy">
                 Я даю согласие на обработку моих персональных данных в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
             </label>
