@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -65,8 +66,9 @@ $result[$keywords.keywords]
     ^if($mashine_instore){<div class="in_teh_mtz"><a href="/catalog/mtz/instore/" title="Наличие техники ПО МТЗ на стоянке в Москве">Наличие техники ПО &laquo^;МТЗ&raquo^; на стоянке в Москве</a></div>}{}
     
 	^navi_sub_nav[]
-   
-    <h2>${mashine_s.name_ru}. ${h_Machines.classification_sub.[$mashine_s.classification_sub]}. Производство $h_Machines.brand_id.[$mashine_s.brand_id] ($h_Machines.country_origin_ru.[$mashine_s.country_origin_ru]).</h2>
+    <div>
+    <h1>${mashine_s.name_ru}. ${h_Machines.classification_sub.[$mashine_s.classification_sub]}. Производство $h_Machines.brand_id.[$mashine_s.brand_id] ($h_Machines.country_origin_ru.[$mashine_s.country_origin_ru]).</h1>
+	</div>
     $mashine_price[$price_hash.[$mashine_s.id].price]
     <div id="tehnobody">
     <span>^dtf:format[%d %h %Y;]</span>

@@ -8,8 +8,10 @@ $teh[^getTehMTZ[$.id(^form:id.int(0))]]
 $field_teh[^table::load[/field_teh_mtz.cfg]]
 
 ^navi_sub_nav_[]
+<div>
+<h1>“ехнические характеристики трактора $teh.namenklatura</h1>
+</div>
 
-<h2>“ехнические характеристики трактора $teh.namenklatura</h2>
 <h3 title="$teh.namenklatura" class="en">$teh.namenklatura</h3>	
 
 <table cellspacing="0">

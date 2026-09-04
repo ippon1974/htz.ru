@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -48,7 +49,9 @@
   $str[$request:uri] 
   $parts[^str.split[/;lh]]
   <div style="margin: 0 0 0.8em 0^; font-size: 1.5em^;"><a href="/catalog/mtz/" title="Техника ПО МТЗ">Техника ПО &laquo^;МТЗ&raquo^;</a></div>
-  <h2>^title[].</h2>
+  <div>
+  <h1>^title[].</h1>
+  </div>
   <ul class="listing">
   <form action="/catalog/mtz/compare/" method="POST">
   <input type="Hidden" name="item" value="$parts.3" />
