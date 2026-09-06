@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -41,7 +42,9 @@
   $mashine_s_s[^mashine_s.select($mashine_s.classification==35)]
   $price[^getPriceMachines[]]
   $price_hash[^price.hash[id]]  
-  <h2>^title[]</h2>
+  <div>
+  <h1>^title[]</h1>
+  </div>
   <ul class="listing">
   ^mashine_s_s.menu{ 
     $mashine_price[$price_hash.[$mashine_s_s.id].price] 

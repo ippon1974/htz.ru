@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -40,7 +41,9 @@
   $mashine_s[^mashine.select($mashine.brand_id==8)]
   $price[^getPriceMachines[]]
   $price_hash[^price.hash[id]]  
-  <h2>^title[]</h2>
+  <div>
+  <h1>^title[]</h1>
+  </div>
   <ul id="anchorlist">
 			<li><a href="/catalog/belarus/taim/mashine/excavating_equipment/" title="Ёкскаваторное оборудование">Ёкскаваторное оборудование</a></li>
 			<li><a href="/catalog/belarus/taim/mashine/hoover_park_mounted/" title="Ќавесные пылесосы">Ќавесные пылесосы</a></li>

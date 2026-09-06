@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/callback.css">
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/services/css/style.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"/>
 <link rel="shortcut icon" href="/ico.ico" /> 
 <!--[if gte IE 6]><link href="/css/ie6.css" rel="stylesheet" media="screen, projection" type="text/css" /><![endif]-->
@@ -55,8 +56,9 @@ $title[^table::sql{SELECT * FROM machines LEFT JOIN tech_bobruysk ON tech_bobruy
 $sql_table[^table::sql{SELECT * FROM machines LEFT JOIN tech_bobruysk ON tech_bobruysk.machines_id = machines.machines_id}]
 }
 $sql_table_s[^sql_table.select($sql_table.brand_id==7)] 
-
-<h2>^title[]</h2>
+<div>
+<h1>^title[]</h1>
+</div>
 <table cellspacing="0">
 <tr>
 <th scope="col" class="name">Название машин</th>
@@ -76,7 +78,9 @@ $sql_table[^table::sql{SELECT * FROM machines LEFT JOIN tech_bobruysk ON tech_bo
 }
 
 ^navi_sub_nav[]
-<h2>^title[]</h2>
+<div>
+<h1>^title[]</h1>
+</div>
 ^if(^sql_table.locate[tech_id;$form:id]){<h3 title="" class="en" style="margin: 0 0 0.5em 0^;">$sql_table.namenklatura</h3>}{}
 <table cellspacing="0">
 <tr>
