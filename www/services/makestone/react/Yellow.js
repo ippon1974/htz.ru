@@ -107,7 +107,7 @@ function BottomPanelApp() {
      
       const markerElement = document.createElement('div');
       markerElement.className = 'custom-marker';
-      markerElement.innerHTML = '<div>Сивек Ватер Джет</div>';
+      markerElement.innerHTML = '<div>РЎРёРІРµРє Р’Р°С‚РµСЂ Р”Р¶РµС‚</div>';
 
       const marker = new YMapMarker({
         coordinates: [37.425699, 55.709026],
@@ -125,16 +125,16 @@ function BottomPanelApp() {
   //   try {
   //     const response = await fetch('https://htz.ru/api/post/order/makestone/');
       
-  //     // Проверяем, прошел ли запрос успешно
+  //     // РџСЂРѕРІРµСЂСЏРµРј, РїСЂРѕС€РµР» Р»Рё Р·Р°РїСЂРѕСЃ СѓСЃРїРµС€РЅРѕ
   //     if (!response.ok) {
-  //       throw new Error('Ошибка на сервере');
+  //       throw new Error('РћС€РёР±РєР° РЅР° СЃРµСЂРІРµСЂРµ');
   //     }
       
   //     const data = await response.json();
-  //     console.log('Данные JSON ', data);
+  //     console.log('Р”Р°РЅРЅС‹Рµ JSON ', data);
       
   //   } catch (error) {
-  //     console.log('Что-то пошло не так:', error.message);
+  //     console.log('Р§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє:', error.message);
   //   }
   // }
   // getData();
@@ -218,9 +218,9 @@ function BottomPanelApp() {
 	  e.preventDefault();
 
     if(nameValid && phoneValid && emailValid && messageValid && !checkValid){
-      //console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
+      //console.log(`РРјСЏ: ${name} РўРµР»РµС„РѕРЅ: ${phone} РџРѕС‡С‚Р°: ${email} РЎРѕРѕР±С‰РµРЅРёРµ: ${message} РџСЂР°РІР° ${check}`);
   }
-  else console.log("Данные не корректны")
+  else console.log("Р”Р°РЅРЅС‹Рµ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹")
 
     setIsFormVisible(false);
     setIsLoading(true);
@@ -229,9 +229,9 @@ function BottomPanelApp() {
       setIsLoading(false);
       NProgress.done();
     }, 1500);
-	  //console.log('Данные из формы ...', formData);
+	  //console.log('Р”Р°РЅРЅС‹Рµ РёР· С„РѕСЂРјС‹ ...', formData);
     const jsonTotal = JSON.stringify(formData);
-    console.log('Данные из формы JSON ...', jsonTotal);
+    console.log('Р”Р°РЅРЅС‹Рµ РёР· С„РѕСЂРјС‹ JSON ...', jsonTotal);
 	  };
     
     function infoblockreturn() {
@@ -272,7 +272,7 @@ function BottomPanelApp() {
         onClick={() => setIsPanelOpen(true)}
         style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
       >
-        Запрос
+        Р—Р°РїСЂРѕСЃ
       </button>
 
       {isPanelOpen && (
@@ -290,7 +290,7 @@ function BottomPanelApp() {
           position: 'fixed',
           left: 0,
           right: 0,
-          bottom: isPanelOpen ? '0' : '-100%',
+          bottom: isPanelOpen ? '0' : '-100%', 
           backgroundColor: '#efba46',
           padding: '20px 20px',
 		      borderTopLeftRadius: '0px',
@@ -321,21 +321,21 @@ function BottomPanelApp() {
       <div>
     
 <div className="parent">
-    <div className="modal_header"><h1>Предварительный запрос: {textTitle}.</h1>
-    <h2>Мы постараемся ответить на ваш запрос в течении 5-6 часов в рабочее время.</h2>
+    <div className="modal_header"><h1>РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ Р·Р°РїСЂРѕСЃ: {textTitle}.</h1>
+    <h2>РњС‹ РїРѕСЃС‚Р°СЂР°РµРјСЃСЏ РѕС‚РІРµС‚РёС‚СЊ РЅР° РІР°С€ Р·Р°РїСЂРѕСЃ РІ С‚РµС‡РµРЅРёРё 5-6 С‡Р°СЃРѕРІ РІ СЂР°Р±РѕС‡РµРµ РІСЂРµРјСЏ.</h2>
     </div>
     <div className="modal_address">
-      <p className="block_head">Российская Федерация, 121357, г.Москва, Можайский (ЗАО), ул.Верейская,д.29 С 82</p>
+      <p className="block_head">Р РѕСЃСЃРёР№СЃРєР°СЏ Р¤РµРґРµСЂР°С†РёСЏ, 121357, Рі.РњРѕСЃРєРІР°, РњРѕР¶Р°Р№СЃРєРёР№ (Р—РђРћ), СѓР».Р’РµСЂРµР№СЃРєР°СЏ,Рґ.29 РЎ 82</p>
     </div>
     <div className="modal_form">
       
       <form onSubmit={handleSubmit}>
       <input type="hidden" name="page_title" value={textTitle} />
       <input type="hidden" name="page_uri" id="urlInput" value={currentUrl} />
-      <input type="hidden" name="user_check_private_agree" value="Я даю согласие на обработку моих персональных данных в соответствии с Политикой обработки персональных данных" />
+      <input type="hidden" name="user_check_private_agree" value="РЇ РґР°СЋ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РјРѕРёС… РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С… РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РџРѕР»РёС‚РёРєРѕР№ РѕР±СЂР°Р±РѕС‚РєРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…" />
       <input type="hidden" name="dt" value={formatted} />
                <div>
-               <label htmlFor ="name">Ваше имя:</label>
+               <label htmlFor ="name">Р’Р°С€Рµ РёРјСЏ:</label>
                <input className="firstname" type="text" autoFocus
                 id="name"
                 name="name"
@@ -346,7 +346,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label htmlFor ="phone">Телефон:</label>
+               <label htmlFor ="phone">РўРµР»РµС„РѕРЅ:</label>
                <input type="tel" 
                 id="phone"
                 name="phone"
@@ -356,7 +356,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label htmlFor ="email">Элетропочта:</label>
+               <label htmlFor ="email">Р­Р»РµС‚СЂРѕРїРѕС‡С‚Р°:</label>
                <input type="text"
                id="email"
                name="email"
@@ -366,7 +366,7 @@ function BottomPanelApp() {
                </div>
 
                <div>
-               <label htmlFor ="message">Сообщение:</label>
+               <label htmlFor ="message">РЎРѕРѕР±С‰РµРЅРёРµ:</label>
                <textarea
                 id="message"
                 name="message"
@@ -384,7 +384,7 @@ function BottomPanelApp() {
                  />
 
             <label htmlFor ="check" className="policy">
-                Я даю согласие на обработку моих персональных данных в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
+                РЇ РґР°СЋ СЃРѕРіР»Р°СЃРёРµ РЅР° РѕР±СЂР°Р±РѕС‚РєСѓ РјРѕРёС… РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С… РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ <a href="/documents/policy/" target="_blank">РџРѕР»РёС‚РёРєРѕР№ РѕР±СЂР°Р±РѕС‚РєРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…</a>
             </label>
             </div>
             <div>
@@ -396,23 +396,24 @@ function BottomPanelApp() {
             }}
             disabled={!nameValid || !phoneValid || !emailValid || !messageValid || checkValid} 
             type="submit">
-              Отправить
+              РћС‚РїСЂР°РІРёС‚СЊ
             </button>
             </div>
     </form>
 
     </div>
+    
     <div className="modal_contacts">
-      <p className="block_head">Пн-Пт с 9:00 до 19:00. Выходные дни: суббота и воскресенье.
-      Контактный телефон: +7 (925) 585-33-71 (MAX)
-      Электронная почта: mail@htz.ru</p>
+      <p className="block_head">РџРЅ-РџС‚ СЃ 9:00 РґРѕ 19:00. Р’С‹С…РѕРґРЅС‹Рµ РґРЅРё: СЃСѓР±Р±РѕС‚Р° Рё РІРѕСЃРєСЂРµСЃРµРЅСЊРµ.
+      РљРѕРЅС‚Р°РєС‚РЅС‹Р№ С‚РµР»РµС„РѕРЅ: +7 (925) 585-33-71 (MAX)
+      Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°: mail@htz.ru</p>
     </div>
     <div className="modal_map">
 
     <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
 
     </div>
-    <div className="modal_copy">&copy; 2004&mdash;{year} «СПМ»</div>
+    <div className="modal_copy">&copy; 2004&mdash;{year} В«РЎРџРњВ»</div>
 </div>
 		   </div>
         ) : (
