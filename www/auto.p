@@ -1832,6 +1832,10 @@ $found(^CNStats[])
 <li><a href="http://www.parser.ru/" target="_blank">Parser 3</a> &mdash^; в сердце сайта</li>
 </ul>
 
+<ul>
+<li><a href="http://dev.wcut.ru/" target="_blank">Разработка и поддержка сайта</a></li>
+</ul>
+
 <ul id="copyright">
 <li class="first">&copy; 2004&mdash;$now.year ^my_company_name_[]</li>
 </ul>
