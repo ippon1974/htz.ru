@@ -1,6 +1,7 @@
 # robots.txt for http://www.htz.ru
 
 User-agent: *
+Disallow: /documents/
 Disallow: /cgi-bin/
 Disallow: /admin/
 Disallow: /php/
