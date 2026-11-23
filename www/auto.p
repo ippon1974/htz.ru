@@ -1819,7 +1819,15 @@ $now[^date::now[]]
 </ul>
 
 <ul id="site">
-<li><a href="http://dev.wcut.ru/" target="_blank">Разработка и поддержка сайта</a></li>
+<li><a href="/documents/policy/" target="_blank" title="Политика обработки персональных данных">Политика обработки персональных данных</a></li>
+</ul>
+
+<ul>
+<li><a href="http://dev.wcut.ru/" target="_blank" title="Разработка и поддержка сайта">Разработка и поддержка сайта</a></li>
+</ul>
+
+<ul>
+<li><a href="http://www.parser.ru/" target="_blank">Parser 3</a> &mdash^; в сердце сайта</li>
 </ul>
 
 ^if($request:uri eq "/"){
@@ -1828,14 +1836,9 @@ $found(^CNStats[])
 <li>Всего ^CNStats[] ^num_decline[$found;посетитель;посетителя;посетителей]</li>
 </ul>}{}
 
-<ul>
-<li><a href="http://www.parser.ru/" target="_blank">Parser 3</a> &mdash^; в сердце сайта</li>
-</ul>
-
 <ul id="copyright">
 <li class="first">&copy; 2004&mdash;$now.year ^my_company_name_[]</li>
 </ul>
-
 
 <!-- Statistika begin -->
 <span id="cnstats_span"><script type="text/javascript">
