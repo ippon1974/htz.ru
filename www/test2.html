@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Title of the document</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+
+<style>
+.email-box {
+  background: #000000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: sans-serif;
+  background: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+
+.email-box #copy-email-btn {
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.email-box #copy-email-btn:hover {
+  background: #e5e7eb;
+  color: #10b981;
+}
+
+/* Стили для визуального отклика */
+.email-box #copy-email-btn.copied {
+  color: #10b981; /* Зеленый цвет при успехе */
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Проверка русского языка</h1>
+
+<div class="email-box">
+  <span id="email-text"><a href="/">mail@htz.ru</a></span>
+  <button type="button" id="copy-email-btn" aria-label="Скопировать email" title="Скопировать email">
+    <!-- Иконка копирования (SVG) -->
+    <svg id="copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    </svg>
+    <!-- Иконка галочки после копирования -->
+    <svg id="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  </button>
+  <span id="copy-status" style="display: none;">Адрес скопирован!</span>
+</div>
+
+
+<script>
+  const btn = document.getElementById('copy-email-btn');
+  const emailEl = document.getElementById('email-text');
+  const copyIcon = document.getElementById('copy-icon');
+  const checkIcon = document.getElementById('check-icon');
+  const statusEl = document.getElementById('copy-status');
+
+  async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const input = document.createElement('input');
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+  }
+
+  btn.addEventListener('click', async () => {
+    const email = emailEl.textContent.trim();
+    try {
+      await copyText(email);
+      copyIcon.style.display = 'none';
+      checkIcon.style.display = 'inline';
+      statusEl.style.display = 'inline';
+
+      setTimeout(() => {
+        copyIcon.style.display = 'inline';
+        checkIcon.style.display = 'none';
+        statusEl.style.display = 'none';
+      }, 2500);
+    } catch (e) {
+      console.error('Не удалось скопировать email:', e);
+    }
+  });
+</script>
+
+</body>
+
+</html>

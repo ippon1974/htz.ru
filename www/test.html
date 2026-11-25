@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+
+<style>
+.email-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: sans-serif;
+  background: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+#copy-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+#copy-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* Стили для визуального отклика */
+#copy-btn.copied {
+  color: #10b981; /* Зеленый цвет при успехе */
+}
+</style>
+
+<script type="text/javascript">
+console.log("hi ...");
+document.getElementById('copy-btn').addEventListener('click', async function() {
+  const emailText = document.getElementById('email-text').innerText;
+  const button = this;
+
+  try {
+    // Используем современный Clipboard API
+    await navigator.clipboard.writeText(emailText);
+    
+    // Визуальный отклик (меняем стиль кнопки)
+    button.classList.add('copied');
+    
+    // Возвращаем исходный вид через 1.5 секунды
+    setTimeout(() => {
+      button.classList.remove('copied');
+    }, 1500);
+    
+  } catch (err) {
+    console.error('Не удалось скопировать текст: ', err);
+    alert('Ошибка при копировании');
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+
+<div class="email-container">
+  <span id="email-text">example@domain.com</span>
+  <button id="copy-btn" title="Скопировать email" aria-label="Скопировать email">
+    <!-- Иконка копирования (SVG) -->
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    </svg>
+  </button>
+</div>
+
+
+</body>
+
+</html>
