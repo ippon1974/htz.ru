@@ -218,7 +218,7 @@ function BottomPanelApp() {
 	  e.preventDefault();
 
     if(nameValid && phoneValid && emailValid && messageValid && !checkValid){
-      //console.log(`Имя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
+      //console.log(`�?мя: ${name} Телефон: ${phone} Почта: ${email} Сообщение: ${message} Права ${check}`);
   }
   else console.log("Данные не корректны")
 
@@ -384,7 +384,7 @@ function BottomPanelApp() {
                  />
 
             <label htmlFor ="check" className="policy">
-                Я даю согласие на обработку моих персональных данных в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
+            <a href="/documents/policy/agree.html" target="_blank">Я даю согласие на обработку моих персональных данных</a> в соответствии с <a href="/documents/policy/" target="_blank">Политикой обработки персональных данных</a>
             </label>
             </div>
             <div>
